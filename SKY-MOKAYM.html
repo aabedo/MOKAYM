@@ -1,0 +1,3216 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>SKY-MOKAYM 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg1:#0f172a;--bg2:#1e293b;--bg3:#162032;
+  --card1:#1e293b;--card2:#243447;--card3:#2d3f55;
+  --border:#2d3f55;--border2:#334155;
+  --t1:#f1f5f9;--t2:#94a3b8;--t3:#64748b;
+  --blue:#3b82f6;--blue2:#60a5fa;
+  --green:#10b981;--green2:#34d399;
+  --red:#ef4444;--red2:#f87171;
+  --yellow:#f59e0b;--yellow2:#fbbf24;
+  --purple:#7c3aed;--purple2:#a78bfa;
+  --orange:#f97316;--orange2:#fb923c;
+  --radius:16px;--radius-sm:10px;
+  --shadow:0 4px 24px rgba(0,0,0,0.4);
+}
+body{font-family:'Tajawal',sans-serif;background:var(--bg1);color:var(--t1);min-height:100vh;overflow-x:hidden}
+
+/* ══ تسجيل الدخول ══ */
+#loginPage{
+  position:fixed;inset:0;z-index:9999;
+  background:linear-gradient(135deg,#0f172a 0%,#1e293b 50%,#0f172a 100%);
+  display:flex;align-items:center;justify-content:center;padding:20px;
+}
+.login-box{
+  width:100%;max-width:420px;background:var(--card1);
+  border:1px solid var(--border2);border-radius:24px;
+  padding:40px 36px;box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+.login-logo{text-align:center;margin-bottom:28px}
+.login-logo .logo-icon{font-size:3rem;display:block;margin-bottom:8px}
+.login-logo h1{font-size:1.6rem;font-weight:900;color:var(--t1)}
+.login-logo p{font-size:0.82rem;color:var(--t3);margin-top:4px}
+.form-group{margin-bottom:18px}
+.form-label{display:block;font-size:0.82rem;font-weight:700;color:var(--t2);margin-bottom:8px}
+.input-wrap{position:relative;display:flex;align-items:center}
+.input-icon{position:absolute;right:14px;font-size:1rem;color:var(--t3);pointer-events:none}
+.form-input{
+  width:100%;padding:12px 42px 12px 14px;
+  background:var(--bg2);border:1.5px solid var(--border2);
+  border-radius:var(--radius-sm);color:var(--t1);
+  font-family:'Tajawal',sans-serif;font-size:0.95rem;outline:none;
+  transition:border-color .2s,box-shadow .2s;
+}
+.form-input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(59,130,246,0.15)}
+.pw-toggle{
+  position:absolute;left:12px;background:none;border:none;
+  color:var(--t3);cursor:pointer;font-size:1rem;padding:4px;touch-action:manipulation;
+}
+.login-btn{
+  width:100%;padding:14px;margin-top:8px;
+  background:linear-gradient(135deg,var(--blue),#2563eb);
+  color:#fff;border:none;border-radius:var(--radius-sm);
+  font-family:'Tajawal',sans-serif;font-size:1rem;font-weight:800;
+  cursor:pointer;transition:all .2s;touch-action:manipulation;
+}
+.login-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(59,130,246,0.4)}
+.login-error{
+  display:none;margin-top:16px;padding:12px 16px;
+  background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);
+  border-radius:var(--radius-sm);align-items:center;gap:10px;
+}
+.login-error.show{display:flex}
+.err-title{font-weight:700;color:var(--red2);font-size:0.88rem}
+.err-body{font-size:0.78rem;color:var(--t2);margin-top:2px}
+
+/* ══ التطبيق ══ */
+#app{display:none;min-height:100vh;flex-direction:column}
+#app.show{display:flex}
+
+/* ══ الهيدر ══ */
+.header{
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  border-bottom:1px solid var(--border);
+  padding:0 20px;display:flex;align-items:center;justify-content:space-between;
+  height:60px;position:sticky;top:0;z-index:100;
+  box-shadow:0 2px 12px rgba(0,0,0,0.3);
+}
+.header-logo{display:flex;align-items:center;gap:10px;cursor:pointer}
+.header-logo span{font-size:1.4rem}
+.header-logo h1{font-size:1rem;font-weight:900;color:var(--t1)}
+.header-actions{display:flex;align-items:center;gap:6px}
+.hbtn{
+  display:flex;align-items:center;gap:5px;
+  padding:7px 12px;border-radius:8px;border:none;
+  font-family:'Tajawal',sans-serif;font-size:0.78rem;font-weight:700;
+  cursor:pointer;transition:all .2s;touch-action:manipulation;white-space:nowrap;
+}
+.hbtn-save{background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;box-shadow:0 3px 10px rgba(245,158,11,0.35)}
+.hbtn-save.saved{background:rgba(16,185,129,0.2);color:var(--green2);box-shadow:none}
+.hbtn-import{background:rgba(59,130,246,0.15);color:var(--blue2)}
+.hbtn-export{background:rgba(16,185,129,0.15);color:var(--green2)}
+.hbtn-logout{background:rgba(239,68,68,0.1);color:var(--red2)}
+.hbtn:hover{filter:brightness(1.15)}
+.save-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--orange2);
+  display:inline-block;animation:pulse 1.5s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* ══ الصفحة الرئيسية ══ */
+#homePage{flex:1;padding:24px 20px}
+.home-title{text-align:center;margin-bottom:28px}
+.home-title h2{font-size:1.5rem;font-weight:900;color:var(--t1)}
+.home-title p{font-size:0.85rem;color:var(--t3);margin-top:6px}
+.persons-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:16px;max-width:960px;margin:0 auto;
+}
+.person-card{
+  background:var(--card1);border:1px solid var(--border);
+  border-radius:var(--radius);padding:22px;cursor:pointer;
+  transition:all .25s;position:relative;overflow:hidden;
+}
+.person-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(59,130,246,0.05),transparent);
+  opacity:0;transition:opacity .25s;
+}
+.person-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,0.3);border-color:var(--blue)}
+.person-card:hover::before{opacity:1}
+.pc-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.pc-avatar{
+  width:48px;height:48px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;flex-shrink:0;
+}
+.pc-name{font-size:1rem;font-weight:800;color:var(--t1)}
+.pc-role{font-size:0.75rem;color:var(--t3);margin-top:2px}
+.pc-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.pc-stat{background:var(--bg2);border-radius:8px;padding:8px;text-align:center}
+.pc-stat-val{font-size:0.9rem;font-weight:800}
+.pc-stat-lbl{font-size:0.65rem;color:var(--t3);margin-top:2px}
+.pc-balance{
+  margin-top:12px;padding:10px;border-radius:8px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.pc-balance.pos{background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2)}
+.pc-balance.neg{background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2)}
+.pc-balance-lbl{font-size:0.75rem;color:var(--t3)}
+.pc-balance-val{font-size:1rem;font-weight:900}
+.pc-balance.pos .pc-balance-val{color:var(--green2)}
+.pc-balance.neg .pc-balance-val{color:var(--red2)}
+/* بطاقة إضافة مسؤول */
+.add-person-card{
+  background:transparent;border:2.5px dashed var(--border2);
+  border-radius:var(--radius);padding:22px;cursor:pointer;
+  transition:all .25s;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:12px;min-height:180px;
+}
+.add-person-card:hover{border-color:var(--blue);background:rgba(59,130,246,0.05);transform:translateY(-2px)}
+.add-person-icon{
+  width:56px;height:56px;border-radius:16px;
+  background:rgba(59,130,246,0.12);border:2px dashed rgba(59,130,246,0.4);
+  display:flex;align-items:center;justify-content:center;font-size:1.6rem;
+}
+.add-person-text{font-size:0.9rem;font-weight:700;color:var(--t3)}
+.add-person-sub{font-size:0.75rem;color:var(--t3);opacity:.7}
+
+/* ══ صفحة المسؤول ══ */
+#personPage{flex:1;display:none;flex-direction:column}
+#personPage.show{display:flex}
+/* ══ رأس صفحة المسؤول ══ */
+.person-header{
+  background:linear-gradient(160deg,rgba(15,23,42,0.98) 0%,rgba(30,41,59,0.97) 100%);
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  padding:14px 20px 16px;
+}
+.ph-top{
+  display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:nowrap;
+}
+.ph-info{display:flex;align-items:center;gap:10px;flex:1;min-width:0;}
+.ph-avatar{
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;flex-shrink:0;
+  border:2px solid rgba(255,255,255,0.15);
+  background:rgba(255,255,255,0.06);
+}
+.ph-name{font-size:1.05rem;font-weight:900;color:var(--t1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ph-role{font-size:0.72rem;color:var(--t3);margin-top:2px;}
+.ph-excel-btns{display:flex;gap:6px;flex-shrink:0;}
+.ph-xl-btn{
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+  padding:7px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.04);color:var(--t2);
+  font-family:'Tajawal',sans-serif;font-size:0.7rem;font-weight:700;
+  cursor:pointer;transition:all .2s;white-space:nowrap;
+}
+.ph-xl-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.3);}
+.ph-xl-import{border-color:rgba(52,211,153,0.3);color:#34d399;}
+.ph-xl-import:hover{background:rgba(52,211,153,0.1);border-color:#34d399;box-shadow:0 4px 12px rgba(52,211,153,0.2);}
+.ph-xl-export{border-color:rgba(251,191,36,0.3);color:#fbbf24;}
+.ph-xl-export:hover{background:rgba(251,191,36,0.1);border-color:#fbbf24;box-shadow:0 4px 12px rgba(251,191,36,0.2);}
+.ph-xl-icon{font-size:1.1rem;line-height:1;}
+.ph-xl-text{font-size:0.65rem;opacity:0.85;}
+.stats-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr) auto;
+  gap:10px;max-width:1100px;margin:0 auto;
+  align-items:stretch;
+}
+.stat-box{
+  background:rgba(255,255,255,0.04);border-radius:12px;padding:12px 14px;
+  border:1px solid rgba(255,255,255,0.08);transition:border-color .2s,background .2s;
+}
+.stat-box:hover{border-color:rgba(255,255,255,0.15);background:rgba(255,255,255,0.06);}
+.stat-val{font-size:1.05rem;font-weight:900;}
+.stat-lbl{font-size:0.65rem;color:var(--t3);margin-top:3px;letter-spacing:0.3px;}
+.stat-count{font-size:0.7rem;color:var(--t3);margin-top:2px;}
+/* ══ بطاقة أزرار العهد (العمود الأخير) ══ */
+.stat-action-box{
+  display:flex;flex-direction:column;justify-content:center;gap:7px;
+  padding:10px 12px;min-width:130px;
+  background:linear-gradient(160deg,rgba(15,23,42,0.9),rgba(30,41,59,0.85));
+  border:1px solid rgba(96,165,250,0.2);border-radius:12px;
+  position:relative;
+}
+.stat-action-box::before{
+  content:'';position:absolute;right:-1px;top:20%;bottom:20%;
+  width:0;border-right:none;
+}
+.stat-action-btn{
+  display:flex;align-items:center;gap:7px;
+  padding:8px 13px;border-radius:9px;border:none;
+  font-family:'Tajawal',sans-serif;font-size:0.8rem;font-weight:700;
+  cursor:pointer;transition:all .22s;white-space:nowrap;width:100%;
+  justify-content:flex-start;
+}
+.stat-btn-custody{
+  background:linear-gradient(135deg,rgba(37,99,235,0.85),rgba(29,78,216,0.95));
+  color:#fff;box-shadow:0 2px 8px rgba(37,99,235,0.25);
+}
+.stat-btn-custody:hover{
+  background:linear-gradient(135deg,#2563eb,#1d4ed8);
+  transform:translateX(-2px);box-shadow:0 4px 14px rgba(37,99,235,0.45);
+}
+.stat-btn-expense{
+  background:linear-gradient(135deg,rgba(220,38,38,0.82),rgba(185,28,28,0.92));
+  color:#fff;box-shadow:0 2px 8px rgba(220,38,38,0.22);
+}
+.stat-btn-expense:hover{
+  background:linear-gradient(135deg,#dc2626,#b91c1c);
+  transform:translateX(-2px);box-shadow:0 4px 14px rgba(220,38,38,0.42);
+}
+.sab-icon{font-size:1rem;line-height:1;flex-shrink:0;}
+.sab-text{font-size:0.78rem;}
+.stat-action-divider{
+  height:1px;background:rgba(255,255,255,0.08);margin:0 4px;
+}
+.action-bar{
+  display:flex;flex-wrap:wrap;gap:8px;
+  padding:10px 20px;max-width:1100px;margin:0 auto;width:100%;
+}
+.action-btn{
+  display:flex;align-items:center;gap:6px;
+  padding:9px 16px;border-radius:var(--radius-sm);
+  border:none;font-family:'Tajawal',sans-serif;
+  font-size:0.85rem;font-weight:700;cursor:pointer;
+  transition:all .2s;touch-action:manipulation;white-space:nowrap;
+}
+.back-btn{
+  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+  border-radius:9px;padding:8px 13px;color:var(--t2);cursor:pointer;
+  font-size:0.82rem;font-family:'Tajawal',sans-serif;font-weight:700;
+  transition:all .2s;touch-action:manipulation;
+  display:flex;align-items:center;gap:5px;flex-shrink:0;
+}
+.back-btn:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);}
+@media(max-width:800px){
+  .stats-row{grid-template-columns:repeat(2,1fr);}
+  .stat-action-box{grid-column:span 2;flex-direction:row;justify-content:center;min-width:unset;}
+  .stat-action-btn{flex:1;justify-content:center;}
+  .stat-action-divider{width:1px;height:auto;margin:4px 0;}
+  .ph-xl-text{display:none;}
+  .ph-xl-btn{padding:7px 9px;}
+}
+@media(max-width:480px){
+  .stats-row{grid-template-columns:1fr 1fr;}
+  .stat-action-box{grid-column:span 2;}
+  .sab-text{font-size:0.75rem;}
+}
+.back-btn:hover{background:rgba(255,255,255,0.12);color:var(--t1)}
+.ph-name{font-size:1.1rem;font-weight:900;color:var(--t1)}
+.ph-role{font-size:0.75rem;color:var(--t3)}
+.stats-row{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:10px;
+  max-width:1100px;margin:0 auto;
+}
+.stat-box{
+  background:var(--card2);border-radius:10px;padding:12px;text-align:center;
+  border:1px solid var(--border);
+}
+.stat-val{font-size:1.1rem;font-weight:900}
+.stat-lbl{font-size:0.68rem;color:var(--t3);margin-top:3px}
+
+/* ══ شريط الأزرار ══ */
+.action-bar{
+  display:flex;flex-wrap:wrap;gap:8px;
+  padding:12px 20px;max-width:1100px;margin:0 auto;width:100%;
+}
+.action-btn{
+  display:flex;align-items:center;gap:6px;
+  padding:9px 16px;border-radius:var(--radius-sm);
+  border:none;font-family:'Tajawal',sans-serif;
+  font-size:0.85rem;font-weight:700;cursor:pointer;
+  transition:all .2s;touch-action:manipulation;white-space:nowrap;
+}
+.action-btn:active{transform:scale(.96)}
+.btn-add-c{background:linear-gradient(135deg,var(--green),#059669);color:#fff;box-shadow:0 4px 14px rgba(16,185,129,0.3)}
+.btn-add-e{background:linear-gradient(135deg,var(--red),#dc2626);color:#fff;box-shadow:0 4px 14px rgba(239,68,68,0.3)}
+.btn-import-xl{background:linear-gradient(135deg,var(--purple),#6d28d9);color:#fff;box-shadow:0 4px 14px rgba(124,58,237,0.3)}
+.btn-report{background:linear-gradient(135deg,var(--blue),#2563eb);color:#fff;box-shadow:0 4px 14px rgba(59,130,246,0.3)}
+.btn-excel{background:linear-gradient(135deg,#16a34a,#15803d);color:#fff}
+.btn-print{background:var(--card2);color:var(--t2);border:1px solid var(--border2)}
+.btn-del-person{background:rgba(239,68,68,0.1);color:var(--red2);border:1px solid rgba(239,68,68,0.2)}
+
+/* ══ فلتر الشهر والفترة ══ */
+.filter-bar{
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px;
+  padding:10px 20px;max-width:1100px;margin:0 auto;width:100%;
+  background:var(--bg3);border-bottom:1px solid var(--border);
+}
+.filter-label{font-size:0.78rem;font-weight:700;color:var(--t3);white-space:nowrap}
+.filter-select,.filter-date{
+  padding:7px 12px;background:var(--card2);
+  border:1.5px solid var(--border2);border-radius:8px;
+  color:var(--t1);font-family:'Tajawal',sans-serif;font-size:0.82rem;
+  outline:none;cursor:pointer;-webkit-appearance:none;
+  transition:border-color .2s;
+}
+.filter-select:focus,.filter-date:focus{border-color:var(--blue)}
+.filter-sep{color:var(--t3);font-size:0.8rem;padding:0 2px}
+.filter-divider{width:1px;height:24px;background:var(--border2);margin:0 4px}
+.filter-reset{
+  padding:6px 12px;border-radius:8px;border:none;
+  background:rgba(239,68,68,0.1);color:var(--red2);
+  font-family:'Tajawal',sans-serif;font-size:0.78rem;font-weight:700;
+  cursor:pointer;transition:all .2s;touch-action:manipulation;
+}
+.filter-reset:hover{background:rgba(239,68,68,0.2)}
+.filter-info{
+  margin-right:auto;font-size:0.75rem;color:var(--t3);
+  background:var(--card2);padding:4px 10px;border-radius:20px;
+}
+
+/* ══ الجداول ══ */
+.tables-wrap{flex:1;padding:0 20px 20px;max-width:1100px;margin:0 auto;width:100%}
+.table-section{margin-bottom:20px}
+.table-title{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 16px;background:var(--card2);
+  border-radius:var(--radius-sm) var(--radius-sm) 0 0;
+  border:1px solid var(--border);border-bottom:none;cursor:pointer;
+}
+.table-title-text{font-size:0.9rem;font-weight:800;display:flex;align-items:center;gap:8px}
+.table-toggle{color:var(--t3);font-size:0.8rem;transition:transform .2s}
+.table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:0 0 var(--radius-sm) var(--radius-sm)}
+table{width:100%;border-collapse:collapse;font-size:0.82rem}
+thead th{
+  background:var(--bg3);color:var(--t2);font-weight:700;
+  padding:10px 12px;text-align:right;white-space:nowrap;
+  border-bottom:2px solid var(--border2);
+}
+tbody td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
+tbody tr:hover td{background:rgba(59,130,246,0.04)}
+.tbl-actions{display:flex;gap:6px}
+.tbl-btn{
+  padding:4px 10px;border-radius:6px;border:none;
+  font-family:'Tajawal',sans-serif;font-size:0.75rem;font-weight:700;
+  cursor:pointer;transition:all .15s;touch-action:manipulation;
+}
+.tbl-edit{background:rgba(59,130,246,0.15);color:var(--blue2)}
+.tbl-del{background:rgba(239,68,68,0.1);color:var(--red2)}
+.tbl-btn:hover{filter:brightness(1.3)}
+.badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:0.72rem;font-weight:700}
+.badge-green{background:rgba(16,185,129,0.15);color:var(--green2)}
+.badge-red{background:rgba(239,68,68,0.1);color:var(--red2)}
+.badge-blue{background:rgba(59,130,246,0.15);color:var(--blue2)}
+.badge-yellow{background:rgba(245,158,11,0.15);color:var(--yellow2)}
+.badge-purple{background:rgba(124,58,237,0.15);color:var(--purple2)}
+.badge-gray{background:rgba(100,116,139,0.15);color:var(--t3)}
+.empty-row td{text-align:center;color:var(--t3);padding:24px;font-size:0.85rem}
+/* رأس الشهر */
+.month-header-row td{
+  background:linear-gradient(90deg,rgba(59,130,246,0.12),transparent);
+  color:var(--blue2);font-weight:800;font-size:0.8rem;
+  padding:6px 12px;border-bottom:1px solid rgba(59,130,246,0.2);
+}
+
+/* ══ المودالات ══ */
+.overlay{
+  position:fixed;inset:0;z-index:1000;
+  background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);
+  display:none;align-items:center;justify-content:center;padding:16px;
+}
+.overlay.show{display:flex}
+.modal{
+  background:var(--card1);border:1px solid var(--border2);
+  border-radius:var(--radius);width:100%;max-width:560px;
+  max-height:90vh;display:flex;flex-direction:column;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+.modal-xl{max-width:860px}
+.modal-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 20px;border-bottom:1px solid var(--border);flex-shrink:0;
+}
+.modal-title{font-size:1rem;font-weight:800;color:var(--t1)}
+.modal-close{
+  background:rgba(255,255,255,0.08);border:none;border-radius:8px;
+  width:32px;height:32px;color:var(--t2);cursor:pointer;font-size:1rem;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .15s;touch-action:manipulation;
+}
+.modal-close:hover{background:var(--red);color:#fff}
+.modal-body{flex:1;overflow-y:auto;padding:20px;-webkit-overflow-scrolling:touch}
+.modal-foot{
+  padding:14px 20px;border-top:1px solid var(--border);
+  display:flex;justify-content:flex-end;gap:10px;flex-shrink:0;
+}
+.mbtn{
+  padding:10px 22px;border-radius:var(--radius-sm);border:none;
+  font-family:'Tajawal',sans-serif;font-size:0.88rem;font-weight:700;
+  cursor:pointer;transition:all .2s;touch-action:manipulation;
+  display:flex;align-items:center;gap:6px;
+}
+.mbtn-cancel{background:var(--card2);color:var(--t2)}
+.mbtn-save{background:linear-gradient(135deg,var(--blue),#2563eb);color:#fff;box-shadow:0 4px 14px rgba(59,130,246,0.3)}
+.mbtn:hover{filter:brightness(1.1)}
+
+/* ══ نماذج الإدخال ══ */
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.form-row.full{grid-template-columns:1fr}
+.form-group-m{display:flex;flex-direction:column;gap:6px}
+.form-label-m{font-size:0.78rem;font-weight:700;color:var(--t2)}
+.form-input-m,.form-select-m{
+  padding:10px 12px;background:var(--bg2);
+  border:1.5px solid var(--border2);border-radius:8px;
+  color:var(--t1);font-family:'Tajawal',sans-serif;font-size:0.88rem;
+  outline:none;transition:border-color .2s;-webkit-appearance:none;
+}
+.form-input-m:focus,.form-select-m:focus{border-color:var(--blue)}
+
+/* ══ مودال إضافة مسؤول ══ */
+.avatar-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:8px}
+.avatar-opt{
+  width:44px;height:44px;border-radius:10px;border:2px solid var(--border2);
+  background:var(--bg2);cursor:pointer;font-size:1.3rem;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .15s;touch-action:manipulation;
+}
+.avatar-opt.sel{border-color:var(--blue);background:rgba(59,130,246,0.15)}
+.color-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-top:8px}
+.color-opt{
+  width:32px;height:32px;border-radius:8px;cursor:pointer;
+  border:2.5px solid transparent;transition:all .15s;touch-action:manipulation;
+}
+.color-opt.sel{border-color:#fff;transform:scale(1.15)}
+
+/* ══ مصاريف متعددة ══ */
+.multi-exp-wrap{display:flex;flex-direction:column;gap:0}
+.exp-row{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1.2fr auto;
+  gap:8px;align-items:end;padding:10px 12px;
+  background:rgba(255,255,255,0.02);border-bottom:1px solid var(--border);
+}
+.exp-col-head{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1.2fr auto;
+  gap:8px;padding:8px 12px 6px;
+  border-bottom:2px solid var(--border2);background:var(--bg3);
+}
+.exp-col-lbl{font-size:0.72rem;font-weight:700;color:var(--t3);white-space:nowrap}
+.exp-inp{
+  width:100%;padding:8px 10px;background:rgba(255,255,255,0.05);
+  border:1.5px solid var(--border2);border-radius:8px;
+  color:var(--t1);font-family:'Tajawal',sans-serif;font-size:0.82rem;
+  outline:none;transition:border-color .2s;-webkit-appearance:none;
+}
+.exp-inp:focus{border-color:var(--blue);background:rgba(59,130,246,0.05)}
+.exp-inp.err{border-color:var(--red)!important}
+.exp-sel{
+  width:100%;padding:8px 10px;background:var(--card2);
+  border:1.5px solid var(--border2);border-radius:8px;
+  color:var(--t1);font-family:'Tajawal',sans-serif;font-size:0.82rem;
+  outline:none;cursor:pointer;-webkit-appearance:none;
+}
+.exp-del-btn{
+  width:32px;height:32px;border-radius:8px;border:none;
+  background:rgba(239,68,68,0.1);color:var(--red2);
+  cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;
+  transition:all .15s;flex-shrink:0;touch-action:manipulation;
+}
+.exp-del-btn:hover{background:var(--red);color:#fff}
+.add-row-btn{
+  display:flex;align-items:center;gap:8px;
+  padding:10px 16px;margin:10px 12px;
+  background:rgba(16,185,129,0.08);border:1.5px dashed rgba(16,185,129,0.4);
+  border-radius:10px;color:var(--green2);
+  font-family:'Tajawal',sans-serif;font-size:0.85rem;font-weight:700;
+  cursor:pointer;transition:all .2s;width:calc(100% - 24px);touch-action:manipulation;
+}
+.add-row-btn:hover{background:rgba(16,185,129,0.15)}
+.multi-summary{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 14px;background:var(--bg3);border-top:1px solid var(--border);
+  font-size:0.82rem;
+}
+
+/* ══ استيراد Excel ══ */
+.import-drop-zone{
+  border:2.5px dashed rgba(124,58,237,0.4);border-radius:14px;
+  padding:40px 20px;text-align:center;cursor:pointer;
+  transition:all .2s;background:rgba(124,58,237,0.04);margin:16px;
+}
+.import-drop-zone:hover,.import-drop-zone.drag-over{
+  border-color:var(--purple);background:rgba(124,58,237,0.1);
+}
+.import-section-title{
+  display:flex;align-items:center;gap:8px;padding:10px 16px;
+  background:var(--bg3);border-bottom:1px solid var(--border);
+  font-size:0.82rem;font-weight:800;color:var(--t2);
+  position:sticky;top:0;z-index:2;
+}
+.imp-badge{background:var(--blue);color:#fff;border-radius:20px;padding:2px 10px;font-size:0.75rem}
+.import-table{width:100%;border-collapse:collapse;font-size:0.8rem}
+.import-table th{background:var(--card2);color:var(--t3);font-weight:700;padding:8px 12px;text-align:right;border-bottom:2px solid var(--border2);white-space:nowrap}
+.import-table td{padding:7px 12px;border-bottom:1px solid var(--border);color:var(--t1)}
+.import-table tr:hover td{background:rgba(59,130,246,0.04)}
+.import-summary-bar{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  padding:12px 16px;background:var(--bg3);border-top:2px solid var(--border2);
+}
+.imp-sum-item{display:flex;flex-direction:column;align-items:center;gap:2px}
+.imp-sum-lbl{font-size:0.72rem;color:var(--t3);font-weight:600}
+.imp-sum-val{font-size:0.95rem;font-weight:900}
+.imp-chk{width:16px;height:16px;cursor:pointer;accent-color:var(--purple)}
+.import-file-name{
+  display:inline-flex;align-items:center;gap:6px;padding:6px 14px;
+  background:rgba(124,58,237,0.12);border-radius:20px;
+  color:var(--purple2);font-size:0.82rem;font-weight:700;margin-top:10px;
+}
+
+/* ══ التوست ══ */
+#toastWrap{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;display:flex;flex-direction:column;gap:8px;pointer-events:none}
+.toast{
+  padding:12px 20px;border-radius:10px;font-size:0.88rem;font-weight:700;
+  color:#fff;box-shadow:0 4px 20px rgba(0,0,0,0.4);
+  animation:toastIn .3s ease;white-space:nowrap;
+}
+.toast.green{background:linear-gradient(135deg,#059669,#10b981)}
+.toast.red{background:linear-gradient(135deg,#dc2626,#ef4444)}
+.toast.blue{background:linear-gradient(135deg,#2563eb,#3b82f6)}
+.toast.orange{background:linear-gradient(135deg,#d97706,#f59e0b)}
+@keyframes toastIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* ══ تقرير ══ */
+.report-overlay{position:fixed;inset:0;z-index:500;background:var(--bg1);overflow-y:auto;display:none;padding:20px}
+.report-overlay.show{display:block}
+.report-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px}
+.report-title{font-size:1.2rem;font-weight:900}
+.report-actions{display:flex;gap:8px;flex-wrap:wrap}
+.report-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.rs-box{background:var(--card1);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center}
+.rs-val{font-size:1.3rem;font-weight:900;margin-bottom:4px}
+.rs-lbl{font-size:0.75rem;color:var(--t3)}
+
+/* ══ Responsive ══ */
+@media(max-width:768px){
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .exp-row,.exp-col-head{grid-template-columns:1fr 1fr;gap:6px}
+  .report-summary{grid-template-columns:1fr 1fr}
+  .filter-bar{gap:6px}
+}
+@media(max-width:480px){
+  .login-box{padding:28px 20px}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .action-btn{padding:8px 12px;font-size:0.8rem}
+  .exp-row,.exp-col-head{grid-template-columns:1fr}
+  .exp-col-head{display:none}
+  .form-row{grid-template-columns:1fr}
+  .report-summary{grid-template-columns:1fr}
+  .modal-xl{max-width:100%}
+  .filter-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* ══ تبويبات الصفحة ══ */
+.page-tabs{display:flex;gap:6px;padding:0 16px;margin-bottom:0;border-bottom:2px solid rgba(255,255,255,0.07);background:var(--bg2);}
+.page-tab{padding:11px 22px;background:transparent;border:none;border-bottom:3px solid transparent;color:var(--t3);font-family:inherit;font-size:0.92rem;font-weight:600;cursor:pointer;transition:all .2s;margin-bottom:-2px;border-radius:6px 6px 0 0;}
+.page-tab:hover{color:var(--t1);background:rgba(255,255,255,0.04);}
+.page-tab.active{color:#60a5fa;border-bottom-color:#60a5fa;background:rgba(96,165,250,0.07);}
+
+/* ══ محتوى التبويب ══ */
+.tab-pane{display:none;}
+.tab-pane.active{display:block;}
+
+/* ══ شريط أدوات التبويب ══ */
+.tab-toolbar{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:var(--bg2);border-bottom:1px solid rgba(255,255,255,0.06);flex-wrap:wrap;gap:8px;}
+.tab-count{font-size:0.85rem;color:var(--t3);font-weight:600;}
+.tab-print-btns{display:flex;gap:8px;flex-wrap:wrap;}
+.tab-print-btn{padding:7px 14px;background:rgba(30,41,59,0.8);border:1px solid rgba(255,255,255,0.12);border-radius:7px;color:var(--t1);font-family:inherit;font-size:0.82rem;font-weight:600;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:5px;}
+.tab-print-btn:hover{background:rgba(96,165,250,0.15);border-color:#60a5fa;color:#60a5fa;}
+.tab-print-filter{border-color:rgba(251,191,36,0.3);color:#fbbf24;}
+.tab-print-filter:hover{background:rgba(251,191,36,0.12);border-color:#fbbf24;color:#fbbf24;}
+
+/* ══ ملخص التبويب ══ */
+#summaryContent{padding:16px;}
+.sum-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:20px;}
+.sum-card{background:var(--bg2);border-radius:12px;padding:18px;text-align:center;border:1px solid rgba(255,255,255,0.07);}
+.sum-card-val{font-size:1.4rem;font-weight:800;margin-bottom:4px;}
+.sum-card-lbl{font-size:0.78rem;color:var(--t3);}
+.cat-breakdown{background:var(--bg2);border-radius:12px;padding:16px;border:1px solid rgba(255,255,255,0.07);}
+.cat-breakdown-title{font-size:0.9rem;font-weight:700;color:var(--t1);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.07);}
+.cat-row{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+.cat-row:last-child{border-bottom:none;}
+.cat-name{flex:1;font-size:0.83rem;color:var(--t2);}
+.cat-bar-wrap{flex:2;background:rgba(255,255,255,0.06);border-radius:4px;height:8px;overflow:hidden;}
+.cat-bar{height:100%;border-radius:4px;background:linear-gradient(90deg,#60a5fa,#818cf8);transition:width .4s;}
+.cat-amount{font-size:0.82rem;font-weight:700;color:#f87171;min-width:90px;text-align:left;}
+.cat-pct{font-size:0.75rem;color:var(--t3);min-width:38px;text-align:left;}
+
+/* ══ شريط أزرار الطباعة ══ */
+.print-bar{display:none;align-items:center;gap:8px;padding:10px 16px;background:linear-gradient(135deg,rgba(15,23,42,0.95),rgba(30,41,59,0.95));border-bottom:1px solid rgba(255,255,255,0.08);flex-wrap:wrap;}
+.print-bar-label{font-size:0.8rem;color:var(--t3);font-weight:600;margin-left:4px;white-space:nowrap;}
+.pbar-btn{display:flex;align-items:center;gap:6px;padding:8px 16px;border:none;border-radius:8px;font-family:inherit;font-size:0.82rem;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap;position:relative;overflow:hidden;}
+.pbar-btn::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,0);transition:background .2s;}
+.pbar-btn:hover::before{background:rgba(255,255,255,0.08);}
+.pbar-btn:active{transform:scale(0.97);}
+.pbar-icon{font-size:1rem;}
+.pbar-text{font-size:0.82rem;}
+/* ألوان الأزرار */
+.pbar-custody{background:linear-gradient(135deg,#1d4ed8,#2563eb);color:#fff;box-shadow:0 2px 8px rgba(37,99,235,0.35);}
+.pbar-custody:hover{box-shadow:0 4px 14px rgba(37,99,235,0.5);}
+.pbar-expense{background:linear-gradient(135deg,#b91c1c,#dc2626);color:#fff;box-shadow:0 2px 8px rgba(220,38,38,0.35);}
+.pbar-expense:hover{box-shadow:0 4px 14px rgba(220,38,38,0.5);}
+.pbar-summary{background:linear-gradient(135deg,#6d28d9,#7c3aed);color:#fff;box-shadow:0 2px 8px rgba(124,58,237,0.35);}
+.pbar-summary:hover{box-shadow:0 4px 14px rgba(124,58,237,0.5);}
+.pbar-full{background:linear-gradient(135deg,#b45309,#d97706);color:#fff;box-shadow:0 2px 8px rgba(217,119,6,0.35);}
+.pbar-full:hover{box-shadow:0 4px 14px rgba(217,119,6,0.5);}
+@media(max-width:600px){.pbar-text{display:none;}.pbar-btn{padding:8px 12px;}.print-bar{gap:6px;}}
+
+
+@media(max-width:600px){.inv-field-wide{grid-column:span 1;}.inv-form-grid{grid-template-columns:1fr 1fr;}}
+
+/* ══ شريط بحث المصاريف ══ */
+.expense-search-bar{display:flex;align-items:center;gap:8px;padding:10px 16px;background:linear-gradient(135deg,rgba(15,23,42,0.97),rgba(30,41,59,0.97));border-bottom:1px solid rgba(255,255,255,0.07);flex-wrap:wrap;}
+.esb-icon{font-size:1.1rem;color:var(--t3);}
+.esb-input{flex:2;min-width:180px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 12px;color:var(--t1);font-family:inherit;font-size:0.85rem;outline:none;transition:border-color .2s;}
+.esb-input:focus{border-color:#60a5fa;background:rgba(96,165,250,0.07);}
+.esb-divider{width:1px;height:24px;background:rgba(255,255,255,0.1);margin:0 4px;}
+.esb-label{font-size:0.9rem;color:var(--t3);}
+.esb-amt{width:90px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 10px;color:var(--t1);font-family:inherit;font-size:0.85rem;outline:none;transition:border-color .2s;}
+.esb-amt:focus{border-color:#fbbf24;background:rgba(251,191,36,0.07);}
+.esb-sep{color:var(--t3);font-size:0.85rem;}
+.esb-clear{padding:7px 12px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:7px;color:var(--t3);font-size:0.8rem;cursor:pointer;transition:all .2s;}
+.esb-clear:hover{background:rgba(248,113,113,0.12);border-color:#f87171;color:#f87171;}
+.esb-result{font-size:0.78rem;color:var(--t3);white-space:nowrap;min-width:80px;}
+.esb-result.has-result{color:#34d399;font-weight:700;}
+@media(max-width:600px){.esb-input{min-width:120px;}.esb-amt{width:70px;}}
+
+/* ══ أزرار شريط الأدوات المحدثة ══ */
+.btn-add-e{background:linear-gradient(135deg,#dc2626,#b91c1c);color:#fff;box-shadow:0 2px 8px rgba(220,38,38,0.3);}
+.btn-add-e:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(220,38,38,0.5);}
+.btn-del-person{background:rgba(239,68,68,0.1);color:#f87171;border:1px solid rgba(239,68,68,0.25);}
+.btn-del-person:hover{background:rgba(239,68,68,0.2);border-color:#f87171;}
+
+
+/* ══ Checkbox تحديد البنود ══ */
+.row-cb{
+  appearance:none;-webkit-appearance:none;
+  width:17px;height:17px;border-radius:5px;
+  border:2px solid rgba(255,255,255,0.2);
+  background:rgba(255,255,255,0.04);
+  cursor:pointer;transition:all .18s;
+  flex-shrink:0;position:relative;
+  vertical-align:middle;
+}
+.row-cb:hover{border-color:#60a5fa;background:rgba(96,165,250,0.1);}
+.row-cb:checked{
+  background:#2563eb;border-color:#3b82f6;
+}
+.row-cb:checked::after{
+  content:'✓';position:absolute;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  color:#fff;font-size:11px;font-weight:900;line-height:1;
+}
+.cb-th{width:36px;text-align:center;padding:0 6px !important;}
+.cb-td{text-align:center;padding:0 6px !important;}
+/* صف محدد */
+tr.row-selected{
+  background:rgba(37,99,235,0.12) !important;
+  outline:1px solid rgba(59,130,246,0.3);
+}
+tr.row-selected td{color:var(--t1) !important;}
+
+/* ══ شريط الحذف المتعدد ══ */
+.bulk-bar{
+  display:none;align-items:center;gap:10px;
+  padding:10px 16px;
+  background:linear-gradient(135deg,rgba(220,38,38,0.15),rgba(185,28,28,0.1));
+  border:1px solid rgba(248,113,113,0.3);
+  border-radius:10px;margin:8px 16px 0;
+  animation:bulkSlide .2s ease;
+}
+.bulk-bar.visible{display:flex;}
+@keyframes bulkSlide{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:translateY(0);}}
+.bulk-count{
+  font-size:0.82rem;font-weight:700;color:#fca5a5;flex:1;
+}
+.bulk-count span{color:#f87171;font-size:1rem;}
+.bulk-del-btn{
+  display:flex;align-items:center;gap:6px;
+  padding:7px 16px;border-radius:8px;border:none;
+  background:linear-gradient(135deg,#dc2626,#b91c1c);
+  color:#fff;font-family:'Tajawal',sans-serif;
+  font-size:0.82rem;font-weight:700;cursor:pointer;
+  transition:all .2s;box-shadow:0 2px 8px rgba(220,38,38,0.3);
+}
+.bulk-del-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(220,38,38,0.5);}
+.bulk-cancel-btn{
+  padding:7px 12px;border-radius:8px;
+  border:1px solid rgba(255,255,255,0.12);
+  background:rgba(255,255,255,0.05);color:var(--t3);
+  font-family:'Tajawal',sans-serif;font-size:0.8rem;
+  font-weight:600;cursor:pointer;transition:all .2s;
+}
+.bulk-cancel-btn:hover{background:rgba(255,255,255,0.1);color:var(--t1);}
+/* checkbox الكل في header */
+.cb-all{
+  appearance:none;-webkit-appearance:none;
+  width:15px;height:15px;border-radius:4px;
+  border:2px solid rgba(255,255,255,0.25);
+  background:rgba(255,255,255,0.06);
+  cursor:pointer;transition:all .18s;
+  position:relative;vertical-align:middle;
+}
+.cb-all:hover{border-color:#60a5fa;}
+.cb-all:checked{background:#2563eb;border-color:#3b82f6;}
+.cb-all:checked::after{
+  content:'✓';position:absolute;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  color:#fff;font-size:9px;font-weight:900;line-height:1;
+}
+.cb-all:indeterminate{background:rgba(37,99,235,0.5);border-color:#3b82f6;}
+</style>
+</head>
+<body>
+
+<!-- ══ تسجيل الدخول ══ -->
+<div id="loginPage">
+  <div class="login-box">
+    <div class="login-logo">
+      <span class="logo-icon">⛺</span>
+      <h1>SKY-MOKAYM</h1>
+      <p>نظام إدارة مصاريف المخيم</p>
+    </div>
+    <div class="form-group">
+      <label class="form-label">اسم المستخدم</label>
+      <div class="input-wrap">
+        <span class="input-icon">👤</span>
+        <input id="loginUser" class="form-input" type="text" placeholder="أدخل اسم المستخدم"
+               autocomplete="username" onkeydown="if(event.key==='Enter')doLogin()">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">كلمة المرور</label>
+      <div class="input-wrap">
+        <span class="input-icon">🔒</span>
+        <input id="loginPass" class="form-input" type="password" placeholder="أدخل كلمة المرور"
+               autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
+        <button class="pw-toggle" onclick="togglePw()">👁</button>
+      </div>
+    </div>
+    <button class="login-btn" onclick="doLogin()">دخول ←</button>
+    <div class="login-error" id="loginErr">
+      <div style="font-size:1.2rem">⚠️</div>
+      <div>
+        <div class="err-title">عفواً ابو عمر !</div>
+        <div class="err-body">يوجد خطأ في اسم المستخدم أو كلمة المرور</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ التطبيق ══ -->
+<div id="app">
+
+  <!-- الهيدر -->
+  <div class="header">
+    <div class="header-logo" onclick="showHome()">
+      <span>⛺</span>
+      <h1>SKY-MOKAYM</h1>
+    </div>
+    <div class="header-actions">
+      <button class="hbtn hbtn-save" id="globalSaveBtn" onclick="globalSave()">
+        <span class="save-dot" id="saveDot"></span> حفظ الكل
+      </button>
+      <button class="hbtn hbtn-import" onclick="importData()">📂 استيراد</button>
+      <button class="hbtn hbtn-export" onclick="exportData()">💾 تصدير</button>
+      <button class="hbtn hbtn-logout" onclick="doLogout()">🚪 خروج</button>
+    </div>
+  </div>
+
+  <!-- الصفحة الرئيسية -->
+  <div id="homePage">
+    <div class="home-title">
+      <h2>⛺ لوحة التحكم</h2>
+      <p>اختر المسؤول لعرض تفاصيل حسابه</p>
+    </div>
+    <div class="persons-grid" id="personsGrid"></div>
+  </div>
+
+  <!-- صفحة المسؤول -->
+  <div id="personPage">
+    <div class="person-header">
+      <!-- رأس الصفحة: رجوع + اسم + أزرار Excel -->
+      <div class="ph-top">
+        <button class="back-btn" onclick="showHome()">
+          <span>&#8594;</span> رجوع
+        </button>
+        <div class="ph-info">
+          <div class="ph-avatar" id="phAvatar"></div>
+          <div>
+            <div class="ph-name" id="phName"></div>
+            <div class="ph-role" id="phRole"></div>
+          </div>
+        </div>
+        <!-- أزرار Excel في الزاوية -->
+        <div class="ph-excel-btns">
+          <button class="ph-xl-btn ph-xl-import" onclick="triggerImportExcel()" title="استيراد من Excel">
+            <span class="ph-xl-icon">📥</span>
+            <span class="ph-xl-text">استيراد</span>
+          </button>
+          <button class="ph-xl-btn ph-xl-export" onclick="exportPageExcel()" title="تصدير إلى Excel">
+            <span class="ph-xl-icon">📊</span>
+            <span class="ph-xl-text">تصدير</span>
+          </button>
+        </div>
+      </div>
+      <!-- إحصاءات مع أزرار العهد -->
+      <div class="stats-row" id="statsRow"></div>
+    </div>
+    <!-- تبويبات الصفحة -->
+    <div class="page-tabs" id="pageTabs">
+      <button class="page-tab active" id="tabBtnC" onclick="switchTab('custodies')">💰 العهد</button>
+      <button class="page-tab" id="tabBtnE" onclick="switchTab('expenses')">💸 المصاريف</button>
+      <button class="page-tab" id="tabBtnS" onclick="switchTab('summary')">📊 الملخص</button>
+    </div>
+
+    <!-- فلتر الشهر والفترة (مشترك للعهد والمصاريف) -->
+    <div class="filter-bar" id="filterBar">
+      <span class="filter-label">📅 الشهر:</span>
+      <select class="filter-select" id="filterMonth" onchange="applyFilter()">
+        <option value="all">كل الأشهر</option>
+      </select>
+      <div class="filter-divider"></div>
+      <span class="filter-label">🔍 الفترة:</span>
+      <input class="filter-date" type="date" id="filterFrom" onchange="applyFilter()" placeholder="من">
+      <span class="filter-sep">←</span>
+      <input class="filter-date" type="date" id="filterTo" onchange="applyFilter()" placeholder="إلى">
+      <button class="filter-reset" onclick="resetFilter()">✕ إعادة</button>
+      <span class="filter-info" id="filterInfo"></span>
+    </div>
+
+    <!-- شريط الأدوات -->
+    <div class="action-bar" id="actionBar"></div>
+
+    <!-- شريط أزرار الطباعة -->
+    <div class="print-bar" id="printBar">
+      <span class="print-bar-label">🖨️ طباعة:</span>
+      <button class="pbar-btn pbar-custody" onclick="printCustodies(false)" title="طباعة جميع العهد">
+        <span class="pbar-icon">📥</span>
+        <span class="pbar-text">تقرير العهد</span>
+      </button>
+      <button class="pbar-btn pbar-expense" onclick="printExpenses(false)" title="طباعة جميع المصاريف">
+        <span class="pbar-icon">💸</span>
+        <span class="pbar-text">تقرير المصاريف</span>
+      </button>
+      <button class="pbar-btn pbar-summary" onclick="printSummary()" title="طباعة الملخص الشامل">
+        <span class="pbar-icon">📊</span>
+        <span class="pbar-text">ملخص التقارير</span>
+      </button>
+      <button class="pbar-btn pbar-full" onclick="printFullReport()" title="طباعة كشف شامل بالعهد والمصاريف والتقرير">
+        <span class="pbar-icon">📋</span>
+        <span class="pbar-text">كشف شامل</span>
+      </button>
+    </div>
+
+    <!-- محتوى التبويبات -->
+    <div id="tabContent">
+
+      <!-- ══ تبويب العهد ══ -->
+      <div id="tabCustodies" class="tab-pane active">
+
+        <!-- شريط الحذف المتعدد - العهد -->
+        <div class="bulk-bar" id="bulkBarC">
+          <span class="bulk-count">تم تحديد <span id="bulkCountC">0</span> عهدة</span>
+          <button class="bulk-del-btn" onclick="deleteSelectedC()">🗑 حذف المحدد</button>
+          <button class="bulk-cancel-btn" onclick="clearSelectionC()">✕ إلغاء</button>
+        </div>
+        <!-- شريط الطباعة والعدد -->
+        <div class="tab-toolbar">
+          <span class="tab-count" id="custodyCount"></span>
+          <div class="tab-print-btns">
+            <button class="tab-print-btn" onclick="printCustodies(false)">🖨️ طباعة الكل</button>
+            <button class="tab-print-btn tab-print-filter" onclick="printCustodies(true)">🖨️ طباعة الفترة</button>
+          </div>
+        </div>
+        <div class="tables-wrap" id="tablesWrapC"></div>
+      </div>
+
+      <!-- ══ تبويب المصاريف ══ -->
+      <div id="tabExpenses" class="tab-pane">
+        <!-- شريط البحث -->
+        <div class="expense-search-bar">
+          <div class="esb-icon">🔍</div>
+          <input type="text" id="expSearchText" class="esb-input" placeholder="بحث بكلمة (البيان، الفئة، الملاحظات)..." oninput="applyExpenseSearch()">
+          <div class="esb-divider"></div>
+          <span class="esb-label">💰</span>
+          <input type="number" id="expSearchAmtMin" class="esb-amt" placeholder="من" min="0" step="0.01" oninput="applyExpenseSearch()">
+          <span class="esb-sep">—</span>
+          <input type="number" id="expSearchAmtMax" class="esb-amt" placeholder="إلى" min="0" step="0.01" oninput="applyExpenseSearch()">
+          <button class="esb-clear" onclick="clearExpenseSearch()" title="مسح البحث">✕</button>
+          <span class="esb-result" id="expSearchResult"></span>
+        </div>
+        <!-- شريط الحذف المتعدد - المصاريف -->
+        <div class="bulk-bar" id="bulkBarE">
+          <span class="bulk-count">تم تحديد <span id="bulkCountE">0</span> مصروف</span>
+          <button class="bulk-del-btn" onclick="deleteSelectedE()">🗑 حذف المحدد</button>
+          <button class="bulk-cancel-btn" onclick="clearSelectionE()">✕ إلغاء</button>
+        </div>
+        <!-- شريط الطباعة والعدد -->
+        <div class="tab-toolbar">
+          <span class="tab-count" id="expenseCount"></span>
+          <div class="tab-print-btns">
+            <button class="tab-print-btn" onclick="printExpenses(false)">🖨️ طباعة الكل</button>
+            <button class="tab-print-btn tab-print-filter" onclick="printExpenses(true)">🖨️ طباعة الفترة</button>
+          </div>
+        </div>
+        <div class="tables-wrap" id="tablesWrapE"></div>
+      </div>
+
+      <!-- ══ تبويب الملخص ══ -->
+      <div id="tabSummary" class="tab-pane">
+        <div class="tab-toolbar">
+          <span class="tab-count" id="summaryLabel">📊 ملخص شامل</span>
+          <div class="tab-print-btns">
+            <button class="tab-print-btn" onclick="printSummary()">🖨️ طباعة الملخص</button>
+          </div>
+        </div>
+        <div id="summaryContent"></div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ التوست ══ -->
+<div id="toastWrap"></div>
+
+<!-- ══ التقرير ══ -->
+<div class="report-overlay" id="reportOverlay">
+  <div class="report-head">
+    <div class="report-title" id="reportTitle"></div>
+    <div class="report-actions">
+      <button class="action-btn btn-excel" onclick="exportPageExcel()">📊 Excel</button>
+      <button class="action-btn btn-print" onclick="printReport()">🖨️ طباعة</button>
+      <button class="action-btn btn-print" onclick="closeReport()">✕ إغلاق</button>
+    </div>
+  </div>
+  <div class="report-summary" id="reportSummary"></div>
+  <div id="reportContent"></div>
+</div>
+
+<!-- ══ مودال إضافة عهدة ══ -->
+<div class="overlay" id="ovCustody">
+  <div class="modal">
+    <div class="modal-head">
+      <span class="modal-title" id="mCTitle">➕ إضافة عهدة</span>
+      <button class="modal-close" onclick="closeModal('ovCustody')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-row full">
+        <div class="form-group-m">
+          <label class="form-label-m">جهة العهدة *</label>
+          <input id="cSource" class="form-input-m" type="text" placeholder="مثال: عهده من أبو عمر">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group-m">
+          <label class="form-label-m">المبلغ (ريال) *</label>
+          <input id="cAmount" class="form-input-m" type="number" placeholder="0.00" min="0" step="0.01">
+        </div>
+        <div class="form-group-m">
+          <label class="form-label-m">التاريخ *</label>
+          <input id="cDate" class="form-input-m" type="date">
+        </div>
+      </div>
+      <div class="form-row full">
+        <div class="form-group-m">
+          <label class="form-label-m">ملاحظات</label>
+          <input id="cNotes" class="form-input-m" type="text" placeholder="اختياري">
+        </div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="mbtn mbtn-cancel" onclick="closeModal('ovCustody')">إلغاء</button>
+      <button class="mbtn mbtn-save" onclick="saveCustody()">💾 حفظ</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ مودال إضافة مصاريف متعددة ══ -->
+<div class="overlay" id="ovExpense">
+  <div class="modal modal-xl">
+    <div class="modal-head">
+      <span class="modal-title">💸 إضافة مصاريف</span>
+      <button class="modal-close" onclick="closeModal('ovExpense')">✕</button>
+    </div>
+    <div class="modal-body" style="padding:0;overflow:hidden;display:flex;flex-direction:column;max-height:70vh">
+      <div class="exp-col-head">
+        <div class="exp-col-lbl">📝 البيان *</div>
+        <div class="exp-col-lbl">💰 المبلغ *</div>
+        <div class="exp-col-lbl">📅 التاريخ *</div>
+        <div class="exp-col-lbl">🏷️ التصنيف</div>
+        <div class="exp-col-lbl">📌 ملاحظات</div>
+        <div class="exp-col-lbl"></div>
+      </div>
+      <div class="multi-exp-wrap" id="expRowsList" style="overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch"></div>
+      <button class="add-row-btn" onclick="addExpRow()">＋ إضافة مصروف آخر</button>
+      <div class="multi-summary">
+        <span style="color:var(--t2)" id="expRowCount">0 مصروف</span>
+        <span style="font-weight:900;color:var(--green2)" id="expRowTotal">الإجمالي: 0.00 ر</span>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="mbtn mbtn-cancel" onclick="closeModal('ovExpense')">إلغاء</button>
+      <button class="mbtn mbtn-save" onclick="saveAllExpenses()">💾 حفظ الكل</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ مودال إضافة مسؤول جديد ══ -->
+<div class="overlay" id="ovNewPerson">
+  <div class="modal">
+    <div class="modal-head">
+      <span class="modal-title" id="mPTitle">👤 إضافة مسؤول جديد</span>
+      <button class="modal-close" onclick="closeModal('ovNewPerson')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-row full">
+        <div class="form-group-m">
+          <label class="form-label-m">الاسم *</label>
+          <input id="pName" class="form-input-m" type="text" placeholder="اسم المسؤول">
+        </div>
+      </div>
+      <div class="form-row full">
+        <div class="form-group-m">
+          <label class="form-label-m">الدور / الوصف</label>
+          <input id="pRole" class="form-input-m" type="text" placeholder="مثال: مسؤول المخيم">
+        </div>
+      </div>
+      <div class="form-group-m" style="margin-bottom:14px">
+        <label class="form-label-m">الأيقونة</label>
+        <div class="avatar-grid" id="avatarGrid"></div>
+      </div>
+      <div class="form-group-m">
+        <label class="form-label-m">اللون</label>
+        <div class="color-grid" id="colorGrid"></div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="mbtn mbtn-cancel" onclick="closeModal('ovNewPerson')">إلغاء</button>
+      <button class="mbtn mbtn-save" onclick="saveNewPerson()">✅ إضافة</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ مودال استيراد Excel ══ -->
+<input type="file" id="xlImportInput" accept=".xlsx,.xls,.csv" style="display:none" onchange="handleXlFile(this)">
+<div class="overlay" id="ovImportXl">
+  <div class="modal modal-xl">
+    <div class="modal-head">
+      <span class="modal-title">📥 استيراد من Excel</span>
+      <button class="modal-close" onclick="closeModal('ovImportXl')">✕</button>
+    </div>
+    <div class="modal-body" style="padding:0;overflow:hidden;display:flex;flex-direction:column">
+      <div id="importDropZone" class="import-drop-zone"
+           onclick="document.getElementById('xlImportInput').click()"
+           ondragover="event.preventDefault();this.classList.add('drag-over')"
+           ondragleave="this.classList.remove('drag-over')"
+           ondrop="handleXlDrop(event)">
+        <div style="font-size:2.5rem;margin-bottom:10px">📊</div>
+        <div style="color:var(--t2);font-size:0.9rem;font-weight:600">اضغط لاختيار ملف Excel أو اسحبه هنا</div>
+        <div style="color:var(--t3);font-size:0.78rem;margin-top:6px">يدعم: .xlsx · .xls · .csv</div>
+        <div id="importFileName" style="display:none" class="import-file-name">
+          <span>📄</span><span id="importFileNameText"></span>
+        </div>
+      </div>
+      <div id="importPreviewArea" style="display:none;flex:1;overflow:hidden;flex-direction:column">
+        <div id="importCustodiesSection">
+          <div class="import-section-title">
+            💰 العهد المستلمة
+            <span class="imp-badge" id="impCBadge">0</span>
+            <span style="margin-right:auto;font-size:0.75rem;color:var(--t3)" id="impCTotal"></span>
+          </div>
+          <div style="overflow-x:auto">
+            <table class="import-table">
+              <thead><tr><th style="width:36px">✓</th><th>المصدر</th><th>المبلغ</th><th>التاريخ</th><th>ملاحظات</th></tr></thead>
+              <tbody id="impCBody"></tbody>
+            </table>
+          </div>
+        </div>
+        <div id="importExpensesSection">
+          <div class="import-section-title">
+            💸 المصاريف
+            <span class="imp-badge" id="impEBadge">0</span>
+            <span style="margin-right:auto;font-size:0.75rem;color:var(--t3)" id="impETotal"></span>
+          </div>
+          <div style="overflow-x:auto">
+            <table class="import-table">
+              <thead><tr><th style="width:36px">✓</th><th>البيان</th><th>المبلغ</th><th>التاريخ</th><th>التصنيف</th><th>ملاحظات</th></tr></thead>
+              <tbody id="impEBody"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="import-summary-bar">
+          <div class="imp-sum-item"><span class="imp-sum-lbl">العهد المحددة</span><span class="imp-sum-val" style="color:#60a5fa" id="impSumC">0</span></div>
+          <div class="imp-sum-item"><span class="imp-sum-lbl">إجمالي العهد</span><span class="imp-sum-val" style="color:var(--green2)" id="impSumCTotal">0.00 ر</span></div>
+          <div class="imp-sum-item"><span class="imp-sum-lbl">المصاريف المحددة</span><span class="imp-sum-val" style="color:#60a5fa" id="impSumE">0</span></div>
+          <div class="imp-sum-item"><span class="imp-sum-lbl">إجمالي المصاريف</span><span class="imp-sum-val" style="color:var(--red2)" id="impSumETotal">0.00 ر</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="mbtn mbtn-cancel" onclick="closeModal('ovImportXl')">إلغاء</button>
+      <button class="mbtn mbtn-save" id="impConfirmBtn" onclick="confirmImport()" style="display:none">✅ إضافة المحدد</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════════
+   SKY-MOKAYM 2025 — نظام إدارة مصاريف المخيم
+══════════════════════════════════════════════════════ */
+
+/* ══ البيانات الافتراضية ══ */
+var KHALID_C=[
+{id:1,source:'عهده من أبو عمر محوله من أبو مشعل',amount:1000.0,date:'2025-02-01',notes:''},
+{id:2,source:'عهده من أبو مشعل',amount:1000.0,date:'2025-02-09',notes:''},
+{id:3,source:'عهده من أبو مشعل',amount:1000.0,date:'2025-02-12',notes:''},
+{id:4,source:'عهده من أبو مشعل',amount:2218.0,date:'2025-02-14',notes:''}
+];
+var KHALID_E=[
+{id:1,destination:'وايت مياة 2/3 الساعة 4:55',amount:100.0,category:'مياه',date:'2025-02-03',notes:''},
+{id:2,destination:'وايت مياة 2/4 الساعة 3:45',amount:100.0,category:'مياه',date:'2025-02-04',notes:''},
+{id:3,destination:'خبز',amount:10.0,category:'طعام',date:'2025-02-04',notes:''},
+{id:4,destination:'اجار شانيور',amount:10.0,category:'خدمات',date:'2025-02-04',notes:''},
+{id:5,destination:'دسكات صنفرة 3',amount:15.0,category:'معدات',date:'2025-02-04',notes:''},
+{id:6,destination:'وايت مياة 2/5 الساعة 4:50',amount:100.0,category:'مياه',date:'2025-02-05',notes:''},
+{id:7,destination:'دجاجة للعمال',amount:17.0,category:'طعام',date:'2025-02-05',notes:''},
+{id:8,destination:'خبز',amount:5.0,category:'طعام',date:'2025-02-05',notes:''},
+{id:9,destination:'أغراض الأسبوع للمخيم',amount:200.0,category:'مستلزمات',date:'2025-02-05',notes:''},
+{id:10,destination:'وايت مياة 2/7 الساعة 3:25',amount:100.0,category:'مياه',date:'2025-02-07',notes:''},
+{id:11,destination:'وايت مياة 2/8 الساعة 2:45',amount:100.0,category:'مياه',date:'2025-02-08',notes:''},
+{id:12,destination:'أغراض فطور 2/8 الساعة 9:25',amount:53.0,category:'طعام',date:'2025-02-08',notes:''},
+{id:13,destination:'بنزين 2/9 الساعة 1:15',amount:70.0,category:'وقود',date:'2025-02-09',notes:''},
+{id:14,destination:'أغراض دهان للكرفان الكبير',amount:1100.0,category:'دهانات',date:'2025-02-09',notes:''},
+{id:15,destination:'فوم للكرفان',amount:80.0,category:'مستلزمات',date:'2025-02-09',notes:''},
+{id:16,destination:'خبز للعمال',amount:10.0,category:'طعام',date:'2025-02-09',notes:''},
+{id:17,destination:'بصل',amount:15.0,category:'طعام',date:'2025-02-09',notes:''},
+{id:18,destination:'صنفرة',amount:35.0,category:'معدات',date:'2025-02-09',notes:''},
+{id:19,destination:'وايت مياة 2/10 الساعة 12:15',amount:100.0,category:'مياه',date:'2025-02-10',notes:''},
+{id:20,destination:'خبز',amount:10.0,category:'طعام',date:'2025-02-10',notes:''},
+{id:21,destination:'مغسلة',amount:35.0,category:'خدمات',date:'2025-02-10',notes:''},
+{id:22,destination:'غاز',amount:93.0,category:'مستلزمات',date:'2025-02-10',notes:''},
+{id:23,destination:'وايت مياة 2/11 الساعة 2:45',amount:100.0,category:'مياه',date:'2025-02-11',notes:''},
+{id:24,destination:'أغراض الأسبوع',amount:110.0,category:'مستلزمات',date:'2025-02-11',notes:''},
+{id:25,destination:'قوارير ماء للمطبخ',amount:60.0,category:'مياه',date:'2025-02-11',notes:''},
+{id:26,destination:'تصليح كفرات الوايت',amount:100.0,category:'معدات',date:'2025-02-11',notes:''},
+{id:27,destination:'أغراض سباكة ( للمغاسل )',amount:20.0,category:'خدمات',date:'2025-02-11',notes:''},
+{id:28,destination:'وايت مياة 2/12 الساعة 5:30',amount:100.0,category:'مياه',date:'2025-02-12',notes:''},
+{id:29,destination:'خبز',amount:5.0,category:'طعام',date:'2025-02-12',notes:''},
+{id:30,destination:'ببسي يوم الخميس 12/2',amount:30.0,category:'طعام',date:'2025-02-12',notes:''},
+{id:31,destination:'أغراض بقالة للعشاء',amount:45.0,category:'طعام',date:'2025-02-12',notes:''},
+{id:32,destination:'خبز',amount:10.0,category:'طعام',date:'2025-02-12',notes:''},
+{id:33,destination:'وايت ماء 14/2',amount:100.0,category:'مياه',date:'2025-02-14',notes:''},
+{id:34,destination:'بطاقة نت',amount:115.0,category:'خدمات',date:'2025-02-14',notes:''},
+{id:35,destination:'غيار زيت',amount:65.0,category:'معدات',date:'2025-02-14',notes:''},
+{id:36,destination:'وايت ماء 15/2',amount:100.0,category:'مياه',date:'2025-02-15',notes:''},
+{id:37,destination:'خبز',amount:10.0,category:'طعام',date:'2025-02-15',notes:''},
+{id:38,destination:'علبة بويا - برميل تنر',amount:450.0,category:'دهانات',date:'2025-02-15',notes:''},
+{id:39,destination:'خبز',amount:10.0,category:'طعام',date:'2025-02-15',notes:''},
+{id:40,destination:'دجاجة للعمال',amount:17.0,category:'طعام',date:'2025-02-15',notes:''},
+{id:41,destination:'وايت ماء 17/2',amount:100.0,category:'مياه',date:'2025-02-17',notes:''},
+{id:42,destination:'خبز',amount:5.0,category:'طعام',date:'2025-02-17',notes:''},
+{id:43,destination:'وايت ماء 18/2',amount:100.0,category:'مياه',date:'2025-02-18',notes:''},
+{id:44,destination:'خبز',amount:5.0,category:'طعام',date:'2025-02-18',notes:''},
+{id:45,destination:'تونر للمطبخ والمستودع',amount:50.0,category:'مستلزمات',date:'2025-02-18',notes:''},
+{id:46,destination:'ايجار صاروخ وديسك حديد',amount:30.0,category:'خدمات',date:'2025-02-18',notes:''},
+{id:47,destination:'بويه وتونر',amount:870.0,category:'دهانات',date:'2025-02-19',notes:''},
+{id:48,destination:'طماطم بطاطس بصل ثوم خيار ....',amount:100.0,category:'طعام',date:'2025-02-19',notes:''},
+{id:49,destination:'دسك سلك صنفره للوري',amount:20.0,category:'معدات',date:'2025-02-19',notes:''},
+{id:50,destination:'وايت ماء 19/2',amount:100.0,category:'مياه',date:'2025-02-19',notes:''},
+{id:51,destination:'خبز',amount:10.0,category:'طعام',date:'2025-02-19',notes:''},
+{id:52,destination:'وايت ماء 20/2',amount:100.0,category:'مياه',date:'2025-02-20',notes:''},
+{id:53,destination:'خبز',amount:5.0,category:'طعام',date:'2025-02-20',notes:''},
+{id:54,destination:'وايت ماء 21/2',amount:100.0,category:'مياه',date:'2025-02-21',notes:''},
+{id:55,destination:'خبز',amount:5.0,category:'طعام',date:'2025-02-21',notes:''},
+{id:56,destination:'ديزل',amount:70.0,category:'وقود',date:'2025-02-21',notes:''},
+{id:57,destination:'وايت ماء 22/2',amount:100.0,category:'مياه',date:'2025-02-22',notes:''},
+{id:58,destination:'مروحه للمكيف الطاقة الشمسية',amount:20.0,category:'مستلزمات',date:'2025-02-22',notes:''},
+{id:59,destination:'وايت ماء 23/2',amount:100.0,category:'مياه',date:'2025-02-23',notes:''},
+{id:60,destination:'خبز',amount:5.0,category:'طعام',date:'2025-02-23',notes:''}
+,
+{id:61,destination:'أسطوانة دسك قص حديد مكيف البوابة',amount:5.0,category:'معدات',date:'2026-02-25',notes:''},
+{id:62,destination:'أسطوانة دسك قطع حديد مكيف البوابة',amount:5.0,category:'معدات',date:'2026-02-25',notes:''},
+{id:63,destination:'رد ماء وايت',amount:100.0,category:'مياه',date:'2026-02-25',notes:''},
+{id:64,destination:'خبز',amount:5.0,category:'طعام',date:'2026-02-25',notes:''},
+{id:65,destination:'قوارير ماء شرب',amount:60.0,category:'مياه',date:'2026-02-26',notes:''},
+{id:66,destination:'تعبئة دبة غاز',amount:62.0,category:'خدمات',date:'2026-02-26',notes:''},
+{id:67,destination:'خبز وزبادي',amount:10.0,category:'مستلزمات',date:'2026-02-26',notes:''},
+{id:68,destination:'رد ماء وايت',amount:100.0,category:'مياه',date:'2026-02-26',notes:''},
+{id:69,destination:'حجر واسمنت ورمل',amount:900.0,category:'مستلزمات',date:'2026-02-27',notes:''},
+{id:70,destination:'خبز',amount:5.0,category:'طعام',date:'2026-02-27',notes:''},
+{id:71,destination:'ذبح خروف والمطعم للحفلة',amount:300.0,category:'طعام',date:'2026-02-28',notes:''},
+{id:72,destination:'اجرة ماكينة لحام للمكيفات',amount:15.0,category:'معدات',date:'2026-02-28',notes:''},
+{id:73,destination:'رد ماء وايت',amount:100.0,category:'مياه',date:'2026-02-28',notes:''},
+{id:74,destination:'كيس ارز',amount:40.0,category:'طعام',date:'2026-03-02',notes:''},
+{id:75,destination:'خبز',amount:5.0,category:'طعام',date:'2026-03-02',notes:''},
+{id:76,destination:'رد ماء وايت',amount:100.0,category:'مياه',date:'2026-03-02',notes:''},
+{id:77,destination:'رد ماء وايت',amount:100.0,category:'مياه',date:'2026-03-03',notes:''},
+{id:78,destination:'خبز',amount:5.0,category:'طعام',date:'2026-03-03',notes:''},
+{id:79,destination:'رد ماء وايت',amount:100.0,category:'مياه',date:'2026-03-04',notes:''},
+{id:80,destination:'خبز',amount:5.0,category:'طعام',date:'2026-03-04',notes:''},
+{id:81,destination:'ببسي للعزيمة',amount:20.0,category:'طعام',date:'2026-03-05',notes:''},
+{id:82,destination:'ماء ولبن وقشطة',amount:72.0,category:'طعام',date:'2026-03-07',notes:''},
+{id:83,destination:'تعبئة غاز',amount:62.0,category:'خدمات',date:'2026-03-07',notes:''},
+{id:84,destination:'جريش ولبن',amount:25.0,category:'طعام',date:'2026-03-07',notes:''},
+{id:85,destination:'خضار',amount:48.0,category:'طعام',date:'2026-03-07',notes:''},
+{id:86,destination:'مغسلة',amount:45.0,category:'خدمات',date:'2026-03-07',notes:''},
+{id:87,destination:'مطعم',amount:300.0,category:'طعام',date:'2026-03-07',notes:''},
+{id:88,destination:'رد ماء وايت',amount:100.0,category:'مياه',date:'2026-03-07',notes:''}
+];
+var THAMER_C=[
+  {source:'عهده',date:'2025-06-09',notes:'',id:1,amount:2000},
+  {source:'عهده مشتريات',date:'2025-06-11',notes:'عهده من أبو عمر - صندوق',id:2,amount:1000},
+  {source:'عهده',date:'2025-08-09',notes:'',id:3,amount:2000},
+  {source:'عهده من أبو مشعل',date:'2025-08-10',notes:'عهده من أبو مشعل',id:4,amount:2000},
+  {source:'فرق عهده ثامر من أبو مشعل',date:'2025-08-10',notes:'عهده من أبو مشعل',id:5,amount:1474},
+  {source:'عهده',date:'2025-08-24',notes:'',id:6,amount:1000},
+  {source:'عهده',date:'2025-08-24',notes:'',id:7,amount:600},
+  {source:'عهده',date:'2025-08-27',notes:'',id:8,amount:2000},
+  {source:'عهده',date:'2025-09-11',notes:'',id:9,amount:1419},
+  {source:'عهده من أبو عمر',date:'2025-09-24',notes:'عهده من أبو عمر',id:10,amount:2151},
+  {source:'عهده جديده من أبو مشعل',date:'2025-09-27',notes:'عهده جديده من أبو مشعل',id:11,amount:2000},
+  {source:'عهده من أبو عمر',date:'2025-09-28',notes:'عهده من أبو عمر',id:12,amount:1500},
+  {source:'عهده مشتريات',date:'2025-10-19',notes:'عهده من أبو عمر',id:13,amount:1500},
+  {source:'عهده مشتريات',date:'2025-10-20',notes:'عهده من أبو عمر',id:14,amount:1500},
+  {source:'عهده + فرق عهده سابقة',date:'2025-10-21',notes:'عهده من أبو عمر',id:15,amount:2074},
+  {source:'عهده مشتريات',date:'2025-10-21',notes:'عهده من أبو عمر',id:16,amount:2700},
+  {source:'عهده مشتريات',date:'2025-10-21',notes:'عهده من أبو عمر',id:17,amount:900},
+  {source:'عهده مشتريات',date:'2025-11-05',notes:'عهده من أبو عمر',id:18,amount:1300},
+  {source:'عهده مشتريات',date:'2025-11-05',notes:'عهده من أبو عمر',id:19,amount:500},
+  {source:'عهده مشتريات',date:'2025-11-05',notes:'عهده من أبو عمر',id:20,amount:1500},
+  {source:'عهده مشتريات',date:'2025-11-05',notes:'عهده من أبو مشعل',id:21,amount:4000},
+  {source:'عهده مشتريات',date:'2025-11-05',notes:'عهده من أبو عمر',id:22,amount:1000},
+  {source:'عهده مشتريات',date:'2025-11-05',notes:'عهده من أبو عمر',id:23,amount:1500},
+  {source:'عهده مشتريات',date:'2025-11-05',notes:'عهده من أبو عمر',id:24,amount:2000},
+  {source:'15/11/2025',date:'2025-11-15',notes:'عهده من أبو عمر',id:25,amount:2000},
+  {source:'17/11/2025',date:'2025-11-17',notes:'عهده من أبو عمر',id:26,amount:2800},
+  {source:'',date:'2025-11-17',notes:'عهده من أبو مشعل',id:27,amount:6000},
+  {source:'عهده مشتريات',date:'2025-11-20',notes:'عهده من أبو عمر',id:28,amount:500},
+  {source:'عهده من علي المهيدب',date:'2025-12-11',notes:'',id:29,amount:1000},
+  {source:'عهده من أبو عمر  1000 عهده + 1033 فرق عهده',date:'2025-12-15',notes:'26/11/2025',id:30,amount:2033},
+  {source:'عهده من أبو عمر',date:'2025-12-15',notes:'2025-01-12 00:00:00',id:31,amount:1000},
+  {source:'عهده من أبو عمر',date:'2025-12-15',notes:'2025-11-12 00:00:00',id:32,amount:1000},
+  {source:'عهده من أبو عمر',date:'2025-12-15',notes:'13/12/2025',id:33,amount:1000},
+  {source:'عهده أبو مشعل لثامر',date:'2025-12-17',notes:'16/12/2025',id:34,amount:3500},
+  {source:'عهده أبو مشعل لثامر',date:'2025-12-17',notes:'18/12/2025',id:35,amount:3000},
+  {source:'عهده من أبو عمر',date:'2025-12-17',notes:'21/12/2025',id:36,amount:1000},
+  {source:'عهده من أبو عمر',date:'2025-12-17',notes:'25/12/2025',id:37,amount:1500},
+  {source:'عهده من أبو عمر',date:'2025-12-17',notes:'30/12/2025',id:38,amount:2000},
+  {source:'عهده من أبو عمر',date:'2025-12-17',notes:'2026-10-01 00:00:00',id:39,amount:1500},
+  {source:'عهده من أبو عمر',date:'2025-12-17',notes:'2026-10-01 00:00:00',id:40,amount:1000},
+  {source:'عهده أبو مشعل لثامر',date:'2025-12-17',notes:'15/1/2025',id:41,amount:3500},
+  {id:42,source:'عهده من أبو مشعل',amount:1000,date:'2026-02-05',notes:''},
+  {id:43,source:'عهده من أبو عمر',amount:1000,date:'2026-02-09',notes:''},
+  {id:44,source:'عهده من أبو عمر',amount:1500,date:'2026-02-09',notes:''},
+  {id:45,source:'عهده من أبو مشعل',amount:1000,date:'2026-02-09',notes:''},
+  {id:46,source:'عهده من أبو مشعل',amount:1000,date:'2026-03-10',notes:'عهده في المخيم'},
+  {id:47,source:'عهده من أبو عمر',amount:1500,date:'2026-03-10',notes:''},
+  {id:48,source:'عهده من أبو عمر',amount:4000,date:'2026-03-10',notes:''},
+  {id:49,source:'عهده من أبو عمر',amount:3570,date:'2026-03-10',notes:''},
+];
+var THAMER_E=[
+  {destination:'كفرات القلص',category:'معدات',date:'2025-01-09',notes:'',id:1,amount:1080},
+  {destination:'صيانة لوري',category:'معدات',date:'2025-09-11',notes:'تحويل لفيصل منيف',id:2,amount:1000},
+  {destination:'صيانة لوري',category:'معدات',date:'2025-09-11',notes:'تحويل لفيصل منيف',id:3,amount:600},
+  {destination:'وقود',category:'وقود',date:'2025-09-11',notes:'',id:4,amount:218},
+  {destination:'وقود',category:'وقود',date:'2025-09-11',notes:'',id:5,amount:216},
+  {destination:'تركيب كفرات',category:'معدات',date:'2025-09-11',notes:'',id:6,amount:300},
+  {destination:'تركيب اساتك',category:'أخرى',date:'2025-09-11',notes:'',id:7,amount:170},
+  {destination:'ديزل مخيم',category:'وقود',date:'2025-09-11',notes:'',id:8,amount:1000},
+  {destination:'وقود',category:'وقود',date:'2025-09-11',notes:'',id:9,amount:216},
+  {destination:'شريحه خالد',category:'أخرى',date:'2025-09-11',notes:'',id:10,amount:28},
+  {destination:'تصليح كفر',category:'معدات',date:'2025-09-11',notes:'',id:11,amount:10},
+  {destination:'مشتريات سدير',category:'مستلزمات',date:'2025-09-11',notes:'',id:12,amount:28},
+  {destination:'مشتريات سدير',category:'مستلزمات',date:'2025-09-11',notes:'',id:13,amount:740},
+  {destination:'مشتريات سدير',category:'مستلزمات',date:'2025-09-11',notes:'',id:14,amount:197.21},
+  {destination:'مشتريات سدير',category:'مستلزمات',date:'2025-09-11',notes:'',id:15,amount:965},
+  {destination:'فحص ورشة 1',category:'أخرى',date:'2025-09-11',notes:'',id:16,amount:200},
+  {destination:'وقود لوري',category:'وقود',date:'2025-09-11',notes:'',id:17,amount:300},
+  {destination:'غسيل اللوري',category:'خدمات',date:'2025-09-11',notes:'',id:18,amount:100},
+  {destination:'كراتين ماء',category:'مياه',date:'2025-09-11',notes:'',id:19,amount:100},
+  {destination:'مصروف غداء',category:'طعام',date:'2025-09-11',notes:'',id:20,amount:100},
+  {destination:'مصروف غداء',category:'طعام',date:'2025-09-11',notes:'',id:21,amount:100},
+  {destination:'عدد 2 دريل',category:'أخرى',date:'2025-09-11',notes:'',id:22,amount:200},
+  {destination:'وقود',category:'وقود',date:'2025-09-11',notes:'',id:23,amount:116},
+  {destination:'وقود',category:'وقود',date:'2025-09-11',notes:'',id:24,amount:173},
+  {destination:'وقود',category:'وقود',date:'2025-09-11',notes:'',id:25,amount:209},
+  {destination:'غداء عمال',category:'طعام',date:'2025-09-11',notes:'',id:26,amount:163},
+  {destination:'مصروف مخيم',category:'أخرى',date:'2025-09-11',notes:'',id:27,amount:49},
+  {destination:'غداء عمال',category:'طعام',date:'2025-09-11',notes:'',id:28,amount:14},
+  {destination:'وقود',category:'وقود',date:'2025-09-11',notes:'',id:29,amount:191},
+  {destination:'غسيل خيام',category:'خدمات',date:'2025-09-11',notes:'',id:30,amount:250},
+  {destination:'كراتين ماء',category:'مياه',date:'2025-09-11',notes:'',id:31,amount:100},
+  {destination:'زيت سيارة',category:'معدات',date:'2025-09-24',notes:'',id:32,amount:160},
+  {destination:'غسيل',category:'خدمات',date:'2025-09-24',notes:'',id:33,amount:20},
+  {destination:'أغراض المخيم',category:'مستلزمات',date:'2025-09-24',notes:'',id:34,amount:402},
+  {destination:'تصليح شكمان',category:'أخرى',date:'2025-09-24',notes:'',id:35,amount:200},
+  {destination:'لوري + لكسير + قطع',category:'معدات',date:'2025-09-24',notes:'',id:36,amount:623},
+  {destination:'وقود',category:'وقود',date:'2025-09-24',notes:'',id:37,amount:215},
+  {destination:'شحن شريحه خالد',category:'أخرى',date:'2025-09-24',notes:'',id:38,amount:115},
+  {destination:'وقود',category:'وقود',date:'2025-09-27',notes:'',id:39,amount:166},
+  {destination:'ذراع دركسون ايسوزو',category:'أخرى',date:'2025-09-27',notes:'',id:40,amount:130},
+  {destination:'بقالة',category:'طعام',date:'2025-09-27',notes:'',id:41,amount:42},
+  {destination:'أدوات كهرباء',category:'معدات',date:'2025-09-27',notes:'',id:42,amount:90},
+  {destination:'أدوات سباكة',category:'أخرى',date:'2025-09-27',notes:'',id:43,amount:43},
+  {destination:'مشتريات سدير',category:'مستلزمات',date:'2025-09-27',notes:'',id:44,amount:165.24},
+  {destination:'قطع غيار اللوري',category:'معدات',date:'2025-09-27',notes:'',id:45,amount:300},
+  {destination:'لفه اسلاك',category:'أخرى',date:'2025-09-27',notes:'',id:46,amount:275},
+  {destination:'اصلاح كفر',category:'معدات',date:'2025-09-27',notes:'',id:47,amount:35},
+  {destination:'مصاريف مخيم',category:'أخرى',date:'2025-09-27',notes:'',id:48,amount:225},
+  {destination:'فلاتر مكينة',category:'أخرى',date:'2025-09-28',notes:'',id:49,amount:465},
+  {destination:'زيت مكينة المولد',category:'معدات',date:'2025-09-28',notes:'',id:50,amount:296},
+  {destination:'ذراع دركسون ايسوزو',category:'أخرى',date:'2025-09-28',notes:'',id:51,amount:100},
+  {destination:'تصليح ايسوزو',category:'أخرى',date:'2025-09-28',notes:'',id:52,amount:120},
+  {destination:'وقود لوري',category:'وقود',date:'2025-09-28',notes:'',id:53,amount:150},
+  {destination:'بوية',category:'دهانات',date:'2025-09-28',notes:'',id:54,amount:415},
+  {destination:'ماء + أغراض',category:'مياه',date:'2025-09-28',notes:'',id:55,amount:375},
+  {destination:'حداده بيت الشعر',category:'أخرى',date:'2025-09-28',notes:'',id:56,amount:400},
+  {destination:'سيلكون',category:'أخرى',date:'2025-09-28',notes:'',id:57,amount:25},
+  {destination:'وقود',category:'وقود',date:'2025-09-28',notes:'',id:58,amount:150},
+  {destination:'وق',category:'أخرى',date:'2025-09-28',notes:'',id:59,amount:219},
+  {destination:'أغراض الخيمة عمران',category:'مستلزمات',date:'2025-09-28',notes:'',id:60,amount:56},
+  {destination:'تيب',category:'أخرى',date:'2025-09-28',notes:'',id:61,amount:75},
+  {destination:'سيلكون',category:'أخرى',date:'2025-09-28',notes:'',id:62,amount:25},
+  {destination:'سكر',category:'أخرى',date:'2025-09-28',notes:'',id:63,amount:42},
+  {destination:'وايت ماء',category:'مياه',date:'2025-09-28',notes:'',id:64,amount:200},
+  {destination:'دجاج',category:'طعام',date:'2025-09-28',notes:'',id:65,amount:17},
+  {destination:'خبز',category:'طعام',date:'2025-09-28',notes:'',id:66,amount:57},
+  {destination:'وقود',category:'وقود',date:'2025-09-28',notes:'',id:67,amount:150},
+  {destination:'بطارية مولد',category:'معدات',date:'2025-09-28',notes:'',id:68,amount:290},
+  {destination:'دجاج',category:'طعام',date:'2025-09-28',notes:'',id:69,amount:20},
+  {destination:'تنر + مستلزمات',category:'مستلزمات',date:'2025-09-28',notes:'',id:70,amount:158},
+  {destination:'ديزل الوايت',category:'وقود',date:'2025-10-21',notes:'',id:71,amount:300},
+  {destination:'وقود',category:'وقود',date:'2025-10-21',notes:'',id:72,amount:150},
+  {destination:'وايت ماء',category:'مياه',date:'2025-10-21',notes:'',id:73,amount:100},
+  {destination:'دجاج + أغراض المخيم',category:'طعام',date:'2025-10-21',notes:'',id:74,amount:125},
+  {destination:'غيار زيت سيارة أبو إبراهيم',category:'معدات',date:'2025-10-21',notes:'',id:75,amount:199},
+  {destination:'شراء دفاع ماء',category:'مياه',date:'2025-10-21',notes:'',id:76,amount:700},
+  {destination:'عربون ستارة بتوجيه أبو فهد',category:'أخرى',date:'2025-10-21',notes:'',id:77,amount:500},
+  {destination:'قيمة شراء راوية',category:'أخرى',date:'2025-10-21',notes:'',id:78,amount:1150},
+  {destination:'أغراض للعمال',category:'مستلزمات',date:'2025-10-21',notes:'',id:79,amount:702.64},
+  {destination:'خضار',category:'طعام',date:'2025-10-21',notes:'',id:80,amount:107},
+  {destination:'شحن بطاقة خالد',category:'أخرى',date:'2025-10-21',notes:'',id:81,amount:115},
+  {destination:'وقود',category:'وقود',date:'2025-10-21',notes:'',id:82,amount:210},
+  {destination:'وقود',category:'وقود',date:'2025-10-21',notes:'',id:83,amount:160},
+  {destination:'أغراض تنر ومستلزمات',category:'مستلزمات',date:'2025-10-21',notes:'',id:84,amount:183},
+  {destination:'برميل بلاستيك',category:'أخرى',date:'2025-10-21',notes:'',id:85,amount:50},
+  {destination:'2سيفون للايسوزو',category:'أخرى',date:'2025-10-21',notes:'',id:86,amount:55},
+  {destination:'بنشر',category:'أخرى',date:'2025-10-21',notes:'',id:87,amount:20},
+  {destination:'غيار زيت اسوزو',category:'معدات',date:'2025-10-21',notes:'',id:88,amount:105},
+  {destination:'وقود ماطور الماء',category:'وقود',date:'2025-10-21',notes:'',id:89,amount:30},
+  {destination:'اصلاح تانكي اللوري',category:'معدات',date:'2025-10-21',notes:'',id:90,amount:450},
+  {destination:'خبز',category:'طعام',date:'2025-10-21',notes:'',id:91,amount:45},
+  {destination:'وقود',category:'وقود',date:'2025-10-21',notes:'',id:92,amount:215},
+  {destination:'',category:'أخرى',date:'2025-10-21',notes:'',id:93,amount:30},
+  {destination:'بخاخات + غراء',category:'أخرى',date:'2025-10-21',notes:'',id:94,amount:160},
+  {destination:'قطع غيار مكينة',category:'أخرى',date:'2025-10-21',notes:'',id:95,amount:135},
+  {destination:'اصلاح مكينة صغيرة اس تي سي',category:'أخرى',date:'2025-10-21',notes:'',id:96,amount:50},
+  {destination:'ملابس العامل',category:'أخرى',date:'2025-11-05',notes:'',id:97,amount:55},
+  {destination:'ثياب للعامل',category:'أخرى',date:'2025-11-05',notes:'',id:98,amount:300},
+  {destination:'سلك شايك + صنفرة + فرش',category:'أخرى',date:'2025-11-05',notes:'',id:99,amount:97},
+  {destination:'سطحة ايسوزو لسدير',category:'أخرى',date:'2025-11-05',notes:'',id:100,amount:200},
+  {destination:'غاز',category:'أخرى',date:'2025-11-05',notes:'',id:101,amount:116},
+  {destination:'كفرات الوايت الصغير',category:'مياه',date:'2025-11-05',notes:'',id:102,amount:600},
+  {destination:'رش رمل',category:'أخرى',date:'2025-11-05',notes:'',id:103,amount:50},
+  {destination:'قطع غيار اللوري',category:'معدات',date:'2025-11-05',notes:'',id:104,amount:250},
+  {destination:'وقود',category:'وقود',date:'2025-11-05',notes:'',id:105,amount:182},
+  {destination:'شراء ماطور ماء هواندا',category:'مياه',date:'2025-11-05',notes:'',id:106,amount:1300},
+  {destination:'زيت + فلتر + زيت قير',category:'وقود',date:'2025-11-05',notes:'',id:107,amount:335},
+  {destination:'وايت ماء',category:'مياه',date:'2025-11-05',notes:'',id:108,amount:100},
+  {destination:'بيد خالد حلاقة وثياب',category:'أخرى',date:'2025-11-05',notes:'',id:109,amount:100},
+  {destination:'وقود',category:'وقود',date:'2025-11-05',notes:'',id:110,amount:198},
+  {destination:'عينة عازل',category:'أخرى',date:'2025-11-05',notes:'',id:111,amount:165},
+  {destination:'أدوات سباكة',category:'أخرى',date:'2025-11-05',notes:'',id:112,amount:140},
+  {destination:'طرمبة بنزين فورد',category:'وقود',date:'2025-11-05',notes:'',id:113,amount:150.01},
+  {destination:'وقود',category:'وقود',date:'2025-11-05',notes:'',id:114,amount:200},
+  {destination:'وقود',category:'وقود',date:'2025-11-05',notes:'',id:115,amount:150},
+  {destination:'وقود',category:'وقود',date:'2025-11-05',notes:'',id:116,amount:150},
+  {destination:'مصاريف مخيم',category:'أخرى',date:'2025-11-05',notes:'',id:117,amount:80},
+  {destination:'اصلاح زجاج',category:'أخرى',date:'2025-11-05',notes:'',id:118,amount:200},
+  {destination:'جلدة مطب',category:'أخرى',date:'2025-11-05',notes:'',id:119,amount:40},
+  {destination:'ماء لديتر',category:'مياه',date:'2025-11-05',notes:'',id:120,amount:100},
+  {destination:'لستك',category:'أخرى',date:'2025-11-05',notes:'',id:121,amount:100.05},
+  {destination:'غسيل لديتر',category:'خدمات',date:'2025-11-05',notes:'',id:122,amount:250},
+  {destination:'وقود',category:'وقود',date:'2025-11-05',notes:'',id:123,amount:40},
+  {destination:'سطحة',category:'أخرى',date:'2025-11-05',notes:'',id:124,amount:650},
+  {destination:'تغيير صوفة لوري',category:'معدات',date:'2025-11-05',notes:'',id:125,amount:350},
+  {destination:'صوفه قطع غيار اللوري',category:'معدات',date:'2025-11-05',notes:'',id:126,amount:178},
+  {destination:'أدوات تنظيف اللوري',category:'معدات',date:'2025-11-05',notes:'',id:127,amount:59},
+  {destination:'وقود',category:'وقود',date:'2025-11-05',notes:'',id:128,amount:150},
+  {destination:'بيد خالد المصري',category:'أخرى',date:'2025-11-05',notes:'',id:129,amount:1000},
+  {destination:'ديزل الوايت',category:'وقود',date:'2025-11-05',notes:'',id:130,amount:1500},
+  {destination:'خضار ومقاضي',category:'طعام',date:'2025-11-05',notes:'',id:131,amount:173},
+  {destination:'بداية زراعي',category:'أخرى',date:'2025-11-05',notes:'',id:132,amount:23},
+  {destination:'وقود',category:'وقود',date:'2025-11-05',notes:'',id:133,amount:205.02},
+  {destination:'حداده بيت الشعر',category:'أخرى',date:'2025-11-05',notes:'',id:134,amount:60},
+  {destination:'وقود',category:'وقود',date:'2025-11-05',notes:'',id:135,amount:75},
+  {destination:'مشتريات للمخيم',category:'مستلزمات',date:'2025-11-05',notes:'',id:136,amount:173},
+  {destination:'دينا',category:'أخرى',date:'2025-11-05',notes:'',id:137,amount:1400},
+  {destination:'وقود',category:'وقود',date:'2025-11-05',notes:'',id:138,amount:32},
+  {destination:'مشتريات للمخيم',category:'مستلزمات',date:'2025-11-05',notes:'',id:139,amount:69},
+  {destination:'مشتريات للمخيم',category:'مستلزمات',date:'2025-11-05',notes:'',id:140,amount:10},
+  {destination:'مشتريات للمخيم',category:'مستلزمات',date:'2025-11-05',notes:'',id:141,amount:9},
+  {destination:'مشتريات للمخيم',category:'مستلزمات',date:'2025-11-05',notes:'',id:142,amount:45},
+  {destination:'شراء قطعة الويات مع سير',category:'أخرى',date:'2025-11-05',notes:'',id:143,amount:230},
+  {destination:'وقود',category:'وقود',date:'2025-11-05',notes:'',id:144,amount:218},
+  {destination:'تصليح ماطور ماء',category:'مياه',date:'2025-11-05',notes:'',id:145,amount:200},
+  {destination:'فلاتر مكينة',category:'أخرى',date:'2025-11-05',notes:'',id:146,amount:150},
+  {destination:'مشتريات للمخيم',category:'مستلزمات',date:'2025-11-05',notes:'',id:147,amount:567.05},
+  {destination:'وقود',category:'وقود',date:'2025-11-05',notes:'',id:148,amount:95.50},
+  {destination:'مشتريات للمخيم',category:'مستلزمات',date:'2025-11-05',notes:'',id:149,amount:12},
+  {destination:'أدوات سباكة',category:'أخرى',date:'2025-11-05',notes:'',id:150,amount:101.20},
+  {destination:'مشتريات للمخيم',category:'مستلزمات',date:'2025-11-05',notes:'',id:151,amount:93.56},
+  {destination:'وقود',category:'وقود',date:'2025-11-05',notes:'',id:152,amount:214},
+  {destination:'مشتريات للمخيم',category:'مستلزمات',date:'2025-11-05',notes:'',id:153,amount:7},
+  {destination:'وقود',category:'وقود',date:'2025-11-05',notes:'',id:154,amount:199},
+  {destination:'وقود',category:'وقود',date:'2025-11-05',notes:'',id:155,amount:38},
+  {destination:'وقود',category:'وقود',date:'2025-11-05',notes:'',id:156,amount:63},
+  {destination:'مشتريات للمخيم',category:'مستلزمات',date:'2025-11-05',notes:'',id:157,amount:280},
+  {destination:'مشتريات للمخيم',category:'مستلزمات',date:'2025-11-05',notes:'',id:158,amount:30},
+  {destination:'مشتريات للمخيم',category:'مستلزمات',date:'2025-11-05',notes:'',id:159,amount:102.35},
+  {destination:'غسيل سيارة',category:'خدمات',date:'2025-11-05',notes:'',id:160,amount:40},
+  {destination:'نثريات',category:'أخرى',date:'2025-11-05',notes:'',id:161,amount:120},
+  {destination:'خبز',category:'طعام',date:'2025-11-05',notes:'',id:162,amount:4},
+  {destination:'غسيل ملابس',category:'خدمات',date:'2025-11-05',notes:'',id:163,amount:40},
+  {destination:'مصروف ماء بيد خالد',category:'مياه',date:'2025-11-17',notes:'',id:164,amount:500},
+  {destination:'زيت الوايت',category:'مياه',date:'2025-11-17',notes:'',id:165,amount:400},
+  {destination:'ديزل الوايت',category:'وقود',date:'2025-11-17',notes:'',id:166,amount:500},
+  {destination:'سحب كرفان',category:'أخرى',date:'2025-11-17',notes:'',id:167,amount:700},
+  {destination:'مصروف ماء بيد خالد',category:'مياه',date:'2025-11-17',notes:'',id:168,amount:1000},
+  {destination:'ديزل الوايت',category:'وقود',date:'2025-11-17',notes:'',id:169,amount:1210},
+  {destination:'مقاضي للعمال',category:'أخرى',date:'2025-11-17',notes:'',id:170,amount:471.75},
+  {destination:'بنزين',category:'وقود',date:'2025-11-17',notes:'',id:171,amount:162},
+  {destination:'بنشر الوايت',category:'مياه',date:'2025-11-17',notes:'',id:172,amount:300},
+  {destination:'توضيب مكينة مولد',category:'أخرى',date:'2025-11-17',notes:'',id:173,amount:1300},
+  {destination:'مبلط',category:'أخرى',date:'2025-11-17',notes:'',id:174,amount:2000},
+  {destination:'كفرات الوايت',category:'مياه',date:'2025-11-17',notes:'',id:175,amount:1360},
+  {destination:'تركيب كفرات / بدون فاتورة',category:'معدات',date:'2025-11-17',notes:'',id:176,amount:300},
+  {destination:'ديزل الوايت',category:'وقود',date:'2025-11-17',notes:'',id:177,amount:500},
+  {destination:'فرق استكمال قيمة ستارة',category:'أخرى',date:'2025-11-17',notes:'',id:178,amount:1000},
+  {destination:'ديزل الوايت',category:'وقود',date:'2025-11-17',notes:'',id:179,amount:1400},
+  {destination:'تعبئة وايت ماء',category:'مياه',date:'2025-11-17',notes:'',id:180,amount:200},
+  {destination:'غاز',category:'أخرى',date:'2025-11-20',notes:'',id:181,amount:89},
+  {destination:'تانكي تصريف مياه للكرفان',category:'مياه',date:'2025-11-20',notes:'',id:182,amount:100},
+  {destination:'شحن بطاقة خالد',category:'أخرى',date:'2025-11-20',notes:'',id:183,amount:115},
+  {destination:'مشتريات للمخيم',category:'مستلزمات',date:'2025-11-20',notes:'',id:184,amount:512},
+  {destination:'مغسله',category:'خدمات',date:'2025-12-11',notes:'',id:185,amount:40},
+  {destination:'وقود',category:'وقود',date:'2025-12-11',notes:'',id:186,amount:150},
+  {destination:'تموينات',category:'طعام',date:'2025-12-11',notes:'',id:187,amount:25},
+  {destination:'وقود',category:'وقود',date:'2025-12-11',notes:'',id:188,amount:229},
+  {destination:'وقود',category:'وقود',date:'2025-12-11',notes:'',id:189,amount:145.95},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-11',notes:'',id:190,amount:24.74},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-11',notes:'',id:191,amount:152.96},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-11',notes:'',id:192,amount:528.63},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-11',notes:'',id:193,amount:32},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-11',notes:'',id:194,amount:21},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-11',notes:'',id:195,amount:48.25},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-11',notes:'',id:196,amount:45},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-11',notes:'',id:197,amount:206},
+  {destination:'مصاريف سباكة',category:'أخرى',date:'2025-12-11',notes:'',id:198,amount:101.20},
+  {destination:'وقود',category:'وقود',date:'2025-12-11',notes:'',id:199,amount:181},
+  {destination:'خبز',category:'طعام',date:'2025-12-11',notes:'',id:200,amount:72},
+  {destination:'بصل',category:'أخرى',date:'2025-12-11',notes:'',id:201,amount:20},
+  {destination:'قصدير',category:'أخرى',date:'2025-12-11',notes:'',id:202,amount:10},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:203,amount:97},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:204,amount:101},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:205,amount:100},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:206,amount:189},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:207,amount:79.44},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:208,amount:259},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:209,amount:117},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:210,amount:100},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:211,amount:50},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:212,amount:350},
+  {destination:'خضار',category:'طعام',date:'2025-12-15',notes:'',id:213,amount:110},
+  {destination:'شاي ومناديل',category:'أخرى',date:'2025-12-15',notes:'',id:214,amount:34},
+  {destination:'صابون حمامات',category:'أخرى',date:'2025-12-15',notes:'',id:215,amount:72},
+  {destination:'بنزين',category:'وقود',date:'2025-12-15',notes:'',id:216,amount:15},
+  {destination:'دينمو',category:'أخرى',date:'2025-12-15',notes:'',id:217,amount:140},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:218,amount:245},
+  {destination:'وقود',category:'وقود',date:'2025-12-15',notes:'',id:219,amount:200},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:220,amount:441.27},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:221,amount:152},
+  {destination:'مغسله',category:'خدمات',date:'2025-12-15',notes:'',id:222,amount:118},
+  {destination:'مغسله',category:'خدمات',date:'2025-12-15',notes:'',id:223,amount:35},
+  {destination:'مغسله',category:'خدمات',date:'2025-12-15',notes:'',id:224,amount:35},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:225,amount:153},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:226,amount:165},
+  {destination:'وقود لوري',category:'وقود',date:'2025-12-15',notes:'',id:227,amount:100},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:228,amount:80},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:229,amount:150},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:230,amount:102.51},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:231,amount:90},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:232,amount:98},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-15',notes:'',id:233,amount:30},
+  {destination:'زيت مع غسيل سيارة',category:'خدمات',date:'2025-12-15',notes:'',id:234,amount:200},
+  {destination:'راتب قهوجي',category:'أخرى',date:'2025-12-17',notes:'',id:235,amount:800},
+  {destination:'خضار',category:'طعام',date:'2025-12-17',notes:'',id:236,amount:215},
+  {destination:'مشتريات بقالة',category:'طعام',date:'2025-12-17',notes:'',id:237,amount:70},
+  {destination:'وقود',category:'وقود',date:'2025-12-17',notes:'',id:238,amount:159},
+  {destination:'ديزل',category:'وقود',date:'2025-12-17',notes:'',id:239,amount:1669.57},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-17',notes:'',id:240,amount:349},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-17',notes:'',id:241,amount:420.25},
+  {destination:'مشتريات المخيم',category:'مستلزمات',date:'2025-12-17',notes:'',id:242,amount:903.41},
+  {destination:'ميني ساندوتش + شوكلاته',category:'أخرى',date:'2025-12-17',notes:'',id:243,amount:33},
+  {destination:'مشتريات المخيم للمطبخ',category:'مستلزمات',date:'2025-12-17',notes:'',id:244,amount:83.95},
+  {destination:'وقود',category:'وقود',date:'2025-12-17',notes:'',id:245,amount:100},
+  {destination:'وقود',category:'وقود',date:'2025-12-17',notes:'',id:246,amount:270},
+  {destination:'وقود',category:'وقود',date:'2025-12-17',notes:'',id:247,amount:90},
+  {destination:'مشتريات المخيم',category:'مستلزمات',date:'2025-12-17',notes:'',id:248,amount:551},
+  {destination:'وقود لوري',category:'وقود',date:'2025-12-17',notes:'',id:249,amount:182},
+  {destination:'كفرات لوري',category:'معدات',date:'2025-12-17',notes:'',id:250,amount:400},
+  {destination:'باقة نت خالد',category:'أخرى',date:'2025-12-17',notes:'',id:251,amount:115},
+  {destination:'مشتريات المخيم',category:'مستلزمات',date:'2025-12-17',notes:'',id:252,amount:150},
+  {destination:'وقود',category:'وقود',date:'2025-12-17',notes:'',id:253,amount:97},
+  {destination:'مشتريات المخيم',category:'مستلزمات',date:'2025-12-17',notes:'',id:254,amount:35.50},
+  {destination:'مشتريات المخيم',category:'مستلزمات',date:'2025-12-17',notes:'',id:255,amount:56},
+  {destination:'مشتريات المخيم',category:'مستلزمات',date:'2025-12-17',notes:'',id:256,amount:65},
+  {destination:'وقود لوري',category:'وقود',date:'2025-12-17',notes:'',id:257,amount:300},
+  {destination:'ديزل',category:'وقود',date:'2025-12-17',notes:'',id:258,amount:1500},
+  {destination:'وقود',category:'وقود',date:'2025-12-17',notes:'',id:259,amount:200},
+  {destination:'مشتريات للمخيم',category:'مستلزمات',date:'2025-12-17',notes:'',id:260,amount:169},
+  {destination:'مشتريات للمخيم',category:'مستلزمات',date:'2025-12-17',notes:'',id:261,amount:477.70},
+  {destination:'مطبخ الزاوية الذهبي',category:'أخرى',date:'2025-12-17',notes:'',id:262,amount:400},
+  {destination:'مناديل ومشتريات',category:'مستلزمات',date:'2025-12-17',notes:'',id:263,amount:173},
+  {destination:'ديزل',category:'وقود',date:'2025-12-17',notes:'',id:264,amount:1500},
+  {destination:'مشتريات للمخيم',category:'مستلزمات',date:'2025-12-17',notes:'',id:265,amount:71.75},
+  {destination:'خبز ومشتريات',category:'طعام',date:'2025-12-17',notes:'',id:266,amount:81.50},
+  {destination:'غسيل',category:'خدمات',date:'2025-12-17',notes:'',id:267,amount:50},
+  {destination:'وقود',category:'وقود',date:'2025-12-17',notes:'',id:268,amount:218.02},
+  {destination:'تغيير فحمات ومخرطة',category:'أخرى',date:'2025-12-17',notes:'',id:269,amount:172.50},
+  {destination:'مشتريات للمخيم للمطبخ',category:'مستلزمات',date:'2025-12-17',notes:'',id:270,amount:170},
+  {destination:'مطبخ الزاوية الذهبي',category:'أخرى',date:'2025-12-17',notes:'',id:271,amount:225},
+  {destination:'مغسلة سيارات',category:'خدمات',date:'2025-12-17',notes:'',id:272,amount:35},
+  {destination:'وقود',category:'وقود',date:'2025-12-17',notes:'',id:273,amount:86.76},
+  {destination:'مشتريات للمخيم للمطبخ',category:'مستلزمات',date:'2025-12-17',notes:'',id:274,amount:907.07},
+  {destination:'مشتريات بقالة',category:'طعام',date:'2025-12-17',notes:'',id:275,amount:15},
+  {destination:'ديزل',category:'وقود',date:'2025-12-17',notes:'',id:276,amount:1210},
+  {destination:'وقود',category:'وقود',date:'2025-12-17',notes:'',id:277,amount:206},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-17',notes:'',id:278,amount:60},
+  {destination:'مشتريات للمخيم للمطبخ',category:'مستلزمات',date:'2025-12-17',notes:'',id:279,amount:37},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-17',notes:'',id:280,amount:36},
+  {destination:'وقود',category:'وقود',date:'2025-12-17',notes:'',id:281,amount:160},
+  {destination:'مؤسسة سبيل ارض الزراعية',category:'أخرى',date:'2025-12-17',notes:'',id:282,amount:155},
+  {destination:'مشتريات',category:'مستلزمات',date:'2025-12-17',notes:'',id:283,amount:5},
+  {id:284,destination:'شغل يد إصلاحات سيارة أبو إبراهيم',amount:250,category:'معدات',date:'2026-02-05',notes:''},
+  {id:285,destination:'اصلاح كفرات البودي ( علي )',amount:250,category:'معدات',date:'2026-02-05',notes:''},
+  {id:286,destination:'خبز',amount:10,category:'طعام',date:'2026-03-10',notes:''},
+  {id:287,destination:'ببسي',amount:40,category:'طعام',date:'2026-03-10',notes:''},
+  {id:288,destination:'رباط',amount:30,category:'مستلزمات',date:'2026-03-10',notes:''},
+  {id:289,destination:'مغسلة',amount:5,category:'خدمات',date:'2026-03-10',notes:''},
+  {id:290,destination:'دجاج وماجي',amount:55,category:'طعام',date:'2026-03-10',notes:''},
+  {id:291,destination:'ذبح خروف',amount:40,category:'طعام',date:'2026-03-10',notes:''},
+  {id:292,destination:'ثلج',amount:18,category:'مياه',date:'2026-03-10',notes:''},
+  {id:293,destination:'زبده وغاز وماء',amount:14,category:'مياه',date:'2026-03-10',notes:''},
+  {id:294,destination:'ارز',amount:78,category:'طعام',date:'2026-03-10',notes:''},
+  {id:295,destination:'كرك',amount:36,category:'طعام',date:'2026-03-10',notes:''},
+  {id:296,destination:'تغيير زيت وسيفون سيارة',amount:105,category:'معدات',date:'2026-03-10',notes:''},
+  {id:297,destination:'خبز',amount:25,category:'طعام',date:'2026-03-10',notes:''},
+  {id:298,destination:'دجاج وببسي واغراض مطبخ',amount:200,category:'طعام',date:'2026-03-10',notes:''},
+  {id:299,destination:'مغسلة سيارات',amount:35,category:'خدمات',date:'2026-03-10',notes:''},
+  {id:300,destination:'خبز',amount:15,category:'طعام',date:'2026-03-10',notes:''},
+  {id:301,destination:'حلاقة',amount:65,category:'خدمات',date:'2026-03-10',notes:''},
+  {id:302,destination:'خبز',amount:10,category:'طعام',date:'2026-03-10',notes:''},
+  {id:303,destination:'أغراض مطبخ',amount:61,category:'طعام',date:'2026-03-10',notes:''},
+  {id:304,destination:'أغراض زراعة',amount:140,category:'مستلزمات',date:'2026-03-10',notes:''},
+  {id:305,destination:'أغراض مطبخ',amount:292.98,category:'طعام',date:'2026-03-10',notes:''},
+  {id:306,destination:'ديزل',amount:500,category:'وقود',date:'2026-03-10',notes:''},
+  {id:307,destination:'مشتريات بقالة',amount:34,category:'طعام',date:'2026-03-10',notes:''},
+  {id:308,destination:'مصاريف متنوعة',amount:400,category:'أخرى',date:'2026-03-10',notes:''},
+  {id:309,destination:'زيت مع فلتر مكينة',amount:105,category:'وقود',date:'2026-03-10',notes:''},
+  {id:310,destination:'بويا للغرفة',amount:1480,category:'دهانات',date:'2026-03-10',notes:''},
+  {id:311,destination:'بويا للغرفة',amount:720.02,category:'دهانات',date:'2026-03-10',notes:''},
+  {id:312,destination:'بويا للغرفة',amount:365,category:'دهانات',date:'2026-03-10',notes:''},
+  {id:313,destination:'بويا للغرفة',amount:35,category:'دهانات',date:'2026-03-10',notes:''},
+  {id:314,destination:'تريلا نقل غرفة من جل الى الحسي',amount:2000,category:'معدات',date:'2026-03-10',notes:''},
+  {id:315,destination:'ايجار ونش',amount:2500,category:'معدات',date:'2026-03-10',notes:''},
+  {id:316,destination:'وقود',amount:195,category:'وقود',date:'2026-03-10',notes:''},
+  {id:317,destination:'ونش الجل',amount:600,category:'معدات',date:'2026-03-10',notes:''},
+  {id:318,destination:'سطحه',amount:900,category:'معدات',date:'2026-03-10',notes:''},
+  {id:319,destination:'عمال تحميل',amount:200,category:'خدمات',date:'2026-03-10',notes:''},
+  {id:320,destination:'مصاريف مشتريات للمخيم',amount:63,category:'مستلزمات',date:'2026-03-10',notes:''},
+  {id:321,destination:'مصاريف مشتريات للمخيم',amount:64,category:'مستلزمات',date:'2026-03-10',notes:''},
+  {id:322,destination:'مصاريف مشتريات للمخيم',amount:50,category:'مستلزمات',date:'2026-03-10',notes:''},
+  {id:323,destination:'مصاريف مشتريات للمخيم',amount:35,category:'مستلزمات',date:'2026-03-10',notes:''},
+  {id:324,destination:'مصاريف مشتريات للمخيم',amount:57,category:'مستلزمات',date:'2026-03-10',notes:''},
+  {id:325,destination:'مصاريف مشتريات للمخيم',amount:1,category:'مستلزمات',date:'2026-03-10',notes:''},
+  {id:326,destination:'مصاريف مشتريات للمخيم',amount:30,category:'مستلزمات',date:'2026-03-10',notes:''},
+  {id:327,destination:'مصاريف مشتريات للمخيم',amount:36,category:'مستلزمات',date:'2026-03-10',notes:''},
+  {id:328,destination:'مصاريف مشتريات للمخيم',amount:18,category:'مستلزمات',date:'2026-03-10',notes:''},
+  {id:329,destination:'مصاريف مشتريات للمخيم',amount:21,category:'مستلزمات',date:'2026-03-10',notes:''},
+  {id:330,destination:'مصاريف مشتريات للمخيم',amount:76,category:'مستلزمات',date:'2026-03-10',notes:''},
+  {id:331,destination:'قطع غيار إصلاحات سيارة أبو إبراهيم',amount:475,category:'معدات',date:'2026-03-10',notes:''},
+  {id:332,destination:'وقود',amount:100,category:'وقود',date:'2026-03-10',notes:''},
+  {id:333,destination:'ديزل',amount:500,category:'وقود',date:'2026-03-10',notes:''},
+];
+
+var STORAGE_KEY='skymokaym_v6';
+var curId=null;
+var editCId=null,editEId=null;
+var _expRowId=0;
+var _impParsed={custodies:[],expenses:[]};
+var _selAvatar='⛺';
+var _selColor='#3b82f6';
+var _unsaved=false;
+
+/* ══ الصفحات الافتراضية ══ */
+var DEFAULT_PAGES=[
+  {id:'khalid',name:'خالد',role:'مسؤول المخيم - المخيم خالد',avatar:'🏕️',color:'#3b82f6',custodies:KHALID_C,expenses:KHALID_E},
+  {id:'thamer',name:'ثامر',role:'مسؤول المخيم - الجريد',avatar:'⛺',color:'#10b981',custodies:THAMER_C,expenses:THAMER_E}
+];
+
+/* ══ التخزين ══ */
+var pages=[];
+function save(){
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(pages));
+  _unsaved=false;
+  updateSaveBtn();
+}
+function markUnsaved(){
+  _unsaved=true;
+  updateSaveBtn();
+}
+function updateSaveBtn(){
+  var btn=document.getElementById('globalSaveBtn');
+  var dot=document.getElementById('saveDot');
+  if(!btn)return;
+  if(_unsaved){
+    btn.classList.remove('saved');
+    dot.style.display='inline-block';
+    btn.innerHTML='<span class="save-dot" id="saveDot"></span> حفظ الكل';
+  }else{
+    btn.classList.add('saved');
+    dot.style.display='none';
+    btn.innerHTML='✅ محفوظ';
+    setTimeout(function(){
+      btn.classList.remove('saved');
+      btn.innerHTML='<span class="save-dot" id="saveDot" style="display:none"></span> حفظ الكل';
+    },2500);
+  }
+}
+function globalSave(){
+  save();
+  showToast('✅ تم حفظ جميع البيانات','green');
+}
+function pg(id){return pages.find(function(p){return p.id===id;});}
+function today(){var d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+
+function init(){
+  var saved=null;
+  try{saved=JSON.parse(localStorage.getItem(STORAGE_KEY));}catch(e){}
+  if(saved&&Array.isArray(saved)&&saved.length>0){
+    pages=saved.map(function(sp){
+      var dp=DEFAULT_PAGES.find(function(d){return d.id===sp.id;});
+      if(dp&&(!sp.custodies||sp.custodies.length===0)&&(!sp.expenses||sp.expenses.length===0)){
+        return Object.assign({},sp,{custodies:dp.custodies,expenses:dp.expenses});
+      }
+      return sp;
+    });
+    DEFAULT_PAGES.forEach(function(dp){
+      if(!pages.find(function(p){return p.id===dp.id;})){pages.push(dp);}
+    });
+  }else{
+    pages=DEFAULT_PAGES.map(function(p){return Object.assign({},p);});
+  }
+}
+
+/* ══ تسجيل الدخول ══ */
+(function(){
+  var U='aabed',P='Aa@013467009',SK='sky_ok_v5';
+  function hide(){
+    var lp=document.getElementById('loginPage');
+    lp.style.transition='opacity .4s';lp.style.opacity='0';
+    setTimeout(function(){lp.style.display='none';},400);
+    document.getElementById('app').classList.add('show');
+  }
+  if(sessionStorage.getItem(SK)==='1'){hide();}
+  window.doLogin=function(){
+    var u=(document.getElementById('loginUser').value||'').trim();
+    var p=(document.getElementById('loginPass').value||'').trim();
+    var err=document.getElementById('loginErr');
+    err.classList.remove('show');
+    if(u===U&&p===P){sessionStorage.setItem(SK,'1');hide();}
+    else{void err.offsetWidth;err.classList.add('show');document.getElementById('loginPass').value='';}
+  };
+  window.doLogout=function(){
+    sessionStorage.removeItem(SK);
+    document.getElementById('app').classList.remove('show');
+    document.getElementById('loginPage').style.display='flex';
+    document.getElementById('loginPage').style.opacity='1';
+    document.getElementById('loginUser').value='';
+    document.getElementById('loginPass').value='';
+  };
+  window.togglePw=function(){
+    var inp=document.getElementById('loginPass');
+    inp.type=inp.type==='password'?'text':'password';
+  };
+})();
+
+/* ══ التوست ══ */
+function showToast(msg,type){
+  var wrap=document.getElementById('toastWrap');
+  var t=document.createElement('div');
+  t.className='toast '+(type||'blue');
+  t.textContent=msg;
+  wrap.appendChild(t);
+  setTimeout(function(){
+    t.style.transition='opacity .3s,transform .3s';
+    t.style.opacity='0';t.style.transform='translateY(8px)';
+    setTimeout(function(){t.remove();},300);
+  },3000);
+}
+
+/* ══ المودالات ══ */
+function openModal(id){document.getElementById(id).classList.add('show');}
+function closeModal(id){document.getElementById(id).classList.remove('show');}
+
+/* ══ الصفحة الرئيسية ══ */
+function showHome(){
+  curId=null;
+  document.getElementById('homePage').style.display='block';
+  document.getElementById('personPage').classList.remove('show');
+  /* إخفاء شريط الطباعة */
+  var pb=document.getElementById('printBar');
+  if(pb)pb.style.display='none';
+  renderHome();
+}
+
+function renderHome(){
+  var grid=document.getElementById('personsGrid');
+  grid.innerHTML='';
+  pages.forEach(function(p){
+    var tc=p.custodies.reduce(function(s,x){return s+x.amount;},0);
+    var te=p.expenses.reduce(function(s,x){return s+x.amount;},0);
+    var bal=tc-te;
+    var div=document.createElement('div');
+    div.className='person-card';
+    div.onclick=function(){openPerson(p.id);};
+    div.innerHTML=
+      '<div class="pc-header">'+
+        '<div class="pc-avatar" style="background:'+p.color+'22;color:'+p.color+'">'+p.avatar+'</div>'+
+        '<div><div class="pc-name">'+p.name+'</div><div class="pc-role">'+p.role+'</div></div>'+
+      '</div>'+
+      '<div class="pc-stats">'+
+        '<div class="pc-stat"><div class="pc-stat-val" style="color:#60a5fa">'+p.custodies.length+'</div><div class="pc-stat-lbl">عهدة</div></div>'+
+        '<div class="pc-stat"><div class="pc-stat-val" style="color:#f87171">'+p.expenses.length+'</div><div class="pc-stat-lbl">مصروف</div></div>'+
+        '<div class="pc-stat"><div class="pc-stat-val" style="color:#fbbf24">'+(p.custodies.length+p.expenses.length)+'</div><div class="pc-stat-lbl">عملية</div></div>'+
+      '</div>'+
+      '<div class="pc-balance '+(bal>=0?'pos':'neg')+'">'+
+        '<span class="pc-balance-lbl">الرصيد المتبقي</span>'+
+        '<span class="pc-balance-val">'+(bal>=0?'+':'')+bal.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</span>'+
+      '</div>';
+    grid.appendChild(div);
+  });
+  /* بطاقة إضافة مسؤول */
+  var addCard=document.createElement('div');
+  addCard.className='add-person-card';
+  addCard.onclick=openNewPersonModal;
+  addCard.innerHTML=
+    '<div class="add-person-icon">➕</div>'+
+    '<div class="add-person-text">إضافة مسؤول جديد</div>'+
+    '<div class="add-person-sub">اضغط لإضافة مسؤول</div>';
+  grid.appendChild(addCard);
+}
+
+/* ══ إضافة مسؤول جديد ══ */
+var AVATARS=['⛺','🏕️','👤','🧑','👨','🧔','👷','🏗️','🌿','🌲','🔧','⚙️','🏠','🏡','🌟','💼','📋','🎯'];
+var COLORS=['#3b82f6','#10b981','#ef4444','#f59e0b','#7c3aed','#ec4899','#06b6d4','#84cc16','#f97316','#6366f1','#14b8a6','#a855f7','#64748b','#0ea5e9','#22c55e','#eab308'];
+
+function openNewPersonModal(){
+  _selAvatar='⛺';_selColor='#3b82f6';
+  document.getElementById('pName').value='';
+  document.getElementById('pRole').value='';
+  document.getElementById('mPTitle').textContent='👤 إضافة مسؤول جديد';
+  /* رسم الأيقونات */
+  var ag=document.getElementById('avatarGrid');
+  ag.innerHTML='';
+  AVATARS.forEach(function(a){
+    var d=document.createElement('div');
+    d.className='avatar-opt'+(a===_selAvatar?' sel':'');
+    d.textContent=a;
+    d.onclick=function(){
+      _selAvatar=a;
+      ag.querySelectorAll('.avatar-opt').forEach(function(x){x.classList.remove('sel');});
+      d.classList.add('sel');
+    };
+    ag.appendChild(d);
+  });
+  /* رسم الألوان */
+  var cg=document.getElementById('colorGrid');
+  cg.innerHTML='';
+  COLORS.forEach(function(c){
+    var d=document.createElement('div');
+    d.className='color-opt'+(c===_selColor?' sel':'');
+    d.style.background=c;
+    d.onclick=function(){
+      _selColor=c;
+      cg.querySelectorAll('.color-opt').forEach(function(x){x.classList.remove('sel');});
+      d.classList.add('sel');
+    };
+    cg.appendChild(d);
+  });
+  openModal('ovNewPerson');
+}
+
+function saveNewPerson(){
+  var name=(document.getElementById('pName').value||'').trim();
+  var role=(document.getElementById('pRole').value||'').trim();
+  if(!name){showToast('⚠️ أدخل اسم المسؤول','red');return;}
+  var id='person_'+Date.now();
+  pages.push({
+    id:id,name:name,
+    role:role||'مسؤول المخيم',
+    avatar:_selAvatar,color:_selColor,
+    custodies:[],expenses:[]
+  });
+  markUnsaved();save();
+  closeModal('ovNewPerson');
+  renderHome();
+  showToast('✅ تمت إضافة '+name,'green');
+}
+
+/* ══ صفحة المسؤول ══ */
+function openPerson(id){
+  curId=id;
+  var p=pg(id);if(!p)return;
+  document.getElementById('homePage').style.display='none';
+  document.getElementById('personPage').classList.add('show');
+  buildMonthFilter();
+  renderPerson();
+}
+
+/* ══ فلتر الشهر والفترة ══ */
+var _filterMonth='last';
+var _filterFrom='';
+var _filterTo='';
+
+var AR_MONTHS=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+
+function getLastEntryMonth(p){
+  var allDates=[];
+  p.custodies.forEach(function(x){if(x.date)allDates.push(x.date);});
+  p.expenses.forEach(function(x){if(x.date)allDates.push(x.date);});
+  if(!allDates.length)return null;
+  allDates.sort();
+  var last=allDates[allDates.length-1];
+  return last.substring(0,7); /* YYYY-MM */
+}
+
+function buildMonthFilter(){
+  var p=pg(curId);if(!p)return;
+  var monthSet={};
+  p.custodies.forEach(function(x){if(x.date)monthSet[x.date.substring(0,7)]=1;});
+  p.expenses.forEach(function(x){if(x.date)monthSet[x.date.substring(0,7)]=1;});
+  var months=Object.keys(monthSet).sort().reverse();
+  var sel=document.getElementById('filterMonth');
+  sel.innerHTML='<option value="all">كل الأشهر</option>';
+  months.forEach(function(m){
+    var parts=m.split('-');
+    var yr=parts[0];var mo=parseInt(parts[1],10)-1;
+    var label=AR_MONTHS[mo]+' '+yr;
+    var opt=document.createElement('option');
+    opt.value=m;opt.textContent=label;
+    sel.appendChild(opt);
+  });
+  /* تحديد آخر شهر فيه إدخال */
+  var lastM=getLastEntryMonth(p);
+  if(lastM){
+    sel.value=lastM;
+    _filterMonth=lastM;
+  }else{
+    sel.value='all';
+    _filterMonth='all';
+  }
+  _filterFrom='';_filterTo='';
+  document.getElementById('filterFrom').value='';
+  document.getElementById('filterTo').value='';
+}
+
+function applyFilter(){
+  _filterMonth=document.getElementById('filterMonth').value;
+  _filterFrom=document.getElementById('filterFrom').value;
+  _filterTo=document.getElementById('filterTo').value;
+  /* إذا اختار فترة يدوية، أبطل فلتر الشهر */
+  if(_filterFrom||_filterTo){
+    document.getElementById('filterMonth').value='all';
+    _filterMonth='all';
+  }
+  renderTables();
+}
+
+function resetFilter(){
+  _filterMonth='all';_filterFrom='';_filterTo='';
+  document.getElementById('filterMonth').value='all';
+  document.getElementById('filterFrom').value='';
+  document.getElementById('filterTo').value='';
+  renderTables();
+}
+
+function filterItems(items){
+  return items.filter(function(x){
+    var d=x.date||'';
+    if(_filterFrom&&d<_filterFrom)return false;
+    if(_filterTo&&d>_filterTo)return false;
+    if(_filterMonth!=='all'&&!d.startsWith(_filterMonth))return false;
+    return true;
+  });
+}
+
+function renderPerson(){
+  var p=pg(curId);if(!p)return;
+  var tc=p.custodies.reduce(function(s,x){return s+x.amount;},0);
+  var te=p.expenses.reduce(function(s,x){return s+x.amount;},0);
+  var bal=tc-te;
+
+  /* ══ رأس الصفحة ══ */
+  document.getElementById('phName').textContent=p.name;
+  document.getElementById('phRole').textContent=p.role;
+
+  /* أفاتار المسؤول */
+  var avEl=document.getElementById('phAvatar');
+  if(avEl){
+    avEl.textContent=p.avatar||'👤';
+    avEl.style.background='linear-gradient(135deg,'+(p.color||'#334155')+',rgba(15,23,42,0.9))';
+    avEl.style.borderColor=(p.color||'rgba(255,255,255,0.15)');
+  }
+
+  /* ══ صف الإحصاءات + زرا الإضافة على اليمين ══ */
+  document.getElementById('statsRow').innerHTML=
+    '<div class="stat-box">'+
+      '<div class="stat-val" style="color:#60a5fa">'+tc.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</div>'+
+      '<div class="stat-lbl">💰 إجمالي العهد</div>'+
+      '<div class="stat-count">'+p.custodies.length+' عهدة</div>'+
+    '</div>'+
+    '<div class="stat-box">'+
+      '<div class="stat-val" style="color:#f87171">'+te.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</div>'+
+      '<div class="stat-lbl">💸 إجمالي المصاريف</div>'+
+      '<div class="stat-count">'+p.expenses.length+' مصروف</div>'+
+    '</div>'+
+    '<div class="stat-box">'+
+      '<div class="stat-val" style="color:'+(bal>=0?'#34d399':'#f87171')+'">'+bal.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</div>'+
+      '<div class="stat-lbl">'+(bal>=0?'✅':'⚠️')+' الرصيد المتبقي</div>'+
+      '<div class="stat-count">'+(bal>=0?'فائض':'عجز')+'</div>'+
+    '</div>'+
+    '<div class="stat-box">'+
+      '<div class="stat-val" style="color:#fbbf24">'+(p.custodies.length+p.expenses.length)+'</div>'+
+      '<div class="stat-lbl">📋 إجمالي العمليات</div>'+
+      '<div class="stat-count">عملية</div>'+
+    '</div>'+
+    /* ══ عمود الأزرار على اليمين ══ */
+    '<div class="stat-action-box">'+
+      '<button class="stat-action-btn stat-btn-custody" onclick="openAddCustody()">'+
+        '<span class="sab-icon">➕</span>'+
+        '<span class="sab-text">إضافة عهدة</span>'+
+      '</button>'+
+      '<div class="stat-action-divider"></div>'+
+      '<button class="stat-action-btn stat-btn-expense" onclick="openAddExpense()">'+
+        '<span class="sab-icon">💸</span>'+
+        '<span class="sab-text">إضافة مصروف</span>'+
+      '</button>'+
+    '</div>';
+
+  /* ══ شريط الأدوات: حذف المسؤول فقط إن وُجد ══ */
+  document.getElementById('actionBar').innerHTML=
+    (curId!=='khalid'&&curId!=='thamer'?'<button class="action-btn btn-del-person" onclick="deletePerson()">🗑 حذف المسؤول</button>':'');
+
+  /* إظهار شريط الطباعة */
+  var pb=document.getElementById('printBar');
+  if(pb)pb.style.display='flex';
+
+  /* مسح التحديد عند فتح صفحة جديدة */
+  _selectedC.clear();
+  _selectedE.clear();
+  /* تهيئة التبويبات - افتراضي: العهد */
+  switchTab('custodies');
+  buildMonthFilter();
+  renderTables();
+}
+
+function deletePerson(){
+  var p=pg(curId);if(!p)return;
+  if(!confirm('هل تريد حذف مسؤول "'+p.name+'" وجميع بياناته؟'))return;
+  pages=pages.filter(function(x){return x.id!==curId;});
+  markUnsaved();save();showHome();
+  showToast('🗑 تم حذف '+p.name,'red');
+}
+
+/* ══ الجداول ══ */
+function catBadge(cat){
+  var map={'وقود':'yellow','طعام':'green','مياه':'blue','خدمات':'purple','معدات':'red','دهانات':'yellow','مستلزمات':'blue','أخرى':'gray'};
+  return '<span class="badge badge-'+(map[cat]||'gray')+'">'+cat+'</span>';
+}
+
+function renderTables(){
+  var p=pg(curId);if(!p)return;
+
+  var cs=filterItems([].concat(p.custodies)).sort(function(a,b){return a.date<b.date?1:-1;});
+  var es=filterItems([].concat(p.expenses)).sort(function(a,b){return a.date<b.date?1:-1;});
+
+  /* إحصاء الفلتر */
+  var tcF=cs.reduce(function(s,x){return s+x.amount;},0);
+  var infoTxt='';
+  if(_filterMonth!=='all'){
+    var parts=_filterMonth.split('-');
+    infoTxt='📅 '+AR_MONTHS[parseInt(parts[1],10)-1]+' '+parts[0];
+  }else if(_filterFrom||_filterTo){
+    infoTxt='🔍 '+(_filterFrom||'البداية')+' ← '+(_filterTo||'النهاية');
+  }else{
+    infoTxt='كل الفترات';
+  }
+  document.getElementById('filterInfo').textContent=infoTxt+' | عهد: '+cs.length+' | مصاريف: '+es.length;
+
+  /* تجميع حسب الشهر */
+  function groupByMonth(items){
+    var groups={};
+    items.forEach(function(item){
+      var m=item.date?item.date.substring(0,7):'غير محدد';
+      if(!groups[m])groups[m]=[];
+      groups[m].push(item);
+    });
+    return groups;
+  }
+  function monthLabel(m){
+    if(m==='غير محدد')return '📅 غير محدد';
+    var parts=m.split('-');
+    return '📅 '+AR_MONTHS[parseInt(parts[1],10)-1]+' '+parts[0];
+  }
+
+  /* ══ جدول العهد مع Checkbox ══ */
+  var cGroups=groupByMonth(cs);
+  var cMonths=Object.keys(cGroups).sort().reverse();
+  var cRows='';var cIdx=0;
+  if(cMonths.length===0){
+    cRows='<tr class="empty-row"><td colspan="7">لا توجد عهد في هذه الفترة</td></tr>';
+  }else{
+    cMonths.forEach(function(m){
+      var mTotal=cGroups[m].reduce(function(s,x){return s+x.amount;},0);
+      cRows+='<tr class="month-header-row"><td colspan="7">'+monthLabel(m)+
+        ' &nbsp;|&nbsp; <span style="color:var(--green2)">'+mTotal.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</span>'+
+        ' &nbsp;|&nbsp; <span style="color:var(--t3)">'+cGroups[m].length+' عهدة</span></td></tr>';
+      cGroups[m].forEach(function(c){
+        cIdx++;
+        var isSelected=_selectedC.has(c.id);
+        cRows+='<tr class="'+(isSelected?'row-selected':'')+'" id="crow-'+c.id+'">'+
+          '<td class="cb-td"><input type="checkbox" class="row-cb" data-id="'+c.id+'" data-type="c" '+(isSelected?'checked':'')+' onchange="toggleSelectC('+c.id+',this.checked)"></td>'+
+          '<td>'+cIdx+'</td>'+
+          '<td>'+c.source+'</td>'+
+          '<td style="color:#34d399;font-weight:700">'+c.amount.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td>'+
+          '<td>'+c.date+'</td>'+
+          '<td style="color:var(--t3)">'+(c.notes||'—')+'</td>'+
+          '<td><div class="tbl-actions">'+
+            '<button class="tbl-btn tbl-edit" onclick="editCustody('+c.id+')">✏️</button>'+
+            '<button class="tbl-btn tbl-del" onclick="delCustody('+c.id+')">🗑</button>'+
+          '</div></td>'+
+        '</tr>';
+      });
+    });
+  }
+
+  /* تحديث عداد العهد */
+  var custEl=document.getElementById('custodyCount');
+  if(custEl)custEl.textContent='💰 '+cs.length+' عهدة | إجمالي: '+tcF.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر';
+
+  /* حقن جدول العهد */
+  var wrapC=document.getElementById('tablesWrapC');
+  if(wrapC){
+    wrapC.innerHTML=
+      '<div class="table-section">'+
+        '<div class="table-wrap">'+
+          '<table><thead><tr>'+
+            '<th class="cb-th"><input type="checkbox" class="cb-all" id="cbAllC" onchange="toggleSelectAllC(this.checked)" title="تحديد الكل"></th>'+
+            '<th>#</th><th>جهة العهدة</th><th>المبلغ</th><th>التاريخ</th><th>ملاحظات</th><th>إجراء</th>'+
+          '</tr></thead>'+
+          '<tbody>'+cRows+'</tbody></table>'+
+        '</div>'+
+      '</div>';
+  }
+  updateBulkBarC();
+
+  /* ══ جدول المصاريف — عبر renderExpensesTab ══ */
+  renderExpensesTab();
+
+  /* تحديث الملخص */
+  renderSummary(p);
+}
+function switchTab(tab){
+  /* إخفاء كل التبويبات */
+  ['tabCustodies','tabExpenses','tabSummary'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el)el.classList.remove('active');
+  });
+  ['tabBtnC','tabBtnE','tabBtnS'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el)el.classList.remove('active');
+  });
+  var filterBar=document.getElementById('filterBar');
+  if(tab==='custodies'){
+    document.getElementById('tabCustodies').classList.add('active');
+    document.getElementById('tabBtnC').classList.add('active');
+    if(filterBar)filterBar.style.display='';
+  }else if(tab==='expenses'){
+    document.getElementById('tabExpenses').classList.add('active');
+    document.getElementById('tabBtnE').classList.add('active');
+    if(filterBar)filterBar.style.display='';
+    /* تحديث جدول المصاريف مع البحث */
+    renderExpensesTab();
+  }else if(tab==='summary'){
+    document.getElementById('tabSummary').classList.add('active');
+    document.getElementById('tabBtnS').classList.add('active');
+    if(filterBar)filterBar.style.display='none';
+    var p=pg(curId);if(p)renderSummary(p);
+  }
+}
+function renderSummary(p){
+  var sc=document.getElementById('summaryContent');
+  if(!sc)return;
+  var tc=p.custodies.reduce(function(s,x){return s+x.amount;},0);
+  var te=p.expenses.reduce(function(s,x){return s+x.amount;},0);
+  var bal=tc-te;
+  /* توزيع المصاريف حسب الفئة */
+  var cats={};
+  p.expenses.forEach(function(e){
+    var c=e.category||'أخرى';
+    cats[c]=(cats[c]||0)+e.amount;
+  });
+  var catArr=Object.keys(cats).map(function(k){return{name:k,amount:cats[k]};});
+  catArr.sort(function(a,b){return b.amount-a.amount;});
+  var catRows=catArr.map(function(c){
+    var pct=te>0?Math.round(c.amount/te*100):0;
+    return '<div class="cat-row">'+
+      '<span class="cat-name">'+c.name+'</span>'+
+      '<div class="cat-bar-wrap"><div class="cat-bar" style="width:'+pct+'%"></div></div>'+
+      '<span class="cat-amount">'+c.amount.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</span>'+
+      '<span class="cat-pct">'+pct+'%</span>'+
+    '</div>';
+  }).join('');
+  /* آخر معاملة */
+  var allDates=p.expenses.map(function(e){return e.date;}).filter(Boolean).sort();
+  var lastDate=allDates.length?allDates[allDates.length-1]:'—';
+  var firstDate=allDates.length?allDates[0]:'—';
+  sc.innerHTML=
+    '<div class="sum-grid">'+
+      '<div class="sum-card"><div class="sum-card-val" style="color:#60a5fa">'+tc.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</div><div class="sum-card-lbl">إجمالي العهد المستلمة</div></div>'+
+      '<div class="sum-card"><div class="sum-card-val" style="color:#f87171">'+te.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</div><div class="sum-card-lbl">إجمالي المصاريف</div></div>'+
+      '<div class="sum-card"><div class="sum-card-val" style="color:'+(bal>=0?'#34d399':'#f87171')+'">'+bal.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</div><div class="sum-card-lbl">الرصيد المتبقي</div></div>'+
+      '<div class="sum-card"><div class="sum-card-val" style="color:#a78bfa">'+p.custodies.length+'</div><div class="sum-card-lbl">عدد العهد</div></div>'+
+      '<div class="sum-card"><div class="sum-card-val" style="color:#fb923c">'+p.expenses.length+'</div><div class="sum-card-lbl">عدد المصاريف</div></div>'+
+      '<div class="sum-card"><div class="sum-card-val" style="color:#34d399;font-size:1rem">'+firstDate+'</div><div class="sum-card-lbl">أول معاملة</div></div>'+
+    '</div>'+
+    '<div class="cat-breakdown">'+
+      '<div class="cat-breakdown-title">📊 توزيع المصاريف حسب الفئة</div>'+
+      catRows+
+    '</div>';
+}
+/* ══ بطاقة إضافة فاتورة العهدة ══ */
+
+
+
+
+
+
+/* ══ بحث المصاريف ══ */
+var _expSearchText='';
+var _expSearchAmtMin=null;
+var _expSearchAmtMax=null;
+
+function applyExpenseSearch(){
+  _expSearchText=(document.getElementById('expSearchText').value||'').trim().toLowerCase();
+  var minVal=document.getElementById('expSearchAmtMin').value;
+  var maxVal=document.getElementById('expSearchAmtMax').value;
+  _expSearchAmtMin=minVal!==''?parseFloat(minVal):null;
+  _expSearchAmtMax=maxVal!==''?parseFloat(maxVal):null;
+  renderExpensesTab();
+}
+
+function clearExpenseSearch(){
+  document.getElementById('expSearchText').value='';
+  document.getElementById('expSearchAmtMin').value='';
+  document.getElementById('expSearchAmtMax').value='';
+  _expSearchText='';
+  _expSearchAmtMin=null;
+  _expSearchAmtMax=null;
+  var res=document.getElementById('expSearchResult');
+  if(res){res.textContent='';res.className='esb-result';}
+  renderExpensesTab();
+}
+
+function filterExpenseSearch(items){
+  return items.filter(function(e){
+    /* فلتر النص */
+    if(_expSearchText){
+      var haystack=(e.destination+' '+(e.category||'')+' '+(e.notes||'')).toLowerCase();
+      if(haystack.indexOf(_expSearchText)===-1)return false;
+    }
+    /* فلتر المبلغ */
+    if(_expSearchAmtMin!==null&&e.amount<_expSearchAmtMin)return false;
+    if(_expSearchAmtMax!==null&&e.amount>_expSearchAmtMax)return false;
+    return true;
+  });
+}
+
+function renderExpensesTab(){
+  var p=pg(curId);if(!p)return;
+  var es=filterItems([].concat(p.expenses)).sort(function(a,b){return a.date<b.date?1:-1;});
+  var esFiltered=filterExpenseSearch(es);
+
+  /* تحديث نتيجة البحث */
+  var res=document.getElementById('expSearchResult');
+  var hasSearch=_expSearchText||_expSearchAmtMin!==null||_expSearchAmtMax!==null;
+  if(res){
+    if(hasSearch){
+      res.textContent='نتائج: '+esFiltered.length+' من '+es.length;
+      res.className='esb-result has-result';
+    }else{
+      res.textContent='';
+      res.className='esb-result';
+    }
+  }
+
+  /* تجميع حسب الشهر */
+  function groupByMonth(items){
+    var groups={};
+    items.forEach(function(item){
+      var m=item.date?item.date.substring(0,7):'غير محدد';
+      if(!groups[m])groups[m]=[];
+      groups[m].push(item);
+    });
+    return groups;
+  }
+  function monthLabel(m){
+    if(m==='غير محدد')return '📅 غير محدد';
+    var parts=m.split('-');
+    return '📅 '+AR_MONTHS[parseInt(parts[1],10)-1]+' '+parts[0];
+  }
+
+  var teF=esFiltered.reduce(function(s,x){return s+x.amount;},0);
+  var expEl=document.getElementById('expenseCount');
+  if(expEl)expEl.textContent='💸 '+esFiltered.length+' مصروف | إجمالي: '+teF.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر'+(hasSearch?' 🔍':'');
+
+  var eGroups=groupByMonth(esFiltered);
+  var eMonths=Object.keys(eGroups).sort().reverse();
+  var eRows='';var eIdx=0;
+  if(eMonths.length===0){
+    eRows='<tr class="empty-row"><td colspan="8">'+(hasSearch?'لا توجد نتائج مطابقة للبحث':'لا توجد مصاريف في هذه الفترة')+'</td></tr>';
+  }else{
+    eMonths.forEach(function(m){
+      var mTotal=eGroups[m].reduce(function(s,x){return s+x.amount;},0);
+      eRows+='<tr class="month-header-row"><td colspan="8">'+monthLabel(m)+
+        ' &nbsp;|&nbsp; <span style="color:var(--red2)">'+mTotal.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</span>'+
+        ' &nbsp;|&nbsp; <span style="color:var(--t3)">'+eGroups[m].length+' مصروف</span></td></tr>';
+      eGroups[m].forEach(function(e){
+        eIdx++;
+        var isSelected=_selectedE.has(e.id);
+        /* تمييز نص البحث */
+        var destTxt=e.destination;
+        if(_expSearchText){
+          var re=new RegExp('('+_expSearchText.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+          destTxt=destTxt.replace(re,'<mark style="background:#fbbf24;color:#1e293b;border-radius:2px;padding:0 2px">$1</mark>');
+        }
+        eRows+='<tr class="'+(isSelected?'row-selected':'')+'" id="erow-'+e.id+'">'+
+          '<td class="cb-td"><input type="checkbox" class="row-cb" data-id="'+e.id+'" data-type="e" '+(isSelected?'checked':'')+' onchange="toggleSelectE('+e.id+',this.checked)"></td>'+
+          '<td>'+eIdx+'</td>'+
+          '<td>'+destTxt+'</td>'+
+          '<td style="color:#f87171;font-weight:700">'+e.amount.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td>'+
+          '<td>'+catBadge(e.category)+'</td>'+
+          '<td>'+e.date+'</td>'+
+          '<td style="color:var(--t3)">'+(e.notes||'—')+'</td>'+
+          '<td><div class="tbl-actions">'+
+            '<button class="tbl-btn tbl-edit" onclick="editExpense('+e.id+')">✏️</button>'+
+            '<button class="tbl-btn tbl-del" onclick="delExpense('+e.id+')">🗑</button>'+
+          '</div></td>'+
+        '</tr>';
+      });
+    });
+  }
+
+  var wrapE=document.getElementById('tablesWrapE');
+  if(wrapE){
+    wrapE.innerHTML=
+      '<div class="table-section">'+
+        '<div class="table-wrap">'+
+          '<table><thead><tr>'+
+            '<th class="cb-th"><input type="checkbox" class="cb-all" id="cbAllE" onchange="toggleSelectAllE(this.checked)" title="تحديد الكل"></th>'+
+            '<th>#</th><th>البيان</th><th>المبلغ</th><th>التصنيف</th><th>التاريخ</th><th>ملاحظات</th><th>إجراء</th>'+
+          '</tr></thead>'+
+          '<tbody>'+eRows+'</tbody></table>'+
+        '</div>'+
+      '</div>';
+  }
+  updateBulkBarE();
+}
+/* ══════════════════════════════════════════
+   تحديد وحذف متعدد — العهد والمصاريف
+══════════════════════════════════════════ */
+var _selectedC = new Set();
+var _selectedE = new Set();
+
+/* ── العهد ── */
+function toggleSelectC(id, checked){
+  if(checked) _selectedC.add(id);
+  else _selectedC.delete(id);
+  /* تحديث مظهر الصف */
+  var row=document.getElementById('crow-'+id);
+  if(row) row.className=checked?'row-selected':'';
+  updateBulkBarC();
+}
+
+function toggleSelectAllC(checked){
+  var cbs=document.querySelectorAll('#tablesWrapC .row-cb');
+  cbs.forEach(function(cb){
+    var id=parseInt(cb.getAttribute('data-id'));
+    cb.checked=checked;
+    if(checked) _selectedC.add(id);
+    else _selectedC.delete(id);
+    var row=document.getElementById('crow-'+id);
+    if(row) row.className=checked?'row-selected':'';
+  });
+  updateBulkBarC();
+}
+
+function updateBulkBarC(){
+  var bar=document.getElementById('bulkBarC');
+  var cnt=document.getElementById('bulkCountC');
+  var cbAll=document.getElementById('cbAllC');
+  var total=document.querySelectorAll('#tablesWrapC .row-cb').length;
+  if(bar){
+    if(_selectedC.size>0){
+      bar.classList.add('visible');
+      if(cnt) cnt.textContent=_selectedC.size;
+    }else{
+      bar.classList.remove('visible');
+    }
+  }
+  if(cbAll){
+    if(_selectedC.size===0) cbAll.indeterminate=false,cbAll.checked=false;
+    else if(total>0&&_selectedC.size===total) cbAll.indeterminate=false,cbAll.checked=true;
+    else cbAll.indeterminate=true;
+  }
+}
+
+function clearSelectionC(){
+  _selectedC.clear();
+  renderTables();
+}
+
+function deleteSelectedC(){
+  if(_selectedC.size===0) return;
+  var p=pg(curId);if(!p)return;
+  if(!confirm('هل تريد حذف '+_selectedC.size+' عهدة محددة؟')) return;
+  p.custodies=p.custodies.filter(function(c){ return !_selectedC.has(c.id); });
+  _selectedC.clear();
+  markUnsaved();
+  saveData();
+  showToast('✅ تم حذف العهد المحددة','green');
+  renderPerson();
+}
+
+/* ── المصاريف ── */
+function toggleSelectE(id, checked){
+  if(checked) _selectedE.add(id);
+  else _selectedE.delete(id);
+  var row=document.getElementById('erow-'+id);
+  if(row) row.className=checked?'row-selected':'';
+  updateBulkBarE();
+}
+
+function toggleSelectAllE(checked){
+  var cbs=document.querySelectorAll('#tablesWrapE .row-cb');
+  cbs.forEach(function(cb){
+    var id=parseInt(cb.getAttribute('data-id'));
+    cb.checked=checked;
+    if(checked) _selectedE.add(id);
+    else _selectedE.delete(id);
+    var row=document.getElementById('erow-'+id);
+    if(row) row.className=checked?'row-selected':'';
+  });
+  updateBulkBarE();
+}
+
+function updateBulkBarE(){
+  var bar=document.getElementById('bulkBarE');
+  var cnt=document.getElementById('bulkCountE');
+  var cbAll=document.getElementById('cbAllE');
+  var total=document.querySelectorAll('#tablesWrapE .row-cb').length;
+  if(bar){
+    if(_selectedE.size>0){
+      bar.classList.add('visible');
+      if(cnt) cnt.textContent=_selectedE.size;
+    }else{
+      bar.classList.remove('visible');
+    }
+  }
+  if(cbAll){
+    if(_selectedE.size===0) cbAll.indeterminate=false,cbAll.checked=false;
+    else if(total>0&&_selectedE.size===total) cbAll.indeterminate=false,cbAll.checked=true;
+    else cbAll.indeterminate=true;
+  }
+}
+
+function clearSelectionE(){
+  _selectedE.clear();
+  renderExpensesTab();
+}
+
+function deleteSelectedE(){
+  if(_selectedE.size===0) return;
+  var p=pg(curId);if(!p)return;
+  if(!confirm('هل تريد حذف '+_selectedE.size+' مصروف محدد؟')) return;
+  p.expenses=p.expenses.filter(function(e){ return !_selectedE.has(e.id); });
+  _selectedE.clear();
+  markUnsaved();
+  saveData();
+  showToast('✅ تم حذف المصاريف المحددة','green');
+  renderPerson();
+}
+
+
+
+
+function toggleTable(id){
+  var el=document.getElementById(id);
+  var tog=document.getElementById('tog'+id.slice(-1).toUpperCase());
+  if(el.style.display==='none'){el.style.display='';if(tog)tog.textContent='▲';}
+  else{el.style.display='none';if(tog)tog.textContent='▼';}
+}
+
+/* ══ العهد ══ */
+function openAddCustody(){
+  editCId=null;
+  document.getElementById('mCTitle').textContent='➕ إضافة عهدة';
+  document.getElementById('cSource').value='';
+  document.getElementById('cAmount').value='';
+  document.getElementById('cDate').value=today();
+  document.getElementById('cNotes').value='';
+  openModal('ovCustody');
+}
+function editCustody(id){
+  var p=pg(curId);if(!p)return;
+  var c=p.custodies.find(function(x){return x.id===id;});if(!c)return;
+  editCId=id;
+  document.getElementById('mCTitle').textContent='✏️ تعديل عهدة';
+  document.getElementById('cSource').value=c.source;
+  document.getElementById('cAmount').value=c.amount;
+  document.getElementById('cDate').value=c.date;
+  document.getElementById('cNotes').value=c.notes||'';
+  openModal('ovCustody');
+}
+function saveCustody(){
+  var p=pg(curId);if(!p)return;
+  var src=document.getElementById('cSource').value.trim();
+  var amt=parseFloat(document.getElementById('cAmount').value);
+  var dt=document.getElementById('cDate').value;
+  var nt=document.getElementById('cNotes').value.trim();
+  if(!src){showToast('⚠️ أدخل جهة العهدة','red');return;}
+  if(!amt||amt<=0){showToast('⚠️ أدخل مبلغاً صحيحاً','red');return;}
+  if(!dt){showToast('⚠️ أدخل التاريخ','red');return;}
+  if(editCId){
+    var c=p.custodies.find(function(x){return x.id===editCId;});
+    if(c){c.source=src;c.amount=amt;c.date=dt;c.notes=nt;}
+    showToast('✅ تم تعديل العهدة','green');
+  }else{
+    var maxId=p.custodies.reduce(function(m,x){return Math.max(m,x.id);},0);
+    p.custodies.push({id:maxId+1,source:src,amount:amt,date:dt,notes:nt});
+    showToast('✅ تمت إضافة العهدة','green');
+  }
+  markUnsaved();save();
+  buildMonthFilter();
+  closeModal('ovCustody');renderPerson();
+}
+function delCustody(id){
+  var p=pg(curId);if(!p)return;
+  if(!confirm('هل تريد حذف هذه العهدة؟'))return;
+  p.custodies=p.custodies.filter(function(x){return x.id!==id;});
+  markUnsaved();save();buildMonthFilter();renderPerson();showToast('🗑 تم الحذف','red');
+}
+
+/* ══ المصاريف المتعددة ══ */
+function _catOptions(sel){
+  var cats=['مستلزمات','وقود','طعام','خدمات','مياه','معدات','دهانات','أخرى'];
+  return cats.map(function(c){return '<option value="'+c+'"'+(c===sel?' selected':'')+'>'+c+'</option>';}).join('');
+}
+function addExpRow(desc,amt,dt,cat,notes){
+  _expRowId++;
+  var rid=_expRowId;
+  var d=dt||today();var c=cat||'مستلزمات';
+  var list=document.getElementById('expRowsList');
+  var div=document.createElement('div');
+  div.className='exp-row';div.id='erow_'+rid;
+  div.innerHTML=
+    '<input class="exp-inp" type="text" placeholder="البيان *" value="'+(desc?_esc(desc):'')+'" oninput="updateExpSummary()">'+
+    '<input class="exp-inp" type="number" placeholder="0.00" min="0" step="0.01" value="'+(amt||'')+'" oninput="updateExpSummary()">'+
+    '<input class="exp-inp" type="date" value="'+d+'" oninput="updateExpSummary()">'+
+    '<select class="exp-sel">'+_catOptions(c)+'</select>'+
+    '<input class="exp-inp" type="text" placeholder="ملاحظات" value="'+(notes?_esc(notes):'')+'">'+
+    '<button class="exp-del-btn" onclick="removeExpRow('+rid+')" title="حذف">🗑</button>';
+  list.appendChild(div);
+  updateExpSummary();
+  setTimeout(function(){list.scrollTop=list.scrollHeight;},50);
+}
+function removeExpRow(rid){
+  var el=document.getElementById('erow_'+rid);
+  if(el){el.style.opacity='0';setTimeout(function(){el.remove();updateExpSummary();},200);}
+}
+function updateExpSummary(){
+  var rows=document.querySelectorAll('#expRowsList .exp-row');
+  var total=0;
+  rows.forEach(function(row){var amt=parseFloat(row.querySelectorAll('input')[1].value)||0;total+=amt;});
+  document.getElementById('expRowCount').textContent=rows.length+' مصروف';
+  document.getElementById('expRowTotal').textContent='الإجمالي: '+total.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر';
+}
+function openAddExpense(){
+  _expRowId=0;
+  document.getElementById('expRowsList').innerHTML='';
+  addExpRow('','',today(),'مستلزمات','');
+  openModal('ovExpense');
+}
+function saveAllExpenses(){
+  var p=pg(curId);if(!p)return;
+  var rows=document.querySelectorAll('#expRowsList .exp-row');
+  if(!rows.length){showToast('⚠️ لا توجد مصاريف','red');return;}
+  var valid=[];var hasErr=false;
+  rows.forEach(function(row){
+    var inputs=row.querySelectorAll('input');
+    var sel=row.querySelector('select');
+    var desc=(inputs[0].value||'').trim();
+    var amt=parseFloat(inputs[1].value);
+    var dt=(inputs[2].value||'').trim();
+    var cat=sel?sel.value:'أخرى';
+    var notes=(inputs[3].value||'').trim();
+    inputs[0].classList.remove('err');inputs[1].classList.remove('err');inputs[2].classList.remove('err');
+    var rowErr=false;
+    if(!desc){inputs[0].classList.add('err');rowErr=true;}
+    if(!amt||amt<=0){inputs[1].classList.add('err');rowErr=true;}
+    if(!dt){inputs[2].classList.add('err');rowErr=true;}
+    if(rowErr){hasErr=true;return;}
+    valid.push({destination:desc,amount:amt,category:cat,date:dt,notes:notes});
+  });
+  if(hasErr){showToast('⚠️ يوجد حقول غير مكتملة','red');return;}
+  if(!valid.length){showToast('⚠️ لا توجد مصاريف صحيحة','red');return;}
+  var maxId=p.expenses.reduce(function(m,x){return Math.max(m,x.id);},0);
+  valid.forEach(function(item){maxId++;p.expenses.push({id:maxId,destination:item.destination,amount:item.amount,category:item.category,date:item.date,notes:item.notes});});
+  markUnsaved();save();buildMonthFilter();closeModal('ovExpense');renderPerson();
+  showToast('✅ تمت إضافة '+valid.length+' مصروف','green');
+}
+function editExpense(id){
+  var p=pg(curId);if(!p)return;
+  var e=p.expenses.find(function(x){return x.id===id;});if(!e)return;
+  editEId=id;
+  _expRowId=0;
+  document.getElementById('expRowsList').innerHTML='';
+  addExpRow(e.destination,e.amount,e.date,e.category,e.notes);
+  /* تعديل زر الحفظ */
+  var foot=document.querySelector('#ovExpense .modal-foot');
+  foot.innerHTML=
+    '<button class="mbtn mbtn-cancel" onclick="closeModal(&quot;ovExpense&quot;)">إلغاء</button>'+
+    '<button class="mbtn mbtn-save" onclick="saveEditExpense('+id+')">💾 حفظ التعديل</button>';
+  openModal('ovExpense');
+}
+function saveEditExpense(id){
+  var p=pg(curId);if(!p)return;
+  var rows=document.querySelectorAll('#expRowsList .exp-row');
+  if(!rows.length)return;
+  var row=rows[0];
+  var inputs=row.querySelectorAll('input');
+  var sel=row.querySelector('select');
+  var desc=(inputs[0].value||'').trim();
+  var amt=parseFloat(inputs[1].value);
+  var dt=(inputs[2].value||'').trim();
+  var cat=sel?sel.value:'أخرى';
+  var notes=(inputs[3].value||'').trim();
+  if(!desc||!amt||amt<=0||!dt){showToast('⚠️ أكمل الحقول المطلوبة','red');return;}
+  var e=p.expenses.find(function(x){return x.id===id;});
+  if(e){e.destination=desc;e.amount=amt;e.category=cat;e.date=dt;e.notes=notes;}
+  /* إعادة زر الحفظ الأصلي */
+  var foot=document.querySelector('#ovExpense .modal-foot');
+  foot.innerHTML=
+    '<button class="mbtn mbtn-cancel" onclick="closeModal(&quot;ovExpense&quot;)">إلغاء</button>'+
+    '<button class="mbtn mbtn-save" onclick="saveAllExpenses()">💾 حفظ الكل</button>';
+  markUnsaved();save();buildMonthFilter();closeModal('ovExpense');renderPerson();
+  showToast('✅ تم تعديل المصروف','green');
+}
+function delExpense(id){
+  var p=pg(curId);if(!p)return;
+  if(!confirm('هل تريد حذف هذا المصروف؟'))return;
+  p.expenses=p.expenses.filter(function(x){return x.id!==id;});
+  markUnsaved();save();buildMonthFilter();renderPerson();showToast('🗑 تم الحذف','red');
+}
+
+/* ══ التقرير ══ */
+function openReport(){
+  var p=pg(curId);if(!p)return;
+  var tc=p.custodies.reduce(function(s,x){return s+x.amount;},0);
+  var te=p.expenses.reduce(function(s,x){return s+x.amount;},0);
+  var bal=tc-te;
+  document.getElementById('reportTitle').textContent='📊 تقرير — '+p.name;
+  document.getElementById('reportSummary').innerHTML=
+    '<div class="rs-box"><div class="rs-val" style="color:#60a5fa">'+tc.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</div><div class="rs-lbl">إجمالي العهد</div></div>'+
+    '<div class="rs-box"><div class="rs-val" style="color:#f87171">'+te.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</div><div class="rs-lbl">إجمالي المصاريف</div></div>'+
+    '<div class="rs-box"><div class="rs-val" style="color:'+(bal>=0?'#34d399':'#f87171')+'">'+bal.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</div><div class="rs-lbl">الرصيد</div></div>';
+  var cs=[].concat(p.custodies).sort(function(a,b){return a.date<b.date?1:-1;});
+  var es=[].concat(p.expenses).sort(function(a,b){return a.date<b.date?1:-1;});
+  var cRows=cs.map(function(c,i){return '<tr><td>'+(i+1)+'</td><td>'+c.source+'</td><td style="color:#34d399;font-weight:700">'+c.amount.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td><td>'+c.date+'</td><td>'+(c.notes||'—')+'</td></tr>';}).join('');
+  var eRows=es.map(function(e,i){return '<tr><td>'+(i+1)+'</td><td>'+e.destination+'</td><td style="color:#f87171;font-weight:700">'+e.amount.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td><td>'+catBadge(e.category)+'</td><td>'+e.date+'</td><td>'+(e.notes||'—')+'</td></tr>';}).join('');
+  document.getElementById('reportContent').innerHTML=
+    '<div class="table-section"><div class="table-title"><span class="table-title-text">💰 العهد المستلمة</span></div>'+
+    '<div class="table-wrap"><table><thead><tr><th>#</th><th>جهة العهدة</th><th>المبلغ</th><th>التاريخ</th><th>ملاحظات</th></tr></thead><tbody>'+cRows+'</tbody></table></div></div>'+
+    '<div class="table-section"><div class="table-title"><span class="table-title-text">💸 المصاريف</span></div>'+
+    '<div class="table-wrap"><table><thead><tr><th>#</th><th>البيان</th><th>المبلغ</th><th>التصنيف</th><th>التاريخ</th><th>ملاحظات</th></tr></thead><tbody>'+eRows+'</tbody></table></div></div>';
+  document.getElementById('reportOverlay').classList.add('show');
+}
+function closeReport(){document.getElementById('reportOverlay').classList.remove('show');}
+
+/* ══ الطباعة ══ */
+function printReport(){
+  var p=pg(curId);if(!p)return;
+  var tc=p.custodies.reduce(function(s,x){return s+x.amount;},0);
+  var te=p.expenses.reduce(function(s,x){return s+x.amount;},0);
+  var bal=tc-te;
+  var cs=[].concat(p.custodies).sort(function(a,b){return a.date<b.date?1:-1;});
+  var es=[].concat(p.expenses).sort(function(a,b){return a.date<b.date?1:-1;});
+  var cRows=cs.map(function(c,i){return '<tr><td>'+(i+1)+'</td><td>'+c.source+'</td><td>'+c.amount.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td><td>'+c.date+'</td><td>'+(c.notes||'')+'</td></tr>';}).join('');
+  var eRows=es.map(function(e,i){return '<tr><td>'+(i+1)+'</td><td>'+e.destination+'</td><td>'+e.amount.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td><td>'+e.category+'</td><td>'+e.date+'</td><td>'+(e.notes||'')+'</td></tr>';}).join('');
+  var pw=window.open('','_blank','width=960,height=720,scrollbars=yes');
+  if(!pw){showToast('❌ يرجى السماح بالنوافذ المنبثقة','red');return;}
+  var printHtml='<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><title>كشف عهدة — '+p.name+'</title>'+
+    '<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,Tahoma,sans-serif;direction:rtl;color:#111;background:#fff;font-size:13px;padding:24px}'+
+    'h1{font-size:20px;text-align:center;margin-bottom:6px}h2{font-size:13px;text-align:center;color:#555;font-weight:normal;margin-bottom:20px}'+
+    '.sum{display:flex;gap:14px;margin-bottom:22px;justify-content:center}.sc{flex:1;max-width:170px;border:1.5px solid #ddd;border-radius:8px;padding:10px;text-align:center}'+
+    '.sc-l{font-size:11px;color:#666;margin-bottom:4px}.sc-v{font-size:15px;font-weight:bold}.blue{border-color:#2563eb;color:#2563eb}.red{border-color:#dc2626;color:#dc2626}.green{border-color:#16a34a;color:#16a34a}'+
+    'h3{font-size:13px;font-weight:bold;margin:18px 0 8px;padding:6px 10px;background:#f3f4f6;border-right:3px solid #2563eb;border-radius:4px}'+
+    'table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:16px}thead th{background:#1e293b;color:#fff;padding:7px 8px;text-align:right}tbody td{padding:6px 8px;border-bottom:1px solid #e5e7eb}tbody tr:nth-child(even){background:#f9fafb}'+
+    '.footer{text-align:center;margin-top:20px;font-size:10px;color:#aaa;border-top:1px solid #eee;padding-top:10px}@media print{@page{margin:1.2cm}}</style></head><body>'+
+    '<h1>⛺ SKY-MOKAYM — كشف عهدة</h1><h2>المسؤول: '+p.name+' | '+p.role+'</h2>'+
+    '<div class="sum">'+
+      '<div class="sc"><div class="sc-l">إجمالي العهد</div><div class="sc-v blue">'+tc.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</div></div>'+
+      '<div class="sc"><div class="sc-l">إجمالي المصاريف</div><div class="sc-v red">'+te.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</div></div>'+
+      '<div class="sc"><div class="sc-l">الرصيد</div><div class="sc-v '+(bal>=0?'green':'red')+'">'+bal.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</div></div>'+
+    '</div>'+
+    '<h3>📥 سجل العهد المستلمة ('+cs.length+')</h3>'+
+    '<table><thead><tr><th>#</th><th>جهة العهدة</th><th>المبلغ</th><th>التاريخ</th><th>ملاحظات</th></tr></thead><tbody>'+cRows+'</tbody></table>'+
+    '<h3>💸 سجل المصاريف ('+es.length+')</h3>'+
+    '<table><thead><tr><th>#</th><th>البيان</th><th>المبلغ</th><th>التصنيف</th><th>التاريخ</th><th>ملاحظات</th></tr></thead><tbody>'+eRows+'</tbody></table>'+
+    '<div class="footer">SKY-MOKAYM 2025 — نظام إدارة مصاريف المخيم | تاريخ الطباعة: '+new Date().toLocaleDateString('ar-SA')+'</div>'+
+    '</body></html>';
+  pw.document.write(printHtml);
+  pw.document.close();
+  setTimeout(function(){pw.print();},500);
+}
+function printCustodies(useFilter){
+  var p=pg(curId);if(!p)return;
+  var cs=useFilter?filterItems([].concat(p.custodies)):[].concat(p.custodies);
+  cs.sort(function(a,b){return a.date<b.date?1:-1;});
+  var tc=cs.reduce(function(s,x){return s+x.amount;},0);
+  var periodLabel=useFilter?_getPeriodLabel():'كامل الفترة';
+  var cRows=cs.map(function(c,i){
+    return '<tr><td>'+(i+1)+'</td><td>'+c.source+'</td><td class="amt-c">'+c.amount.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td><td>'+c.date+'</td><td>'+(c.notes||'—')+'</td></tr>';
+  }).join('');
+  var pw=window.open('','_blank','width=900,height=700,scrollbars=yes');
+  if(!pw){showToast('❌ يرجى السماح بالنوافذ المنبثقة','red');return;}
+  pw.document.write('<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8">'+
+    '<title>تقرير العهد — '+p.name+'</title>'+
+    '<style>'+_printBaseCSS()+
+    '.amt-c{color:#16a34a;font-weight:700}'+
+    '</style></head><body>'+
+    '<div class="print-header">'+
+      '<div class="print-logo">⛺ SKY-MOKAYM</div>'+
+      '<div class="print-title">تقرير العهد المستلمة</div>'+
+      '<div class="print-sub">المسؤول: '+p.name+' | '+p.role+' | الفترة: '+periodLabel+'</div>'+
+    '</div>'+
+    '<div class="sum-row">'+
+      '<div class="sum-box blue"><div class="sum-lbl">عدد العهد</div><div class="sum-val">'+cs.length+'</div></div>'+
+      '<div class="sum-box green"><div class="sum-lbl">إجمالي العهد</div><div class="sum-val">'+tc.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</div></div>'+
+    '</div>'+
+    '<table><thead><tr><th>#</th><th>جهة العهدة</th><th>المبلغ</th><th>التاريخ</th><th>ملاحظات</th></tr></thead>'+
+    '<tbody>'+cRows+'</tbody>'+
+    '<tfoot><tr><td colspan="2" style="font-weight:700;text-align:right">الإجمالي</td><td class="amt-c" style="font-weight:800">'+tc.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td><td colspan="2"></td></tr></tfoot>'+
+    '</table>'+
+    '<div class="print-footer">SKY-MOKAYM 2025 — تاريخ الطباعة: '+new Date().toLocaleDateString('ar-SA')+'</div>'+
+    '</body></html>');
+  pw.document.close();
+  setTimeout(function(){pw.print();},500);
+}
+function printExpenses(useFilter){
+  var p=pg(curId);if(!p)return;
+  var es=useFilter?filterItems([].concat(p.expenses)):[].concat(p.expenses);
+  es.sort(function(a,b){return a.date<b.date?1:-1;});
+  var te=es.reduce(function(s,x){return s+x.amount;},0);
+  var periodLabel=useFilter?_getPeriodLabel():'كامل الفترة';
+  /* توزيع حسب الفئة */
+  var cats={};
+  es.forEach(function(e){cats[e.category||'أخرى']=(cats[e.category||'أخرى']||0)+e.amount;});
+  var catRows=Object.keys(cats).sort(function(a,b){return cats[b]-cats[a];}).map(function(k){
+    var pct=te>0?Math.round(cats[k]/te*100):0;
+    return '<tr><td>'+k+'</td><td class="amt-e">'+cats[k].toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td><td>'+pct+'%</td></tr>';
+  }).join('');
+  var eRows=es.map(function(e,i){
+    return '<tr><td>'+(i+1)+'</td><td>'+e.destination+'</td><td class="amt-e">'+e.amount.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td><td>'+e.category+'</td><td>'+e.date+'</td><td>'+(e.notes||'—')+'</td></tr>';
+  }).join('');
+  var pw=window.open('','_blank','width=960,height=720,scrollbars=yes');
+  if(!pw){showToast('❌ يرجى السماح بالنوافذ المنبثقة','red');return;}
+  pw.document.write('<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8">'+
+    '<title>تقرير المصاريف — '+p.name+'</title>'+
+    '<style>'+_printBaseCSS()+
+    '.amt-e{color:#dc2626;font-weight:700}'+
+    '.cat-tbl{width:auto;min-width:320px;margin-bottom:20px}'+
+    '</style></head><body>'+
+    '<div class="print-header">'+
+      '<div class="print-logo">⛺ SKY-MOKAYM</div>'+
+      '<div class="print-title">تقرير المصاريف</div>'+
+      '<div class="print-sub">المسؤول: '+p.name+' | '+p.role+' | الفترة: '+periodLabel+'</div>'+
+    '</div>'+
+    '<div class="sum-row">'+
+      '<div class="sum-box blue"><div class="sum-lbl">عدد المصاريف</div><div class="sum-val">'+es.length+'</div></div>'+
+      '<div class="sum-box red"><div class="sum-lbl">إجمالي المصاريف</div><div class="sum-val">'+te.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</div></div>'+
+    '</div>'+
+    '<h3 style="font-size:12px;margin:0 0 8px;color:#374151">📊 توزيع المصاريف حسب الفئة</h3>'+
+    '<table class="cat-tbl"><thead><tr><th>الفئة</th><th>الإجمالي</th><th>النسبة</th></tr></thead><tbody>'+catRows+'</tbody></table>'+
+    '<h3 style="font-size:12px;margin:16px 0 8px;color:#374151">💸 تفاصيل المصاريف</h3>'+
+    '<table><thead><tr><th>#</th><th>البيان</th><th>المبلغ</th><th>التصنيف</th><th>التاريخ</th><th>ملاحظات</th></tr></thead>'+
+    '<tbody>'+eRows+'</tbody>'+
+    '<tfoot><tr><td colspan="2" style="font-weight:700;text-align:right">الإجمالي</td><td class="amt-e" style="font-weight:800">'+te.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td><td colspan="3"></td></tr></tfoot>'+
+    '</table>'+
+    '<div class="print-footer">SKY-MOKAYM 2025 — تاريخ الطباعة: '+new Date().toLocaleDateString('ar-SA')+'</div>'+
+    '</body></html>');
+  pw.document.close();
+  setTimeout(function(){pw.print();},500);
+}
+function printSummary(){
+  var p=pg(curId);if(!p)return;
+  var tc=p.custodies.reduce(function(s,x){return s+x.amount;},0);
+  var te=p.expenses.reduce(function(s,x){return s+x.amount;},0);
+  var bal=tc-te;
+  /* توزيع حسب الفئة */
+  var cats={};
+  p.expenses.forEach(function(e){cats[e.category||'أخرى']=(cats[e.category||'أخرى']||0)+e.amount;});
+  var catRows=Object.keys(cats).sort(function(a,b){return cats[b]-cats[a];}).map(function(k){
+    var pct=te>0?Math.round(cats[k]/te*100):0;
+    var bar='<div style="display:inline-block;width:'+pct+'%;height:8px;background:#2563eb;border-radius:4px;vertical-align:middle"></div>';
+    return '<tr><td>'+k+'</td><td>'+cats[k].toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td><td>'+pct+'% '+bar+'</td></tr>';
+  }).join('');
+  /* آخر وأول تاريخ */
+  var allDates=p.expenses.map(function(e){return e.date;}).filter(Boolean).sort();
+  var firstDate=allDates.length?allDates[0]:'—';
+  var lastDate=allDates.length?allDates[allDates.length-1]:'—';
+  /* توزيع شهري للمصاريف */
+  var monthly={};
+  p.expenses.forEach(function(e){
+    var m=e.date?e.date.substring(0,7):'غير محدد';
+    monthly[m]=(monthly[m]||0)+e.amount;
+  });
+  var monthlyRows=Object.keys(monthly).sort().reverse().map(function(m){
+    var parts=m.split('-');
+    var lbl=m==='غير محدد'?'غير محدد':AR_MONTHS[parseInt(parts[1],10)-1]+' '+parts[0];
+    return '<tr><td>'+lbl+'</td><td>'+monthly[m].toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td></tr>';
+  }).join('');
+  var pw=window.open('','_blank','width=900,height=720,scrollbars=yes');
+  if(!pw){showToast('❌ يرجى السماح بالنوافذ المنبثقة','red');return;}
+  pw.document.write('<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8">'+
+    '<title>ملخص — '+p.name+'</title>'+
+    '<style>'+_printBaseCSS()+
+    '.bal-pos{color:#16a34a;font-weight:800}.bal-neg{color:#dc2626;font-weight:800}'+
+    '.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}'+
+    '@media print{.two-col{grid-template-columns:1fr 1fr}}'+
+    '</style></head><body>'+
+    '<div class="print-header">'+
+      '<div class="print-logo">⛺ SKY-MOKAYM</div>'+
+      '<div class="print-title">صفحة الملخص الشامل</div>'+
+      '<div class="print-sub">المسؤول: '+p.name+' | '+p.role+' | من: '+firstDate+' إلى: '+lastDate+'</div>'+
+    '</div>'+
+    '<div class="sum-row">'+
+      '<div class="sum-box blue"><div class="sum-lbl">إجمالي العهد</div><div class="sum-val">'+tc.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</div></div>'+
+      '<div class="sum-box red"><div class="sum-lbl">إجمالي المصاريف</div><div class="sum-val">'+te.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</div></div>'+
+      '<div class="sum-box '+(bal>=0?'green':'red')+'"><div class="sum-lbl">الرصيد المتبقي</div><div class="sum-val '+(bal>=0?'bal-pos':'bal-neg')+'">'+bal.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</div></div>'+
+      '<div class="sum-box"><div class="sum-lbl">عدد العهد</div><div class="sum-val">'+p.custodies.length+'</div></div>'+
+      '<div class="sum-box"><div class="sum-lbl">عدد المصاريف</div><div class="sum-val">'+p.expenses.length+'</div></div>'+
+    '</div>'+
+    '<div class="two-col">'+
+      '<div>'+
+        '<h3 style="font-size:12px;margin:0 0 8px;color:#374151">📊 توزيع المصاريف حسب الفئة</h3>'+
+        '<table><thead><tr><th>الفئة</th><th>الإجمالي</th><th>النسبة</th></tr></thead><tbody>'+catRows+'</tbody></table>'+
+      '</div>'+
+      '<div>'+
+        '<h3 style="font-size:12px;margin:0 0 8px;color:#374151">📅 المصاريف الشهرية</h3>'+
+        '<table><thead><tr><th>الشهر</th><th>الإجمالي</th></tr></thead><tbody>'+monthlyRows+'</tbody></table>'+
+      '</div>'+
+    '</div>'+
+    '<div class="print-footer">SKY-MOKAYM 2025 — تاريخ الطباعة: '+new Date().toLocaleDateString('ar-SA')+'</div>'+
+    '</body></html>');
+  pw.document.close();
+  setTimeout(function(){pw.print();},500);
+}
+function printFullReport(){
+  var p=pg(curId);if(!p)return;
+  var tc=p.custodies.reduce(function(s,x){return s+x.amount;},0);
+  var te=p.expenses.reduce(function(s,x){return s+x.amount;},0);
+  var bal=tc-te;
+  var cs=[].concat(p.custodies).sort(function(a,b){return a.date<b.date?-1:1;});
+  var es=[].concat(p.expenses).sort(function(a,b){return a.date<b.date?-1:1;});
+
+  /* تواريخ */
+  var allDates=p.expenses.map(function(e){return e.date;}).filter(Boolean).sort();
+  var firstDate=allDates.length?allDates[0]:'—';
+  var lastDate=allDates.length?allDates[allDates.length-1]:'—';
+
+  /* توزيع الفئات */
+  var cats={};
+  p.expenses.forEach(function(e){cats[e.category||'أخرى']=(cats[e.category||'أخرى']||0)+e.amount;});
+  var catArr=Object.keys(cats).sort(function(a,b){return cats[b]-cats[a];});
+  var catRows=catArr.map(function(k){
+    var pct=te>0?Math.round(cats[k]/te*100):0;
+    var bar='<div style="display:inline-block;width:'+Math.max(pct,2)+'%;max-width:120px;height:7px;background:#2563eb;border-radius:3px;vertical-align:middle;margin-right:4px"></div>';
+    return '<tr><td>'+k+'</td><td style="color:#dc2626;font-weight:700">'+cats[k].toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td><td>'+pct+'% '+bar+'</td></tr>';
+  }).join('');
+
+  /* توزيع شهري */
+  var monthly={};
+  p.expenses.forEach(function(e){
+    var m=e.date?e.date.substring(0,7):'غير محدد';
+    monthly[m]=(monthly[m]||0)+e.amount;
+  });
+  var monthlyRows=Object.keys(monthly).sort().reverse().map(function(m){
+    var parts=m.split('-');
+    var lbl=m==='غير محدد'?'غير محدد':AR_MONTHS[parseInt(parts[1],10)-1]+' '+parts[0];
+    return '<tr><td>'+lbl+'</td><td style="color:#dc2626;font-weight:700">'+monthly[m].toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td></tr>';
+  }).join('');
+
+  /* صفوف العهد */
+  var cRows=cs.map(function(c,i){
+    return '<tr>'+
+      '<td style="text-align:center;color:#6b7280">'+(i+1)+'</td>'+
+      '<td>'+c.source+'</td>'+
+      '<td style="color:#16a34a;font-weight:700;text-align:center">'+c.amount.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td>'+
+      '<td style="text-align:center">'+c.date+'</td>'+
+      '<td style="color:#6b7280">'+(c.notes||'—')+'</td>'+
+    '</tr>';
+  }).join('');
+
+  /* صفوف المصاريف مجمعة حسب الشهر */
+  var eGroups={};
+  es.forEach(function(e){
+    var m=e.date?e.date.substring(0,7):'غير محدد';
+    if(!eGroups[m])eGroups[m]=[];
+    eGroups[m].push(e);
+  });
+  var eMonths=Object.keys(eGroups).sort().reverse();
+  var eRows='';var eIdx=0;
+  eMonths.forEach(function(m){
+    var parts=m.split('-');
+    var lbl=m==='غير محدد'?'📅 غير محدد':'📅 '+AR_MONTHS[parseInt(parts[1],10)-1]+' '+parts[0];
+    var mTotal=eGroups[m].reduce(function(s,x){return s+x.amount;},0);
+    eRows+='<tr style="background:#f0f4ff"><td colspan="6" style="font-weight:700;color:#1e40af;padding:6px 8px;font-size:11px">'+
+      lbl+' &nbsp;|&nbsp; إجمالي: '+mTotal.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر'+
+      ' &nbsp;|&nbsp; '+eGroups[m].length+' مصروف</td></tr>';
+    eGroups[m].forEach(function(e){
+      eIdx++;
+      eRows+='<tr>'+
+        '<td style="text-align:center;color:#6b7280">'+eIdx+'</td>'+
+        '<td>'+e.destination+'</td>'+
+        '<td style="color:#dc2626;font-weight:700;text-align:center">'+e.amount.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td>'+
+        '<td style="text-align:center;font-size:10px">'+e.category+'</td>'+
+        '<td style="text-align:center">'+e.date+'</td>'+
+        '<td style="color:#6b7280;font-size:10px">'+(e.notes||'—')+'</td>'+
+      '</tr>';
+    });
+  });
+
+  var pw=window.open('','_blank','width=1000,height=800,scrollbars=yes');
+  if(!pw){showToast('❌ يرجى السماح بالنوافذ المنبثقة','red');return;}
+  pw.document.write('<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8">'+
+    '<title>كشف شامل — '+p.name+'</title>'+
+    '<style>'+_printBaseCSS()+
+    'body{font-size:11px}'+
+    '.page-break{page-break-before:always;margin-top:20px}'+
+    '.section-title{font-size:13px;font-weight:800;color:#1e293b;margin:18px 0 10px;padding:8px 12px;'+
+      'background:linear-gradient(135deg,#f0f4ff,#e8f0fe);border-right:4px solid #2563eb;border-radius:0 6px 6px 0;}'+
+    '.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}'+
+    '.bal-pos{color:#16a34a!important}.bal-neg{color:#dc2626!important}'+
+    '.watermark{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);'+
+      'font-size:10px;color:#d1d5db;white-space:nowrap;pointer-events:none}'+
+    '@media print{@page{margin:1cm;size:A4}.two-col{grid-template-columns:1fr 1fr}}'+
+    '</style></head><body>'+
+
+    /* ══ رأس الكشف ══ */
+    '<div style="text-align:center;padding:16px 0 12px;border-bottom:3px solid #1e293b;margin-bottom:16px">'+
+      '<div style="font-size:22px;font-weight:900;color:#1e293b;letter-spacing:1px">⛺ SKY-MOKAYM</div>'+
+      '<div style="font-size:16px;font-weight:700;color:#374151;margin:4px 0">كشف عهدة شامل</div>'+
+      '<div style="font-size:11px;color:#6b7280">المسؤول: <strong>'+p.name+'</strong> | الدور: '+p.role+' | من: '+firstDate+' إلى: '+lastDate+'</div>'+
+      '<div style="font-size:10px;color:#9ca3af;margin-top:3px">تاريخ الطباعة: '+new Date().toLocaleDateString('ar-SA')+' — '+new Date().toLocaleTimeString('ar-SA')+'</div>'+
+    '</div>'+
+
+    /* ══ بطاقات الملخص ══ */
+    '<div class="sum-row">'+
+      '<div class="sum-box blue"><div class="sum-lbl">إجمالي العهد</div><div class="sum-val">'+tc.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</div></div>'+
+      '<div class="sum-box red"><div class="sum-lbl">إجمالي المصاريف</div><div class="sum-val">'+te.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</div></div>'+
+      '<div class="sum-box '+(bal>=0?'green':'red')+'"><div class="sum-lbl">الرصيد المتبقي</div><div class="sum-val '+(bal>=0?'bal-pos':'bal-neg')+'">'+bal.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</div></div>'+
+      '<div class="sum-box"><div class="sum-lbl">عدد العهد</div><div class="sum-val" style="color:#7c3aed">'+p.custodies.length+'</div></div>'+
+      '<div class="sum-box"><div class="sum-lbl">عدد المصاريف</div><div class="sum-val" style="color:#d97706">'+p.expenses.length+'</div></div>'+
+    '</div>'+
+
+    /* ══ التحليل: فئات + شهري ══ */
+    '<div class="two-col">'+
+      '<div>'+
+        '<div class="section-title">📊 توزيع المصاريف حسب الفئة</div>'+
+        '<table><thead><tr><th>الفئة</th><th>الإجمالي</th><th>النسبة</th></tr></thead><tbody>'+catRows+'</tbody>'+
+        '<tfoot><tr><td style="font-weight:700">الإجمالي</td><td style="color:#dc2626;font-weight:800">'+te.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td><td>100%</td></tr></tfoot>'+
+        '</table>'+
+      '</div>'+
+      '<div>'+
+        '<div class="section-title">📅 المصاريف الشهرية</div>'+
+        '<table><thead><tr><th>الشهر</th><th>الإجمالي</th></tr></thead><tbody>'+monthlyRows+'</tbody></table>'+
+      '</div>'+
+    '</div>'+
+
+    /* ══ جدول العهد ══ */
+    '<div class="section-title">💰 سجل العهد المستلمة ('+cs.length+' عهدة — إجمالي: '+tc.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر)</div>'+
+    '<table><thead><tr><th style="width:40px">#</th><th>جهة العهدة</th><th style="width:120px">المبلغ</th><th style="width:100px">التاريخ</th><th>ملاحظات</th></tr></thead>'+
+    '<tbody>'+cRows+'</tbody>'+
+    '<tfoot><tr><td colspan="2" style="font-weight:700;text-align:right">الإجمالي</td><td style="color:#16a34a;font-weight:800">'+tc.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td><td colspan="2"></td></tr></tfoot>'+
+    '</table>'+
+
+    /* ══ جدول المصاريف ══ */
+    '<div class="section-title page-break">💸 سجل المصاريف ('+es.length+' مصروف — إجمالي: '+te.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر)</div>'+
+    '<table><thead><tr><th style="width:40px">#</th><th>البيان</th><th style="width:110px">المبلغ</th><th style="width:80px">الفئة</th><th style="width:95px">التاريخ</th><th>ملاحظات</th></tr></thead>'+
+    '<tbody>'+eRows+'</tbody>'+
+    '<tfoot><tr><td colspan="2" style="font-weight:700;text-align:right">الإجمالي</td><td style="color:#dc2626;font-weight:800">'+te.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td><td colspan="3"></td></tr></tfoot>'+
+    '</table>'+
+
+    /* ══ تذييل ══ */
+    '<div class="print-footer" style="margin-top:24px;border-top:2px solid #e5e7eb;padding-top:10px">'+
+      '<strong>SKY-MOKAYM 2025</strong> — نظام إدارة مصاريف المخيم'+
+      ' &nbsp;|&nbsp; إجمالي العهد: '+tc.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر'+
+      ' &nbsp;|&nbsp; إجمالي المصاريف: '+te.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر'+
+      ' &nbsp;|&nbsp; الرصيد: <strong style="color:'+(bal>=0?'#16a34a':'#dc2626')+'">'+bal.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</strong>'+
+    '</div>'+
+    '<div class="watermark">SKY-MOKAYM © 2025</div>'+
+    '</body></html>');
+  pw.document.close();
+  setTimeout(function(){pw.print();},600);
+}
+
+function _printBaseCSS(){
+  return '*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,Tahoma,sans-serif;direction:rtl;color:#111;background:#fff;font-size:12px;padding:20px}'+
+    '.print-header{text-align:center;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid #1e293b}'+
+    '.print-logo{font-size:18px;font-weight:800;color:#1e293b;margin-bottom:4px}'+
+    '.print-title{font-size:15px;font-weight:700;color:#1e293b;margin-bottom:3px}'+
+    '.print-sub{font-size:11px;color:#6b7280}'+
+    '.sum-row{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}'+
+    '.sum-box{flex:1;min-width:120px;border:1.5px solid #e5e7eb;border-radius:8px;padding:10px;text-align:center}'+
+    '.sum-box.blue{border-color:#2563eb}.sum-box.red{border-color:#dc2626}.sum-box.green{border-color:#16a34a}'+
+    '.sum-lbl{font-size:10px;color:#6b7280;margin-bottom:4px}'+
+    '.sum-val{font-size:14px;font-weight:800;color:#1e293b}'+
+    '.sum-box.blue .sum-val{color:#2563eb}.sum-box.red .sum-val{color:#dc2626}.sum-box.green .sum-val{color:#16a34a}'+
+    'table{width:100%;border-collapse:collapse;font-size:11px;margin-bottom:14px}'+
+    'thead th{background:#1e293b;color:#fff;padding:6px 8px;text-align:right;font-size:11px}'+
+    'tbody td{padding:5px 8px;border-bottom:1px solid #f3f4f6}'+
+    'tbody tr:nth-child(even){background:#f9fafb}'+
+    'tfoot td{background:#f3f4f6;font-size:11px;padding:6px 8px}'+
+    '.print-footer{text-align:center;margin-top:16px;font-size:10px;color:#9ca3af;border-top:1px solid #e5e7eb;padding-top:8px}'+
+    '@media print{@page{margin:1cm}body{padding:0}}';
+}
+function _getPeriodLabel(){
+  if(_filterMonth!=='all'){
+    var parts=_filterMonth.split('-');
+    return AR_MONTHS[parseInt(parts[1],10)-1]+' '+parts[0];
+  }else if(_filterFrom||_filterTo){
+    return (_filterFrom||'البداية')+' — '+(_filterTo||'النهاية');
+  }
+  return 'كامل الفترة';
+}
+
+
+/* ══ تصدير Excel ══ */
+function exportPageExcel(){
+  var p=pg(curId);if(!p)return;
+  if(!window.XLSX){showToast('⚠️ مكتبة Excel غير محملة','red');return;}
+  var wb=XLSX.utils.book_new();
+  var cData=[['#','جهة العهدة','المبلغ','التاريخ','ملاحظات']];
+  p.custodies.forEach(function(c,i){cData.push([i+1,c.source,c.amount,c.date,c.notes||'']);});
+  var eData=[['#','البيان','المبلغ','التصنيف','التاريخ','ملاحظات']];
+  p.expenses.forEach(function(e,i){eData.push([i+1,e.destination,e.amount,e.category,e.date,e.notes||'']);});
+  XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(cData),'العهد');
+  XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(eData),'المصاريف');
+  XLSX.writeFile(wb,'كشف_'+p.name+'_'+today()+'.xlsx');
+  showToast('✅ تم تصدير Excel','green');
+}
+
+/* ══ استيراد/تصدير .skymokaym ══ */
+function exportData(){
+  var blob=new Blob([JSON.stringify(pages,null,2)],{type:'application/json'});
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='SKY-MOKAYM_'+today()+'.skymokaym';
+  a.click();
+  showToast('✅ تم التصدير','green');
+}
+function importData(){
+  var inp=document.createElement('input');
+  inp.type='file';inp.accept='.skymokaym,.json';
+  inp.onchange=function(){
+    var file=inp.files[0];if(!file)return;
+    var reader=new FileReader();
+    reader.onload=function(e){
+      try{
+        var data=JSON.parse(e.target.result);
+        if(!Array.isArray(data))throw new Error('صيغة غير صحيحة');
+        pages=data;save();showHome();
+        showToast('✅ تم الاستيراد بنجاح','green');
+      }catch(err){showToast('❌ خطأ في الملف: '+err.message,'red');}
+    };
+    reader.readAsText(file);
+  };
+  inp.click();
+}
+
+/* ══ استيراد Excel ══ */
+function triggerImportExcel(){
+  _impParsed={custodies:[],expenses:[]};
+  document.getElementById('importFileName').style.display='none';
+  document.getElementById('importPreviewArea').style.display='none';
+  document.getElementById('importDropZone').style.display='block';
+  document.getElementById('impConfirmBtn').style.display='none';
+  document.getElementById('impCBody').innerHTML='';
+  document.getElementById('impEBody').innerHTML='';
+  document.getElementById('xlImportInput').value='';
+  openModal('ovImportXl');
+}
+function handleXlDrop(ev){
+  ev.preventDefault();
+  document.getElementById('importDropZone').classList.remove('drag-over');
+  var file=ev.dataTransfer.files[0];
+  if(file)_readXlFile(file);
+}
+function handleXlFile(inp){
+  var file=inp.files[0];
+  if(file)_readXlFile(file);
+}
+function _readXlFile(file){
+  if(!window.XLSX){showToast('⚠️ مكتبة Excel غير محملة','red');return;}
+  var reader=new FileReader();
+  reader.onload=function(e){
+    try{
+      var data=new Uint8Array(e.target.result);
+      var wb=XLSX.read(data,{type:'array',cellDates:true});
+      var ws=wb.Sheets[wb.SheetNames[0]];
+      var rows=XLSX.utils.sheet_to_json(ws,{header:1,defval:null,raw:false});
+      _parseXlRows(rows,file.name);
+    }catch(err){showToast('❌ خطأ في قراءة الملف: '+err.message,'red');}
+  };
+  reader.readAsArrayBuffer(file);
+}
+function _parseXlRows(rows,fname){
+  var custodies=[],expenses=[],lastDate=today();
+  function parseAmt(v){if(v===null||v===undefined||v==='')return 0;var n=parseFloat(String(v).replace(/[,،\s]/g,''));return isNaN(n)||n<=0?0:n;}
+  function parseDate(v){
+    if(!v)return null;var s=String(v).trim();if(!s||s==='0')return null;
+    var m=s.match(/^(\d{4})-(\d{2})-(\d{2})/);if(m)return m[1]+'-'+m[2]+'-'+m[3];
+    m=s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);if(m)return m[3]+'-'+m[2].padStart(2,'0')+'-'+m[1].padStart(2,'0');
+    m=s.match(/^(\d{1,2})-(\d{1,2})-(\d{4})/);if(m)return m[3]+'-'+m[2].padStart(2,'0')+'-'+m[1].padStart(2,'0');
+    return null;
+  }
+  function catOf(d){
+    d=(d||'').toLowerCase();
+    if(/وقود|بنزين|ديزل/.test(d))return 'وقود';
+    if(/مياه|ثلج|ماء/.test(d))return 'مياه';
+    if(/دجاج|لحم|خبز|طعام|مطعم|بقالة|ارز|كرك|ببسي|زبده|خروف|مطبخ|ذبح/.test(d))return 'طعام';
+    if(/مغسلة|غسيل|حلاقة/.test(d))return 'خدمات';
+    if(/زيت|صيانة|سيارة|سطحه|ونش|تريلا|فلتر|قطع غيار|إصلاح|اصلاح|كفر/.test(d))return 'معدات';
+    if(/دهان|بوية|بويا/.test(d))return 'دهانات';
+    if(/مشتريات|أغراض|اغراض|مستلزمات|زراعة/.test(d))return 'مستلزمات';
+    if(/ايجار|إيجار|نقل|عمال/.test(d))return 'خدمات';
+    return 'أخرى';
+  }
+  var colDate=0,colPaid=3,colExp=5,colDesc=6,colNotes=7;
+  for(var i=0;i<rows.length;i++){
+    var row=rows[i];if(!row)continue;
+    var dv=parseDate(row[colDate]);if(dv)lastDate=dv;
+    var paid=parseAmt(row[colPaid]),exp=parseAmt(row[colExp]);
+    var desc=String(row[colDesc]||'').trim(),notes=String(row[colNotes]||'').trim();
+    if(/^(column|عمود|بيان|وصف|مصروف|عهد)/i.test(desc))continue;
+    if(paid>0&&desc)custodies.push({source:desc,amount:paid,date:lastDate,notes:notes});
+    if(exp>0)expenses.push({destination:desc||'مصاريف متنوعة',amount:exp,category:catOf(desc),date:lastDate,notes:notes});
+  }
+  _impParsed={custodies:custodies,expenses:expenses};
+  _renderImportPreview(fname);
+}
+function _renderImportPreview(fname){
+  var c=_impParsed.custodies,e=_impParsed.expenses;
+  document.getElementById('importFileNameText').textContent=fname||'';
+  document.getElementById('importFileName').style.display='inline-flex';
+  if(c.length===0&&e.length===0){showToast('⚠️ لم يتم العثور على بيانات','red');return;}
+  document.getElementById('importDropZone').style.display='none';
+  var pa=document.getElementById('importPreviewArea');
+  pa.style.display='flex';
+  var cBody=document.getElementById('impCBody');cBody.innerHTML='';
+  var cTotal=0;
+  c.forEach(function(item,idx){
+    cTotal+=item.amount;
+    var tr=document.createElement('tr');
+    tr.innerHTML='<td><input type="checkbox" class="imp-chk imp-c-chk" data-idx="'+idx+'" checked onchange="_updateImpSummary()"></td>'+
+      '<td>'+_esc(item.source)+'</td>'+
+      '<td style="color:#34d399;font-weight:700">'+item.amount.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td>'+
+      '<td>'+item.date+'</td><td style="color:var(--t3)">'+_esc(item.notes)+'</td>';
+    cBody.appendChild(tr);
+  });
+  document.getElementById('impCBadge').textContent=c.length;
+  document.getElementById('impCTotal').textContent='إجمالي: '+cTotal.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر';
+  var eBody=document.getElementById('impEBody');eBody.innerHTML='';
+  var eTotal=0;
+  e.forEach(function(item,idx){
+    eTotal+=item.amount;
+    var tr=document.createElement('tr');
+    tr.innerHTML='<td><input type="checkbox" class="imp-chk imp-e-chk" data-idx="'+idx+'" checked onchange="_updateImpSummary()"></td>'+
+      '<td>'+_esc(item.destination)+'</td>'+
+      '<td style="color:#f87171;font-weight:700">'+item.amount.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر</td>'+
+      '<td>'+item.date+'</td>'+
+      '<td><span style="font-size:.75rem;padding:2px 8px;border-radius:10px;background:var(--card2);color:var(--t2)">'+item.category+'</span></td>'+
+      '<td style="color:var(--t3)">'+_esc(item.notes)+'</td>';
+    eBody.appendChild(tr);
+  });
+  document.getElementById('impEBadge').textContent=e.length;
+  document.getElementById('impETotal').textContent='إجمالي: '+eTotal.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر';
+  _updateImpSummary();
+  document.getElementById('impConfirmBtn').style.display='inline-flex';
+}
+function _updateImpSummary(){
+  var cChks=document.querySelectorAll('.imp-c-chk:checked');
+  var eChks=document.querySelectorAll('.imp-e-chk:checked');
+  var cTotal=0,eTotal=0;
+  cChks.forEach(function(ch){cTotal+=_impParsed.custodies[parseInt(ch.dataset.idx)].amount;});
+  eChks.forEach(function(ch){eTotal+=_impParsed.expenses[parseInt(ch.dataset.idx)].amount;});
+  document.getElementById('impSumC').textContent=cChks.length;
+  document.getElementById('impSumE').textContent=eChks.length;
+  document.getElementById('impSumCTotal').textContent=cTotal.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر';
+  document.getElementById('impSumETotal').textContent=eTotal.toLocaleString('ar-SA',{minimumFractionDigits:2})+' ر';
+}
+function confirmImport(){
+  var p=pg(curId);if(!p)return;
+  var cChks=document.querySelectorAll('.imp-c-chk:checked');
+  var eChks=document.querySelectorAll('.imp-e-chk:checked');
+  if(cChks.length===0&&eChks.length===0){showToast('⚠️ لم تحدد أي بيانات','red');return;}
+  var maxCid=p.custodies.reduce(function(m,x){return Math.max(m,x.id);},0);
+  var maxEid=p.expenses.reduce(function(m,x){return Math.max(m,x.id);},0);
+  var addedC=0,addedE=0;
+  cChks.forEach(function(ch){
+    var item=_impParsed.custodies[parseInt(ch.dataset.idx)];
+    maxCid++;p.custodies.push({id:maxCid,source:item.source,amount:item.amount,date:item.date,notes:item.notes});addedC++;
+  });
+  eChks.forEach(function(ch){
+    var item=_impParsed.expenses[parseInt(ch.dataset.idx)];
+    maxEid++;p.expenses.push({id:maxEid,destination:item.destination,amount:item.amount,category:item.category,date:item.date,notes:item.notes});addedE++;
+  });
+  markUnsaved();save();buildMonthFilter();closeModal('ovImportXl');renderPerson();
+  var msg='✅ تم الاستيراد: ';
+  if(addedC>0)msg+=addedC+' عهدة ';
+  if(addedE>0)msg+=addedE+' مصروف';
+  showToast(msg,'green');
+}
+
+/* ══ مساعد ══ */
+function _esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+/* ══ حفظ تلقائي ══ */
+function startAutoSave(){setInterval(function(){if(pages.length&&_unsaved)save();},30000);}
+
+/* ══ تشغيل ══ */
+document.addEventListener('DOMContentLoaded',function(){
+  init();
+  startAutoSave();
+  showHome();
+});
+</script>
+</body>
+</html>

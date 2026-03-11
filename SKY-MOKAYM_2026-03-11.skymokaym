@@ -1,0 +1,3770 @@
+[
+  {
+    "id": "khalid",
+    "name": "خالد",
+    "role": "مسؤول المخيم - المخيم خالد",
+    "avatar": "🏕️",
+    "color": "#3b82f6",
+    "custodies": [
+      {
+        "id": 1,
+        "source": "عهده من أبو عمر محوله من أبو مشعل",
+        "amount": 1000,
+        "date": "2025-02-01",
+        "notes": ""
+      },
+      {
+        "id": 2,
+        "source": "عهده من أبو مشعل",
+        "amount": 1000,
+        "date": "2025-02-09",
+        "notes": ""
+      },
+      {
+        "id": 3,
+        "source": "عهده من أبو مشعل",
+        "amount": 1000,
+        "date": "2025-02-12",
+        "notes": ""
+      },
+      {
+        "id": 4,
+        "source": "عهده من أبو مشعل",
+        "amount": 2218,
+        "date": "2025-02-14",
+        "notes": ""
+      },
+      {
+        "id": 5,
+        "source": "عهده من ابو عمر",
+        "amount": 3132,
+        "date": "2026-03-10",
+        "notes": "محوله من ابو مشعل"
+      }
+    ],
+    "expenses": [
+      {
+        "id": 1,
+        "destination": "وايت مياة 2/3 الساعة 4:55",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2025-02-03",
+        "notes": ""
+      },
+      {
+        "id": 2,
+        "destination": "وايت مياة 2/4 الساعة 3:45",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2025-02-04",
+        "notes": ""
+      },
+      {
+        "id": 3,
+        "destination": "خبز",
+        "amount": 10,
+        "category": "طعام",
+        "date": "2025-02-04",
+        "notes": ""
+      },
+      {
+        "id": 4,
+        "destination": "اجار شانيور",
+        "amount": 10,
+        "category": "خدمات",
+        "date": "2025-02-04",
+        "notes": ""
+      },
+      {
+        "id": 5,
+        "destination": "دسكات صنفرة 3",
+        "amount": 15,
+        "category": "معدات",
+        "date": "2025-02-04",
+        "notes": ""
+      },
+      {
+        "id": 6,
+        "destination": "وايت مياة 2/5 الساعة 4:50",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2025-02-05",
+        "notes": ""
+      },
+      {
+        "id": 7,
+        "destination": "دجاجة للعمال",
+        "amount": 17,
+        "category": "طعام",
+        "date": "2025-02-05",
+        "notes": ""
+      },
+      {
+        "id": 8,
+        "destination": "خبز",
+        "amount": 5,
+        "category": "طعام",
+        "date": "2025-02-05",
+        "notes": ""
+      },
+      {
+        "id": 9,
+        "destination": "أغراض الأسبوع للمخيم",
+        "amount": 200,
+        "category": "مستلزمات",
+        "date": "2025-02-05",
+        "notes": ""
+      },
+      {
+        "id": 10,
+        "destination": "وايت مياة 2/7 الساعة 3:25",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2025-02-07",
+        "notes": ""
+      },
+      {
+        "id": 11,
+        "destination": "وايت مياة 2/8 الساعة 2:45",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2025-02-08",
+        "notes": ""
+      },
+      {
+        "id": 12,
+        "destination": "أغراض فطور 2/8 الساعة 9:25",
+        "amount": 53,
+        "category": "طعام",
+        "date": "2025-02-08",
+        "notes": ""
+      },
+      {
+        "id": 13,
+        "destination": "بنزين 2/9 الساعة 1:15",
+        "amount": 70,
+        "category": "وقود",
+        "date": "2025-02-09",
+        "notes": ""
+      },
+      {
+        "id": 14,
+        "destination": "أغراض دهان للكرفان الكبير",
+        "amount": 1100,
+        "category": "دهانات",
+        "date": "2025-02-09",
+        "notes": ""
+      },
+      {
+        "id": 15,
+        "destination": "فوم للكرفان",
+        "amount": 80,
+        "category": "مستلزمات",
+        "date": "2025-02-09",
+        "notes": ""
+      },
+      {
+        "id": 16,
+        "destination": "خبز للعمال",
+        "amount": 10,
+        "category": "طعام",
+        "date": "2025-02-09",
+        "notes": ""
+      },
+      {
+        "id": 17,
+        "destination": "بصل",
+        "amount": 15,
+        "category": "طعام",
+        "date": "2025-02-09",
+        "notes": ""
+      },
+      {
+        "id": 18,
+        "destination": "صنفرة",
+        "amount": 35,
+        "category": "معدات",
+        "date": "2025-02-09",
+        "notes": ""
+      },
+      {
+        "id": 19,
+        "destination": "وايت مياة 2/10 الساعة 12:15",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2025-02-10",
+        "notes": ""
+      },
+      {
+        "id": 20,
+        "destination": "خبز",
+        "amount": 10,
+        "category": "طعام",
+        "date": "2025-02-10",
+        "notes": ""
+      },
+      {
+        "id": 21,
+        "destination": "مغسلة",
+        "amount": 35,
+        "category": "خدمات",
+        "date": "2025-02-10",
+        "notes": ""
+      },
+      {
+        "id": 22,
+        "destination": "غاز",
+        "amount": 93,
+        "category": "مستلزمات",
+        "date": "2025-02-10",
+        "notes": ""
+      },
+      {
+        "id": 23,
+        "destination": "وايت مياة 2/11 الساعة 2:45",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2025-02-11",
+        "notes": ""
+      },
+      {
+        "id": 24,
+        "destination": "أغراض الأسبوع",
+        "amount": 110,
+        "category": "مستلزمات",
+        "date": "2025-02-11",
+        "notes": ""
+      },
+      {
+        "id": 25,
+        "destination": "قوارير ماء للمطبخ",
+        "amount": 60,
+        "category": "مياه",
+        "date": "2025-02-11",
+        "notes": ""
+      },
+      {
+        "id": 26,
+        "destination": "تصليح كفرات الوايت",
+        "amount": 100,
+        "category": "معدات",
+        "date": "2025-02-11",
+        "notes": ""
+      },
+      {
+        "id": 27,
+        "destination": "أغراض سباكة ( للمغاسل )",
+        "amount": 20,
+        "category": "خدمات",
+        "date": "2025-02-11",
+        "notes": ""
+      },
+      {
+        "id": 28,
+        "destination": "وايت مياة 2/12 الساعة 5:30",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2025-02-12",
+        "notes": ""
+      },
+      {
+        "id": 29,
+        "destination": "خبز",
+        "amount": 5,
+        "category": "طعام",
+        "date": "2025-02-12",
+        "notes": ""
+      },
+      {
+        "id": 30,
+        "destination": "ببسي يوم الخميس 12/2",
+        "amount": 30,
+        "category": "طعام",
+        "date": "2025-02-12",
+        "notes": ""
+      },
+      {
+        "id": 31,
+        "destination": "أغراض بقالة للعشاء",
+        "amount": 45,
+        "category": "طعام",
+        "date": "2025-02-12",
+        "notes": ""
+      },
+      {
+        "id": 32,
+        "destination": "خبز",
+        "amount": 10,
+        "category": "طعام",
+        "date": "2025-02-12",
+        "notes": ""
+      },
+      {
+        "id": 33,
+        "destination": "وايت ماء 14/2",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2025-02-14",
+        "notes": ""
+      },
+      {
+        "id": 34,
+        "destination": "بطاقة نت",
+        "amount": 115,
+        "category": "خدمات",
+        "date": "2025-02-14",
+        "notes": ""
+      },
+      {
+        "id": 35,
+        "destination": "غيار زيت",
+        "amount": 65,
+        "category": "معدات",
+        "date": "2025-02-14",
+        "notes": ""
+      },
+      {
+        "id": 36,
+        "destination": "وايت ماء 15/2",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2025-02-15",
+        "notes": ""
+      },
+      {
+        "id": 37,
+        "destination": "خبز",
+        "amount": 10,
+        "category": "طعام",
+        "date": "2025-02-15",
+        "notes": ""
+      },
+      {
+        "id": 38,
+        "destination": "علبة بويا - برميل تنر",
+        "amount": 450,
+        "category": "دهانات",
+        "date": "2025-02-15",
+        "notes": ""
+      },
+      {
+        "id": 39,
+        "destination": "خبز",
+        "amount": 10,
+        "category": "طعام",
+        "date": "2025-02-15",
+        "notes": ""
+      },
+      {
+        "id": 40,
+        "destination": "دجاجة للعمال",
+        "amount": 17,
+        "category": "طعام",
+        "date": "2025-02-15",
+        "notes": ""
+      },
+      {
+        "id": 41,
+        "destination": "وايت ماء 17/2",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2025-02-17",
+        "notes": ""
+      },
+      {
+        "id": 42,
+        "destination": "خبز",
+        "amount": 5,
+        "category": "طعام",
+        "date": "2025-02-17",
+        "notes": ""
+      },
+      {
+        "id": 43,
+        "destination": "وايت ماء 18/2",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2025-02-18",
+        "notes": ""
+      },
+      {
+        "id": 44,
+        "destination": "خبز",
+        "amount": 5,
+        "category": "طعام",
+        "date": "2025-02-18",
+        "notes": ""
+      },
+      {
+        "id": 45,
+        "destination": "تونر للمطبخ والمستودع",
+        "amount": 50,
+        "category": "مستلزمات",
+        "date": "2025-02-18",
+        "notes": ""
+      },
+      {
+        "id": 46,
+        "destination": "ايجار صاروخ وديسك حديد",
+        "amount": 30,
+        "category": "خدمات",
+        "date": "2025-02-18",
+        "notes": ""
+      },
+      {
+        "id": 48,
+        "destination": "طماطم بطاطس بصل ثوم خيار ....",
+        "amount": 100,
+        "category": "طعام",
+        "date": "2025-02-19",
+        "notes": ""
+      },
+      {
+        "id": 50,
+        "destination": "وايت ماء 19/2",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2025-02-19",
+        "notes": ""
+      },
+      {
+        "id": 51,
+        "destination": "خبز",
+        "amount": 10,
+        "category": "طعام",
+        "date": "2025-02-19",
+        "notes": ""
+      },
+      {
+        "id": 52,
+        "destination": "وايت ماء 20/2",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2025-02-20",
+        "notes": ""
+      },
+      {
+        "id": 53,
+        "destination": "خبز",
+        "amount": 5,
+        "category": "طعام",
+        "date": "2025-02-20",
+        "notes": ""
+      },
+      {
+        "id": 54,
+        "destination": "وايت ماء 21/2",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2025-02-21",
+        "notes": ""
+      },
+      {
+        "id": 55,
+        "destination": "خبز",
+        "amount": 5,
+        "category": "طعام",
+        "date": "2025-02-21",
+        "notes": ""
+      },
+      {
+        "id": 56,
+        "destination": "ديزل",
+        "amount": 70,
+        "category": "وقود",
+        "date": "2025-02-21",
+        "notes": ""
+      },
+      {
+        "id": 57,
+        "destination": "وايت ماء 22/2",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2025-02-22",
+        "notes": ""
+      },
+      {
+        "id": 58,
+        "destination": "مروحه للمكيف الطاقة الشمسية",
+        "amount": 20,
+        "category": "مستلزمات",
+        "date": "2025-02-22",
+        "notes": ""
+      },
+      {
+        "id": 59,
+        "destination": "وايت ماء 23/2",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2025-02-23",
+        "notes": ""
+      },
+      {
+        "id": 60,
+        "destination": "خبز",
+        "amount": 5,
+        "category": "طعام",
+        "date": "2025-02-23",
+        "notes": ""
+      },
+      {
+        "id": 62,
+        "destination": "أسطوانة دسك قطع حديد مكيف البوابة",
+        "amount": 5,
+        "category": "معدات",
+        "date": "2026-02-25",
+        "notes": ""
+      },
+      {
+        "id": 63,
+        "destination": "رد ماء وايت",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2026-02-25",
+        "notes": ""
+      },
+      {
+        "id": 65,
+        "destination": "قوارير ماء شرب",
+        "amount": 60,
+        "category": "مياه",
+        "date": "2026-02-26",
+        "notes": ""
+      },
+      {
+        "id": 66,
+        "destination": "تعبئة دبة غاز",
+        "amount": 62,
+        "category": "خدمات",
+        "date": "2026-02-26",
+        "notes": ""
+      },
+      {
+        "id": 67,
+        "destination": "خبز وزبادي",
+        "amount": 10,
+        "category": "مستلزمات",
+        "date": "2026-02-26",
+        "notes": ""
+      },
+      {
+        "id": 68,
+        "destination": "رد ماء وايت",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2026-02-26",
+        "notes": ""
+      },
+      {
+        "id": 69,
+        "destination": "حجر واسمنت ورمل",
+        "amount": 900,
+        "category": "مستلزمات",
+        "date": "2026-02-27",
+        "notes": ""
+      },
+      {
+        "id": 70,
+        "destination": "خبز",
+        "amount": 5,
+        "category": "طعام",
+        "date": "2026-02-27",
+        "notes": ""
+      },
+      {
+        "id": 71,
+        "destination": "ذبح خروف والمطعم للحفلة",
+        "amount": 300,
+        "category": "طعام",
+        "date": "2026-02-28",
+        "notes": ""
+      },
+      {
+        "id": 72,
+        "destination": "اجرة ماكينة لحام للمكيفات",
+        "amount": 15,
+        "category": "معدات",
+        "date": "2026-02-28",
+        "notes": ""
+      },
+      {
+        "id": 73,
+        "destination": "رد ماء وايت",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2026-02-28",
+        "notes": ""
+      },
+      {
+        "id": 74,
+        "destination": "كيس ارز",
+        "amount": 40,
+        "category": "طعام",
+        "date": "2026-03-02",
+        "notes": ""
+      },
+      {
+        "id": 75,
+        "destination": "خبز",
+        "amount": 5,
+        "category": "طعام",
+        "date": "2026-03-02",
+        "notes": ""
+      },
+      {
+        "id": 76,
+        "destination": "رد ماء وايت",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2026-03-02",
+        "notes": ""
+      },
+      {
+        "id": 77,
+        "destination": "رد ماء وايت",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2026-03-03",
+        "notes": ""
+      },
+      {
+        "id": 78,
+        "destination": "خبز",
+        "amount": 5,
+        "category": "طعام",
+        "date": "2026-03-03",
+        "notes": ""
+      },
+      {
+        "id": 79,
+        "destination": "رد ماء وايت",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2026-03-04",
+        "notes": ""
+      },
+      {
+        "id": 80,
+        "destination": "خبز",
+        "amount": 5,
+        "category": "طعام",
+        "date": "2026-03-04",
+        "notes": ""
+      },
+      {
+        "id": 81,
+        "destination": "ببسي للعزيمة",
+        "amount": 20,
+        "category": "طعام",
+        "date": "2026-03-05",
+        "notes": ""
+      },
+      {
+        "id": 82,
+        "destination": "ماء ولبن وقشطة",
+        "amount": 72,
+        "category": "طعام",
+        "date": "2026-03-07",
+        "notes": ""
+      },
+      {
+        "id": 83,
+        "destination": "تعبئة غاز",
+        "amount": 62,
+        "category": "خدمات",
+        "date": "2026-03-07",
+        "notes": ""
+      },
+      {
+        "id": 84,
+        "destination": "جريش ولبن",
+        "amount": 25,
+        "category": "طعام",
+        "date": "2026-03-07",
+        "notes": ""
+      },
+      {
+        "id": 85,
+        "destination": "خضار",
+        "amount": 48,
+        "category": "طعام",
+        "date": "2026-03-07",
+        "notes": ""
+      },
+      {
+        "id": 86,
+        "destination": "مغسلة",
+        "amount": 45,
+        "category": "خدمات",
+        "date": "2026-03-07",
+        "notes": ""
+      },
+      {
+        "id": 87,
+        "destination": "مطعم",
+        "amount": 300,
+        "category": "طعام",
+        "date": "2026-03-07",
+        "notes": ""
+      },
+      {
+        "id": 88,
+        "destination": "رد ماء وايت",
+        "amount": 100,
+        "category": "مياه",
+        "date": "2026-03-07",
+        "notes": ""
+      },
+      {
+        "id": 132,
+        "destination": "خبز",
+        "amount": 5,
+        "category": "طعام",
+        "date": "2026-02-01",
+        "notes": ""
+      },
+      {
+        "id": 133,
+        "destination": "دسك سلك صنفره للوري",
+        "amount": 20,
+        "category": "معدات",
+        "date": "2026-02-01",
+        "notes": ""
+      },
+      {
+        "id": 134,
+        "destination": "بويه وتونر",
+        "amount": 870,
+        "category": "دهانات",
+        "date": "2026-02-01",
+        "notes": ""
+      },
+      {
+        "id": 135,
+        "destination": "خبز",
+        "amount": 5,
+        "category": "طعام",
+        "date": "2026-02-01",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "thamer",
+    "name": "ثامر",
+    "role": "مسؤول المخيم - الجريد",
+    "avatar": "⛺",
+    "color": "#10b981",
+    "custodies": [
+      {
+        "source": "عهده",
+        "date": "2025-06-09",
+        "notes": "",
+        "id": 1,
+        "amount": 2000
+      },
+      {
+        "source": "عهده مشتريات",
+        "date": "2025-06-11",
+        "notes": "عهده من أبو عمر - صندوق",
+        "id": 2,
+        "amount": 1000
+      },
+      {
+        "source": "عهده",
+        "date": "2025-08-09",
+        "notes": "",
+        "id": 3,
+        "amount": 2000
+      },
+      {
+        "source": "عهده من أبو مشعل",
+        "date": "2025-08-10",
+        "notes": "عهده من أبو مشعل",
+        "id": 4,
+        "amount": 2000
+      },
+      {
+        "source": "فرق عهده ثامر من أبو مشعل",
+        "date": "2025-08-10",
+        "notes": "عهده من أبو مشعل",
+        "id": 5,
+        "amount": 1474
+      },
+      {
+        "source": "عهده",
+        "date": "2025-08-24",
+        "notes": "",
+        "id": 6,
+        "amount": 1000
+      },
+      {
+        "source": "عهده",
+        "date": "2025-08-24",
+        "notes": "",
+        "id": 7,
+        "amount": 600
+      },
+      {
+        "source": "عهده",
+        "date": "2025-08-27",
+        "notes": "",
+        "id": 8,
+        "amount": 2000
+      },
+      {
+        "source": "عهده",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 9,
+        "amount": 1419
+      },
+      {
+        "source": "عهده من أبو عمر",
+        "date": "2025-09-24",
+        "notes": "عهده من أبو عمر",
+        "id": 10,
+        "amount": 2151
+      },
+      {
+        "source": "عهده جديده من أبو مشعل",
+        "date": "2025-09-27",
+        "notes": "عهده جديده من أبو مشعل",
+        "id": 11,
+        "amount": 2000
+      },
+      {
+        "source": "عهده من أبو عمر",
+        "date": "2025-09-28",
+        "notes": "عهده من أبو عمر",
+        "id": 12,
+        "amount": 1500
+      },
+      {
+        "source": "عهده مشتريات",
+        "date": "2025-10-19",
+        "notes": "عهده من أبو عمر",
+        "id": 13,
+        "amount": 1500
+      },
+      {
+        "source": "عهده مشتريات",
+        "date": "2025-10-20",
+        "notes": "عهده من أبو عمر",
+        "id": 14,
+        "amount": 1500
+      },
+      {
+        "source": "عهده + فرق عهده سابقة",
+        "date": "2025-10-21",
+        "notes": "عهده من أبو عمر",
+        "id": 15,
+        "amount": 2074
+      },
+      {
+        "source": "عهده مشتريات",
+        "date": "2025-10-21",
+        "notes": "عهده من أبو عمر",
+        "id": 16,
+        "amount": 2700
+      },
+      {
+        "source": "عهده مشتريات",
+        "date": "2025-10-21",
+        "notes": "عهده من أبو عمر",
+        "id": 17,
+        "amount": 900
+      },
+      {
+        "source": "عهده مشتريات",
+        "date": "2025-11-05",
+        "notes": "عهده من أبو عمر",
+        "id": 18,
+        "amount": 1300
+      },
+      {
+        "source": "عهده مشتريات",
+        "date": "2025-11-05",
+        "notes": "عهده من أبو عمر",
+        "id": 19,
+        "amount": 500
+      },
+      {
+        "source": "عهده مشتريات",
+        "date": "2025-11-05",
+        "notes": "عهده من أبو عمر",
+        "id": 20,
+        "amount": 1500
+      },
+      {
+        "source": "عهده مشتريات",
+        "date": "2025-11-05",
+        "notes": "عهده من أبو مشعل",
+        "id": 21,
+        "amount": 4000
+      },
+      {
+        "source": "عهده مشتريات",
+        "date": "2025-11-05",
+        "notes": "عهده من أبو عمر",
+        "id": 22,
+        "amount": 1000
+      },
+      {
+        "source": "عهده مشتريات",
+        "date": "2025-11-05",
+        "notes": "عهده من أبو عمر",
+        "id": 23,
+        "amount": 1500
+      },
+      {
+        "source": "عهده مشتريات",
+        "date": "2025-11-05",
+        "notes": "عهده من أبو عمر",
+        "id": 24,
+        "amount": 2000
+      },
+      {
+        "source": "15/11/2025",
+        "date": "2025-11-15",
+        "notes": "عهده من أبو عمر",
+        "id": 25,
+        "amount": 2000
+      },
+      {
+        "source": "17/11/2025",
+        "date": "2025-11-17",
+        "notes": "عهده من أبو عمر",
+        "id": 26,
+        "amount": 2800
+      },
+      {
+        "source": "",
+        "date": "2025-11-17",
+        "notes": "عهده من أبو مشعل",
+        "id": 27,
+        "amount": 6000
+      },
+      {
+        "source": "عهده مشتريات",
+        "date": "2025-11-20",
+        "notes": "عهده من أبو عمر",
+        "id": 28,
+        "amount": 500
+      },
+      {
+        "source": "عهده من علي المهيدب",
+        "date": "2025-12-11",
+        "notes": "",
+        "id": 29,
+        "amount": 1000
+      },
+      {
+        "source": "عهده من أبو عمر  1000 عهده + 1033 فرق عهده",
+        "date": "2025-12-15",
+        "notes": "26/11/2025",
+        "id": 30,
+        "amount": 2033
+      },
+      {
+        "source": "عهده من أبو عمر",
+        "date": "2025-12-15",
+        "notes": "2025-01-12 00:00:00",
+        "id": 31,
+        "amount": 1000
+      },
+      {
+        "source": "عهده من أبو عمر",
+        "date": "2025-12-15",
+        "notes": "2025-11-12 00:00:00",
+        "id": 32,
+        "amount": 1000
+      },
+      {
+        "source": "عهده من أبو عمر",
+        "date": "2025-12-15",
+        "notes": "13/12/2025",
+        "id": 33,
+        "amount": 1000
+      },
+      {
+        "source": "عهده أبو مشعل لثامر",
+        "date": "2025-12-17",
+        "notes": "16/12/2025",
+        "id": 34,
+        "amount": 3500
+      },
+      {
+        "source": "عهده أبو مشعل لثامر",
+        "date": "2025-12-17",
+        "notes": "18/12/2025",
+        "id": 35,
+        "amount": 3000
+      },
+      {
+        "source": "عهده من أبو عمر",
+        "date": "2025-12-17",
+        "notes": "21/12/2025",
+        "id": 36,
+        "amount": 1000
+      },
+      {
+        "source": "عهده من أبو عمر",
+        "date": "2025-12-17",
+        "notes": "25/12/2025",
+        "id": 37,
+        "amount": 1500
+      },
+      {
+        "source": "عهده من أبو عمر",
+        "date": "2025-12-17",
+        "notes": "30/12/2025",
+        "id": 38,
+        "amount": 2000
+      },
+      {
+        "source": "عهده من أبو عمر",
+        "date": "2025-12-17",
+        "notes": "2026-10-01 00:00:00",
+        "id": 39,
+        "amount": 1500
+      },
+      {
+        "source": "عهده من أبو عمر",
+        "date": "2025-12-17",
+        "notes": "2026-10-01 00:00:00",
+        "id": 40,
+        "amount": 1000
+      },
+      {
+        "source": "عهده أبو مشعل لثامر",
+        "date": "2025-12-17",
+        "notes": "15/1/2025",
+        "id": 41,
+        "amount": 3500
+      },
+      {
+        "id": 42,
+        "source": "عهده من أبو مشعل",
+        "amount": 1000,
+        "date": "2026-02-05",
+        "notes": ""
+      },
+      {
+        "id": 43,
+        "source": "عهده من أبو عمر",
+        "amount": 1000,
+        "date": "2026-02-09",
+        "notes": ""
+      },
+      {
+        "id": 44,
+        "source": "عهده من أبو عمر",
+        "amount": 1500,
+        "date": "2026-02-09",
+        "notes": ""
+      },
+      {
+        "id": 45,
+        "source": "عهده من أبو مشعل",
+        "amount": 1000,
+        "date": "2026-02-09",
+        "notes": ""
+      },
+      {
+        "id": 46,
+        "source": "عهده من أبو مشعل",
+        "amount": 1000,
+        "date": "2026-03-10",
+        "notes": "عهده في المخيم"
+      },
+      {
+        "id": 47,
+        "source": "عهده من أبو عمر",
+        "amount": 1500,
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 48,
+        "source": "عهده من أبو عمر",
+        "amount": 4000,
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 49,
+        "source": "عهده من أبو عمر",
+        "amount": 3570,
+        "date": "2026-03-10",
+        "notes": ""
+      }
+    ],
+    "expenses": [
+      {
+        "destination": "كفرات القلص",
+        "category": "معدات",
+        "date": "2025-01-09",
+        "notes": "",
+        "id": 1,
+        "amount": 1080
+      },
+      {
+        "destination": "صيانة لوري",
+        "category": "معدات",
+        "date": "2025-09-11",
+        "notes": "تحويل لفيصل منيف",
+        "id": 2,
+        "amount": 1000
+      },
+      {
+        "destination": "صيانة لوري",
+        "category": "معدات",
+        "date": "2025-09-11",
+        "notes": "تحويل لفيصل منيف",
+        "id": 3,
+        "amount": 600
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 4,
+        "amount": 218
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 5,
+        "amount": 216
+      },
+      {
+        "destination": "تركيب كفرات",
+        "category": "معدات",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 6,
+        "amount": 300
+      },
+      {
+        "destination": "تركيب اساتك",
+        "category": "أخرى",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 7,
+        "amount": 170
+      },
+      {
+        "destination": "ديزل مخيم",
+        "category": "وقود",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 8,
+        "amount": 1000
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 9,
+        "amount": 216
+      },
+      {
+        "destination": "شريحه خالد",
+        "category": "أخرى",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 10,
+        "amount": 28
+      },
+      {
+        "destination": "تصليح كفر",
+        "category": "معدات",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 11,
+        "amount": 10
+      },
+      {
+        "destination": "مشتريات سدير",
+        "category": "مستلزمات",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 12,
+        "amount": 28
+      },
+      {
+        "destination": "مشتريات سدير",
+        "category": "مستلزمات",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 13,
+        "amount": 740
+      },
+      {
+        "destination": "مشتريات سدير",
+        "category": "مستلزمات",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 14,
+        "amount": 197.21
+      },
+      {
+        "destination": "مشتريات سدير",
+        "category": "مستلزمات",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 15,
+        "amount": 965
+      },
+      {
+        "destination": "فحص ورشة 1",
+        "category": "أخرى",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 16,
+        "amount": 200
+      },
+      {
+        "destination": "وقود لوري",
+        "category": "وقود",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 17,
+        "amount": 300
+      },
+      {
+        "destination": "غسيل اللوري",
+        "category": "خدمات",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 18,
+        "amount": 100
+      },
+      {
+        "destination": "كراتين ماء",
+        "category": "مياه",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 19,
+        "amount": 100
+      },
+      {
+        "destination": "مصروف غداء",
+        "category": "طعام",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 20,
+        "amount": 100
+      },
+      {
+        "destination": "مصروف غداء",
+        "category": "طعام",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 21,
+        "amount": 100
+      },
+      {
+        "destination": "عدد 2 دريل",
+        "category": "أخرى",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 22,
+        "amount": 200
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 23,
+        "amount": 116
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 24,
+        "amount": 173
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 25,
+        "amount": 209
+      },
+      {
+        "destination": "غداء عمال",
+        "category": "طعام",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 26,
+        "amount": 163
+      },
+      {
+        "destination": "مصروف مخيم",
+        "category": "أخرى",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 27,
+        "amount": 49
+      },
+      {
+        "destination": "غداء عمال",
+        "category": "طعام",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 28,
+        "amount": 14
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 29,
+        "amount": 191
+      },
+      {
+        "destination": "غسيل خيام",
+        "category": "خدمات",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 30,
+        "amount": 250
+      },
+      {
+        "destination": "كراتين ماء",
+        "category": "مياه",
+        "date": "2025-09-11",
+        "notes": "",
+        "id": 31,
+        "amount": 100
+      },
+      {
+        "destination": "زيت سيارة",
+        "category": "معدات",
+        "date": "2025-09-24",
+        "notes": "",
+        "id": 32,
+        "amount": 160
+      },
+      {
+        "destination": "غسيل",
+        "category": "خدمات",
+        "date": "2025-09-24",
+        "notes": "",
+        "id": 33,
+        "amount": 20
+      },
+      {
+        "destination": "أغراض المخيم",
+        "category": "مستلزمات",
+        "date": "2025-09-24",
+        "notes": "",
+        "id": 34,
+        "amount": 402
+      },
+      {
+        "destination": "تصليح شكمان",
+        "category": "أخرى",
+        "date": "2025-09-24",
+        "notes": "",
+        "id": 35,
+        "amount": 200
+      },
+      {
+        "destination": "لوري + لكسير + قطع",
+        "category": "معدات",
+        "date": "2025-09-24",
+        "notes": "",
+        "id": 36,
+        "amount": 623
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-09-24",
+        "notes": "",
+        "id": 37,
+        "amount": 215
+      },
+      {
+        "destination": "شحن شريحه خالد",
+        "category": "أخرى",
+        "date": "2025-09-24",
+        "notes": "",
+        "id": 38,
+        "amount": 115
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-09-27",
+        "notes": "",
+        "id": 39,
+        "amount": 166
+      },
+      {
+        "destination": "ذراع دركسون ايسوزو",
+        "category": "أخرى",
+        "date": "2025-09-27",
+        "notes": "",
+        "id": 40,
+        "amount": 130
+      },
+      {
+        "destination": "بقالة",
+        "category": "طعام",
+        "date": "2025-09-27",
+        "notes": "",
+        "id": 41,
+        "amount": 42
+      },
+      {
+        "destination": "أدوات كهرباء",
+        "category": "معدات",
+        "date": "2025-09-27",
+        "notes": "",
+        "id": 42,
+        "amount": 90
+      },
+      {
+        "destination": "أدوات سباكة",
+        "category": "أخرى",
+        "date": "2025-09-27",
+        "notes": "",
+        "id": 43,
+        "amount": 43
+      },
+      {
+        "destination": "مشتريات سدير",
+        "category": "مستلزمات",
+        "date": "2025-09-27",
+        "notes": "",
+        "id": 44,
+        "amount": 165.24
+      },
+      {
+        "destination": "قطع غيار اللوري",
+        "category": "معدات",
+        "date": "2025-09-27",
+        "notes": "",
+        "id": 45,
+        "amount": 300
+      },
+      {
+        "destination": "لفه اسلاك",
+        "category": "أخرى",
+        "date": "2025-09-27",
+        "notes": "",
+        "id": 46,
+        "amount": 275
+      },
+      {
+        "destination": "اصلاح كفر",
+        "category": "معدات",
+        "date": "2025-09-27",
+        "notes": "",
+        "id": 47,
+        "amount": 35
+      },
+      {
+        "destination": "مصاريف مخيم",
+        "category": "أخرى",
+        "date": "2025-09-27",
+        "notes": "",
+        "id": 48,
+        "amount": 225
+      },
+      {
+        "destination": "فلاتر مكينة",
+        "category": "أخرى",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 49,
+        "amount": 465
+      },
+      {
+        "destination": "زيت مكينة المولد",
+        "category": "معدات",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 50,
+        "amount": 296
+      },
+      {
+        "destination": "ذراع دركسون ايسوزو",
+        "category": "أخرى",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 51,
+        "amount": 100
+      },
+      {
+        "destination": "تصليح ايسوزو",
+        "category": "أخرى",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 52,
+        "amount": 120
+      },
+      {
+        "destination": "وقود لوري",
+        "category": "وقود",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 53,
+        "amount": 150
+      },
+      {
+        "destination": "بوية",
+        "category": "دهانات",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 54,
+        "amount": 415
+      },
+      {
+        "destination": "ماء + أغراض",
+        "category": "مياه",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 55,
+        "amount": 375
+      },
+      {
+        "destination": "حداده بيت الشعر",
+        "category": "أخرى",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 56,
+        "amount": 400
+      },
+      {
+        "destination": "سيلكون",
+        "category": "أخرى",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 57,
+        "amount": 25
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 58,
+        "amount": 150
+      },
+      {
+        "destination": "وق",
+        "category": "أخرى",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 59,
+        "amount": 219
+      },
+      {
+        "destination": "أغراض الخيمة عمران",
+        "category": "مستلزمات",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 60,
+        "amount": 56
+      },
+      {
+        "destination": "تيب",
+        "category": "أخرى",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 61,
+        "amount": 75
+      },
+      {
+        "destination": "سيلكون",
+        "category": "أخرى",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 62,
+        "amount": 25
+      },
+      {
+        "destination": "سكر",
+        "category": "أخرى",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 63,
+        "amount": 42
+      },
+      {
+        "destination": "وايت ماء",
+        "category": "مياه",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 64,
+        "amount": 200
+      },
+      {
+        "destination": "دجاج",
+        "category": "طعام",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 65,
+        "amount": 17
+      },
+      {
+        "destination": "خبز",
+        "category": "طعام",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 66,
+        "amount": 57
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 67,
+        "amount": 150
+      },
+      {
+        "destination": "بطارية مولد",
+        "category": "معدات",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 68,
+        "amount": 290
+      },
+      {
+        "destination": "دجاج",
+        "category": "طعام",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 69,
+        "amount": 20
+      },
+      {
+        "destination": "تنر + مستلزمات",
+        "category": "مستلزمات",
+        "date": "2025-09-28",
+        "notes": "",
+        "id": 70,
+        "amount": 158
+      },
+      {
+        "destination": "ديزل الوايت",
+        "category": "وقود",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 71,
+        "amount": 300
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 72,
+        "amount": 150
+      },
+      {
+        "destination": "وايت ماء",
+        "category": "مياه",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 73,
+        "amount": 100
+      },
+      {
+        "destination": "دجاج + أغراض المخيم",
+        "category": "طعام",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 74,
+        "amount": 125
+      },
+      {
+        "destination": "غيار زيت سيارة أبو إبراهيم",
+        "category": "معدات",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 75,
+        "amount": 199
+      },
+      {
+        "destination": "شراء دفاع ماء",
+        "category": "مياه",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 76,
+        "amount": 700
+      },
+      {
+        "destination": "عربون ستارة بتوجيه أبو فهد",
+        "category": "أخرى",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 77,
+        "amount": 500
+      },
+      {
+        "destination": "قيمة شراء راوية",
+        "category": "أخرى",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 78,
+        "amount": 1150
+      },
+      {
+        "destination": "أغراض للعمال",
+        "category": "مستلزمات",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 79,
+        "amount": 702.64
+      },
+      {
+        "destination": "خضار",
+        "category": "طعام",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 80,
+        "amount": 107
+      },
+      {
+        "destination": "شحن بطاقة خالد",
+        "category": "أخرى",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 81,
+        "amount": 115
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 82,
+        "amount": 210
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 83,
+        "amount": 160
+      },
+      {
+        "destination": "أغراض تنر ومستلزمات",
+        "category": "مستلزمات",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 84,
+        "amount": 183
+      },
+      {
+        "destination": "برميل بلاستيك",
+        "category": "أخرى",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 85,
+        "amount": 50
+      },
+      {
+        "destination": "2سيفون للايسوزو",
+        "category": "أخرى",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 86,
+        "amount": 55
+      },
+      {
+        "destination": "بنشر",
+        "category": "أخرى",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 87,
+        "amount": 20
+      },
+      {
+        "destination": "غيار زيت اسوزو",
+        "category": "معدات",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 88,
+        "amount": 105
+      },
+      {
+        "destination": "وقود ماطور الماء",
+        "category": "وقود",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 89,
+        "amount": 30
+      },
+      {
+        "destination": "اصلاح تانكي اللوري",
+        "category": "معدات",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 90,
+        "amount": 450
+      },
+      {
+        "destination": "خبز",
+        "category": "طعام",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 91,
+        "amount": 45
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 92,
+        "amount": 215
+      },
+      {
+        "destination": "",
+        "category": "أخرى",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 93,
+        "amount": 30
+      },
+      {
+        "destination": "بخاخات + غراء",
+        "category": "أخرى",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 94,
+        "amount": 160
+      },
+      {
+        "destination": "قطع غيار مكينة",
+        "category": "أخرى",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 95,
+        "amount": 135
+      },
+      {
+        "destination": "اصلاح مكينة صغيرة اس تي سي",
+        "category": "أخرى",
+        "date": "2025-10-21",
+        "notes": "",
+        "id": 96,
+        "amount": 50
+      },
+      {
+        "destination": "ملابس العامل",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 97,
+        "amount": 55
+      },
+      {
+        "destination": "ثياب للعامل",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 98,
+        "amount": 300
+      },
+      {
+        "destination": "سلك شايك + صنفرة + فرش",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 99,
+        "amount": 97
+      },
+      {
+        "destination": "سطحة ايسوزو لسدير",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 100,
+        "amount": 200
+      },
+      {
+        "destination": "غاز",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 101,
+        "amount": 116
+      },
+      {
+        "destination": "كفرات الوايت الصغير",
+        "category": "مياه",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 102,
+        "amount": 600
+      },
+      {
+        "destination": "رش رمل",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 103,
+        "amount": 50
+      },
+      {
+        "destination": "قطع غيار اللوري",
+        "category": "معدات",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 104,
+        "amount": 250
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 105,
+        "amount": 182
+      },
+      {
+        "destination": "شراء ماطور ماء هواندا",
+        "category": "مياه",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 106,
+        "amount": 1300
+      },
+      {
+        "destination": "زيت + فلتر + زيت قير",
+        "category": "وقود",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 107,
+        "amount": 335
+      },
+      {
+        "destination": "وايت ماء",
+        "category": "مياه",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 108,
+        "amount": 100
+      },
+      {
+        "destination": "بيد خالد حلاقة وثياب",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 109,
+        "amount": 100
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 110,
+        "amount": 198
+      },
+      {
+        "destination": "عينة عازل",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 111,
+        "amount": 165
+      },
+      {
+        "destination": "أدوات سباكة",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 112,
+        "amount": 140
+      },
+      {
+        "destination": "طرمبة بنزين فورد",
+        "category": "وقود",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 113,
+        "amount": 150.01
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 114,
+        "amount": 200
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 115,
+        "amount": 150
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 116,
+        "amount": 150
+      },
+      {
+        "destination": "مصاريف مخيم",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 117,
+        "amount": 80
+      },
+      {
+        "destination": "اصلاح زجاج",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 118,
+        "amount": 200
+      },
+      {
+        "destination": "جلدة مطب",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 119,
+        "amount": 40
+      },
+      {
+        "destination": "ماء لديتر",
+        "category": "مياه",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 120,
+        "amount": 100
+      },
+      {
+        "destination": "لستك",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 121,
+        "amount": 100.05
+      },
+      {
+        "destination": "غسيل لديتر",
+        "category": "خدمات",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 122,
+        "amount": 250
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 123,
+        "amount": 40
+      },
+      {
+        "destination": "سطحة",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 124,
+        "amount": 650
+      },
+      {
+        "destination": "تغيير صوفة لوري",
+        "category": "معدات",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 125,
+        "amount": 350
+      },
+      {
+        "destination": "صوفه قطع غيار اللوري",
+        "category": "معدات",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 126,
+        "amount": 178
+      },
+      {
+        "destination": "أدوات تنظيف اللوري",
+        "category": "معدات",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 127,
+        "amount": 59
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 128,
+        "amount": 150
+      },
+      {
+        "destination": "بيد خالد المصري",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 129,
+        "amount": 1000
+      },
+      {
+        "destination": "ديزل الوايت",
+        "category": "وقود",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 130,
+        "amount": 1500
+      },
+      {
+        "destination": "خضار ومقاضي",
+        "category": "طعام",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 131,
+        "amount": 173
+      },
+      {
+        "destination": "بداية زراعي",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 132,
+        "amount": 23
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 133,
+        "amount": 205.02
+      },
+      {
+        "destination": "حداده بيت الشعر",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 134,
+        "amount": 60
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 135,
+        "amount": 75
+      },
+      {
+        "destination": "مشتريات للمخيم",
+        "category": "مستلزمات",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 136,
+        "amount": 173
+      },
+      {
+        "destination": "دينا",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 137,
+        "amount": 1400
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 138,
+        "amount": 32
+      },
+      {
+        "destination": "مشتريات للمخيم",
+        "category": "مستلزمات",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 139,
+        "amount": 69
+      },
+      {
+        "destination": "مشتريات للمخيم",
+        "category": "مستلزمات",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 140,
+        "amount": 10
+      },
+      {
+        "destination": "مشتريات للمخيم",
+        "category": "مستلزمات",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 141,
+        "amount": 9
+      },
+      {
+        "destination": "مشتريات للمخيم",
+        "category": "مستلزمات",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 142,
+        "amount": 45
+      },
+      {
+        "destination": "شراء قطعة الويات مع سير",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 143,
+        "amount": 230
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 144,
+        "amount": 218
+      },
+      {
+        "destination": "تصليح ماطور ماء",
+        "category": "مياه",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 145,
+        "amount": 200
+      },
+      {
+        "destination": "فلاتر مكينة",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 146,
+        "amount": 150
+      },
+      {
+        "destination": "مشتريات للمخيم",
+        "category": "مستلزمات",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 147,
+        "amount": 567.05
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 148,
+        "amount": 95.5
+      },
+      {
+        "destination": "مشتريات للمخيم",
+        "category": "مستلزمات",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 149,
+        "amount": 12
+      },
+      {
+        "destination": "أدوات سباكة",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 150,
+        "amount": 101.2
+      },
+      {
+        "destination": "مشتريات للمخيم",
+        "category": "مستلزمات",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 151,
+        "amount": 93.56
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 152,
+        "amount": 214
+      },
+      {
+        "destination": "مشتريات للمخيم",
+        "category": "مستلزمات",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 153,
+        "amount": 7
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 154,
+        "amount": 199
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 155,
+        "amount": 38
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 156,
+        "amount": 63
+      },
+      {
+        "destination": "مشتريات للمخيم",
+        "category": "مستلزمات",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 157,
+        "amount": 280
+      },
+      {
+        "destination": "مشتريات للمخيم",
+        "category": "مستلزمات",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 158,
+        "amount": 30
+      },
+      {
+        "destination": "مشتريات للمخيم",
+        "category": "مستلزمات",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 159,
+        "amount": 102.35
+      },
+      {
+        "destination": "غسيل سيارة",
+        "category": "خدمات",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 160,
+        "amount": 40
+      },
+      {
+        "destination": "نثريات",
+        "category": "أخرى",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 161,
+        "amount": 120
+      },
+      {
+        "destination": "خبز",
+        "category": "طعام",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 162,
+        "amount": 4
+      },
+      {
+        "destination": "غسيل ملابس",
+        "category": "خدمات",
+        "date": "2025-11-05",
+        "notes": "",
+        "id": 163,
+        "amount": 40
+      },
+      {
+        "destination": "مصروف ماء بيد خالد",
+        "category": "مياه",
+        "date": "2025-11-17",
+        "notes": "",
+        "id": 164,
+        "amount": 500
+      },
+      {
+        "destination": "زيت الوايت",
+        "category": "مياه",
+        "date": "2025-11-17",
+        "notes": "",
+        "id": 165,
+        "amount": 400
+      },
+      {
+        "destination": "ديزل الوايت",
+        "category": "وقود",
+        "date": "2025-11-17",
+        "notes": "",
+        "id": 166,
+        "amount": 500
+      },
+      {
+        "destination": "سحب كرفان",
+        "category": "أخرى",
+        "date": "2025-11-17",
+        "notes": "",
+        "id": 167,
+        "amount": 700
+      },
+      {
+        "destination": "مصروف ماء بيد خالد",
+        "category": "مياه",
+        "date": "2025-11-17",
+        "notes": "",
+        "id": 168,
+        "amount": 1000
+      },
+      {
+        "destination": "ديزل الوايت",
+        "category": "وقود",
+        "date": "2025-11-17",
+        "notes": "",
+        "id": 169,
+        "amount": 1210
+      },
+      {
+        "destination": "مقاضي للعمال",
+        "category": "أخرى",
+        "date": "2025-11-17",
+        "notes": "",
+        "id": 170,
+        "amount": 471.75
+      },
+      {
+        "destination": "بنزين",
+        "category": "وقود",
+        "date": "2025-11-17",
+        "notes": "",
+        "id": 171,
+        "amount": 162
+      },
+      {
+        "destination": "بنشر الوايت",
+        "category": "مياه",
+        "date": "2025-11-17",
+        "notes": "",
+        "id": 172,
+        "amount": 300
+      },
+      {
+        "destination": "توضيب مكينة مولد",
+        "category": "أخرى",
+        "date": "2025-11-17",
+        "notes": "",
+        "id": 173,
+        "amount": 1300
+      },
+      {
+        "destination": "مبلط",
+        "category": "أخرى",
+        "date": "2025-11-17",
+        "notes": "",
+        "id": 174,
+        "amount": 2000
+      },
+      {
+        "destination": "كفرات الوايت",
+        "category": "مياه",
+        "date": "2025-11-17",
+        "notes": "",
+        "id": 175,
+        "amount": 1360
+      },
+      {
+        "destination": "تركيب كفرات / بدون فاتورة",
+        "category": "معدات",
+        "date": "2025-11-17",
+        "notes": "",
+        "id": 176,
+        "amount": 300
+      },
+      {
+        "destination": "ديزل الوايت",
+        "category": "وقود",
+        "date": "2025-11-17",
+        "notes": "",
+        "id": 177,
+        "amount": 500
+      },
+      {
+        "destination": "فرق استكمال قيمة ستارة",
+        "category": "أخرى",
+        "date": "2025-11-17",
+        "notes": "",
+        "id": 178,
+        "amount": 1000
+      },
+      {
+        "destination": "ديزل الوايت",
+        "category": "وقود",
+        "date": "2025-11-17",
+        "notes": "",
+        "id": 179,
+        "amount": 1400
+      },
+      {
+        "destination": "تعبئة وايت ماء",
+        "category": "مياه",
+        "date": "2025-11-17",
+        "notes": "",
+        "id": 180,
+        "amount": 200
+      },
+      {
+        "destination": "غاز",
+        "category": "أخرى",
+        "date": "2025-11-20",
+        "notes": "",
+        "id": 181,
+        "amount": 89
+      },
+      {
+        "destination": "تانكي تصريف مياه للكرفان",
+        "category": "مياه",
+        "date": "2025-11-20",
+        "notes": "",
+        "id": 182,
+        "amount": 100
+      },
+      {
+        "destination": "شحن بطاقة خالد",
+        "category": "أخرى",
+        "date": "2025-11-20",
+        "notes": "",
+        "id": 183,
+        "amount": 115
+      },
+      {
+        "destination": "مشتريات للمخيم",
+        "category": "مستلزمات",
+        "date": "2025-11-20",
+        "notes": "",
+        "id": 184,
+        "amount": 512
+      },
+      {
+        "destination": "مغسله",
+        "category": "خدمات",
+        "date": "2025-12-11",
+        "notes": "",
+        "id": 185,
+        "amount": 40
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-12-11",
+        "notes": "",
+        "id": 186,
+        "amount": 150
+      },
+      {
+        "destination": "تموينات",
+        "category": "طعام",
+        "date": "2025-12-11",
+        "notes": "",
+        "id": 187,
+        "amount": 25
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-12-11",
+        "notes": "",
+        "id": 188,
+        "amount": 229
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-12-11",
+        "notes": "",
+        "id": 189,
+        "amount": 145.95
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-11",
+        "notes": "",
+        "id": 190,
+        "amount": 24.74
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-11",
+        "notes": "",
+        "id": 191,
+        "amount": 152.96
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-11",
+        "notes": "",
+        "id": 192,
+        "amount": 528.63
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-11",
+        "notes": "",
+        "id": 193,
+        "amount": 32
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-11",
+        "notes": "",
+        "id": 194,
+        "amount": 21
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-11",
+        "notes": "",
+        "id": 195,
+        "amount": 48.25
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-11",
+        "notes": "",
+        "id": 196,
+        "amount": 45
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-11",
+        "notes": "",
+        "id": 197,
+        "amount": 206
+      },
+      {
+        "destination": "مصاريف سباكة",
+        "category": "أخرى",
+        "date": "2025-12-11",
+        "notes": "",
+        "id": 198,
+        "amount": 101.2
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-12-11",
+        "notes": "",
+        "id": 199,
+        "amount": 181
+      },
+      {
+        "destination": "خبز",
+        "category": "طعام",
+        "date": "2025-12-11",
+        "notes": "",
+        "id": 200,
+        "amount": 72
+      },
+      {
+        "destination": "بصل",
+        "category": "أخرى",
+        "date": "2025-12-11",
+        "notes": "",
+        "id": 201,
+        "amount": 20
+      },
+      {
+        "destination": "قصدير",
+        "category": "أخرى",
+        "date": "2025-12-11",
+        "notes": "",
+        "id": 202,
+        "amount": 10
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 203,
+        "amount": 97
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 204,
+        "amount": 101
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 205,
+        "amount": 100
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 206,
+        "amount": 189
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 207,
+        "amount": 79.44
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 208,
+        "amount": 259
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 209,
+        "amount": 117
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 210,
+        "amount": 100
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 211,
+        "amount": 50
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 212,
+        "amount": 350
+      },
+      {
+        "destination": "خضار",
+        "category": "طعام",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 213,
+        "amount": 110
+      },
+      {
+        "destination": "شاي ومناديل",
+        "category": "أخرى",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 214,
+        "amount": 34
+      },
+      {
+        "destination": "صابون حمامات",
+        "category": "أخرى",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 215,
+        "amount": 72
+      },
+      {
+        "destination": "بنزين",
+        "category": "وقود",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 216,
+        "amount": 15
+      },
+      {
+        "destination": "دينمو",
+        "category": "أخرى",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 217,
+        "amount": 140
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 218,
+        "amount": 245
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 219,
+        "amount": 200
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 220,
+        "amount": 441.27
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 221,
+        "amount": 152
+      },
+      {
+        "destination": "مغسله",
+        "category": "خدمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 222,
+        "amount": 118
+      },
+      {
+        "destination": "مغسله",
+        "category": "خدمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 223,
+        "amount": 35
+      },
+      {
+        "destination": "مغسله",
+        "category": "خدمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 224,
+        "amount": 35
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 225,
+        "amount": 153
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 226,
+        "amount": 165
+      },
+      {
+        "destination": "وقود لوري",
+        "category": "وقود",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 227,
+        "amount": 100
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 228,
+        "amount": 80
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 229,
+        "amount": 150
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 230,
+        "amount": 102.51
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 231,
+        "amount": 90
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 232,
+        "amount": 98
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 233,
+        "amount": 30
+      },
+      {
+        "destination": "زيت مع غسيل سيارة",
+        "category": "خدمات",
+        "date": "2025-12-15",
+        "notes": "",
+        "id": 234,
+        "amount": 200
+      },
+      {
+        "destination": "راتب قهوجي",
+        "category": "أخرى",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 235,
+        "amount": 800
+      },
+      {
+        "destination": "خضار",
+        "category": "طعام",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 236,
+        "amount": 215
+      },
+      {
+        "destination": "مشتريات بقالة",
+        "category": "طعام",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 237,
+        "amount": 70
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 238,
+        "amount": 159
+      },
+      {
+        "destination": "ديزل",
+        "category": "وقود",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 239,
+        "amount": 1669.57
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 240,
+        "amount": 349
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 241,
+        "amount": 420.25
+      },
+      {
+        "destination": "مشتريات المخيم",
+        "category": "مستلزمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 242,
+        "amount": 903.41
+      },
+      {
+        "destination": "ميني ساندوتش + شوكلاته",
+        "category": "أخرى",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 243,
+        "amount": 33
+      },
+      {
+        "destination": "مشتريات المخيم للمطبخ",
+        "category": "مستلزمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 244,
+        "amount": 83.95
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 245,
+        "amount": 100
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 246,
+        "amount": 270
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 247,
+        "amount": 90
+      },
+      {
+        "destination": "مشتريات المخيم",
+        "category": "مستلزمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 248,
+        "amount": 551
+      },
+      {
+        "destination": "وقود لوري",
+        "category": "وقود",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 249,
+        "amount": 182
+      },
+      {
+        "destination": "كفرات لوري",
+        "category": "معدات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 250,
+        "amount": 400
+      },
+      {
+        "destination": "باقة نت خالد",
+        "category": "أخرى",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 251,
+        "amount": 115
+      },
+      {
+        "destination": "مشتريات المخيم",
+        "category": "مستلزمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 252,
+        "amount": 150
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 253,
+        "amount": 97
+      },
+      {
+        "destination": "مشتريات المخيم",
+        "category": "مستلزمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 254,
+        "amount": 35.5
+      },
+      {
+        "destination": "مشتريات المخيم",
+        "category": "مستلزمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 255,
+        "amount": 56
+      },
+      {
+        "destination": "مشتريات المخيم",
+        "category": "مستلزمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 256,
+        "amount": 65
+      },
+      {
+        "destination": "وقود لوري",
+        "category": "وقود",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 257,
+        "amount": 300
+      },
+      {
+        "destination": "ديزل",
+        "category": "وقود",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 258,
+        "amount": 1500
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 259,
+        "amount": 200
+      },
+      {
+        "destination": "مشتريات للمخيم",
+        "category": "مستلزمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 260,
+        "amount": 169
+      },
+      {
+        "destination": "مشتريات للمخيم",
+        "category": "مستلزمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 261,
+        "amount": 477.7
+      },
+      {
+        "destination": "مطبخ الزاوية الذهبي",
+        "category": "أخرى",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 262,
+        "amount": 400
+      },
+      {
+        "destination": "مناديل ومشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 263,
+        "amount": 173
+      },
+      {
+        "destination": "ديزل",
+        "category": "وقود",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 264,
+        "amount": 1500
+      },
+      {
+        "destination": "مشتريات للمخيم",
+        "category": "مستلزمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 265,
+        "amount": 71.75
+      },
+      {
+        "destination": "خبز ومشتريات",
+        "category": "طعام",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 266,
+        "amount": 81.5
+      },
+      {
+        "destination": "غسيل",
+        "category": "خدمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 267,
+        "amount": 50
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 268,
+        "amount": 218.02
+      },
+      {
+        "destination": "تغيير فحمات ومخرطة",
+        "category": "أخرى",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 269,
+        "amount": 172.5
+      },
+      {
+        "destination": "مشتريات للمخيم للمطبخ",
+        "category": "مستلزمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 270,
+        "amount": 170
+      },
+      {
+        "destination": "مطبخ الزاوية الذهبي",
+        "category": "أخرى",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 271,
+        "amount": 225
+      },
+      {
+        "destination": "مغسلة سيارات",
+        "category": "خدمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 272,
+        "amount": 35
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 273,
+        "amount": 86.76
+      },
+      {
+        "destination": "مشتريات للمخيم للمطبخ",
+        "category": "مستلزمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 274,
+        "amount": 907.07
+      },
+      {
+        "destination": "مشتريات بقالة",
+        "category": "طعام",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 275,
+        "amount": 15
+      },
+      {
+        "destination": "ديزل",
+        "category": "وقود",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 276,
+        "amount": 1210
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 277,
+        "amount": 206
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 278,
+        "amount": 60
+      },
+      {
+        "destination": "مشتريات للمخيم للمطبخ",
+        "category": "مستلزمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 279,
+        "amount": 37
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 280,
+        "amount": 36
+      },
+      {
+        "destination": "وقود",
+        "category": "وقود",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 281,
+        "amount": 160
+      },
+      {
+        "destination": "مؤسسة سبيل ارض الزراعية",
+        "category": "أخرى",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 282,
+        "amount": 155
+      },
+      {
+        "destination": "مشتريات",
+        "category": "مستلزمات",
+        "date": "2025-12-17",
+        "notes": "",
+        "id": 283,
+        "amount": 5
+      },
+      {
+        "id": 284,
+        "destination": "شغل يد إصلاحات سيارة أبو إبراهيم",
+        "amount": 250,
+        "category": "معدات",
+        "date": "2026-02-05",
+        "notes": ""
+      },
+      {
+        "id": 285,
+        "destination": "اصلاح كفرات البودي ( علي )",
+        "amount": 250,
+        "category": "معدات",
+        "date": "2026-02-05",
+        "notes": ""
+      },
+      {
+        "id": 286,
+        "destination": "خبز",
+        "amount": 10,
+        "category": "طعام",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 287,
+        "destination": "ببسي",
+        "amount": 40,
+        "category": "طعام",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 288,
+        "destination": "رباط",
+        "amount": 30,
+        "category": "مستلزمات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 289,
+        "destination": "مغسلة",
+        "amount": 5,
+        "category": "خدمات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 290,
+        "destination": "دجاج وماجي",
+        "amount": 55,
+        "category": "طعام",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 291,
+        "destination": "ذبح خروف",
+        "amount": 40,
+        "category": "طعام",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 292,
+        "destination": "ثلج",
+        "amount": 18,
+        "category": "مياه",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 293,
+        "destination": "زبده وغاز وماء",
+        "amount": 14,
+        "category": "مياه",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 294,
+        "destination": "ارز",
+        "amount": 78,
+        "category": "طعام",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 295,
+        "destination": "كرك",
+        "amount": 36,
+        "category": "طعام",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 296,
+        "destination": "تغيير زيت وسيفون سيارة",
+        "amount": 105,
+        "category": "معدات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 297,
+        "destination": "خبز",
+        "amount": 25,
+        "category": "طعام",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 298,
+        "destination": "دجاج وببسي واغراض مطبخ",
+        "amount": 200,
+        "category": "طعام",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 299,
+        "destination": "مغسلة سيارات",
+        "amount": 35,
+        "category": "خدمات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 300,
+        "destination": "خبز",
+        "amount": 15,
+        "category": "طعام",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 301,
+        "destination": "حلاقة",
+        "amount": 65,
+        "category": "خدمات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 302,
+        "destination": "خبز",
+        "amount": 10,
+        "category": "طعام",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 303,
+        "destination": "أغراض مطبخ",
+        "amount": 61,
+        "category": "طعام",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 304,
+        "destination": "أغراض زراعة",
+        "amount": 140,
+        "category": "مستلزمات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 305,
+        "destination": "أغراض مطبخ",
+        "amount": 292.98,
+        "category": "طعام",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 306,
+        "destination": "ديزل",
+        "amount": 500,
+        "category": "وقود",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 307,
+        "destination": "مشتريات بقالة",
+        "amount": 34,
+        "category": "طعام",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 308,
+        "destination": "مصاريف متنوعة",
+        "amount": 400,
+        "category": "أخرى",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 309,
+        "destination": "زيت مع فلتر مكينة",
+        "amount": 105,
+        "category": "وقود",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 310,
+        "destination": "بويا للغرفة",
+        "amount": 1480,
+        "category": "دهانات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 311,
+        "destination": "بويا للغرفة",
+        "amount": 720.02,
+        "category": "دهانات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 312,
+        "destination": "بويا للغرفة",
+        "amount": 365,
+        "category": "دهانات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 313,
+        "destination": "بويا للغرفة",
+        "amount": 35,
+        "category": "دهانات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 314,
+        "destination": "تريلا نقل غرفة من جل الى الحسي",
+        "amount": 2000,
+        "category": "معدات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 315,
+        "destination": "ايجار ونش",
+        "amount": 2500,
+        "category": "معدات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 316,
+        "destination": "وقود",
+        "amount": 195,
+        "category": "وقود",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 317,
+        "destination": "ونش الجل",
+        "amount": 600,
+        "category": "معدات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 318,
+        "destination": "سطحه",
+        "amount": 900,
+        "category": "معدات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 319,
+        "destination": "عمال تحميل",
+        "amount": 200,
+        "category": "خدمات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 320,
+        "destination": "مصاريف مشتريات للمخيم",
+        "amount": 63,
+        "category": "مستلزمات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 321,
+        "destination": "مصاريف مشتريات للمخيم",
+        "amount": 64,
+        "category": "مستلزمات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 322,
+        "destination": "مصاريف مشتريات للمخيم",
+        "amount": 50,
+        "category": "مستلزمات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 323,
+        "destination": "مصاريف مشتريات للمخيم",
+        "amount": 35,
+        "category": "مستلزمات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 324,
+        "destination": "مصاريف مشتريات للمخيم",
+        "amount": 57,
+        "category": "مستلزمات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 325,
+        "destination": "مصاريف مشتريات للمخيم",
+        "amount": 1,
+        "category": "مستلزمات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 326,
+        "destination": "مصاريف مشتريات للمخيم",
+        "amount": 30,
+        "category": "مستلزمات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 327,
+        "destination": "مصاريف مشتريات للمخيم",
+        "amount": 36,
+        "category": "مستلزمات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 328,
+        "destination": "مصاريف مشتريات للمخيم",
+        "amount": 18,
+        "category": "مستلزمات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 329,
+        "destination": "مصاريف مشتريات للمخيم",
+        "amount": 21,
+        "category": "مستلزمات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 330,
+        "destination": "مصاريف مشتريات للمخيم",
+        "amount": 76,
+        "category": "مستلزمات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 331,
+        "destination": "قطع غيار إصلاحات سيارة أبو إبراهيم",
+        "amount": 475,
+        "category": "معدات",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 332,
+        "destination": "وقود",
+        "amount": 100,
+        "category": "وقود",
+        "date": "2026-03-10",
+        "notes": ""
+      },
+      {
+        "id": 333,
+        "destination": "ديزل",
+        "amount": 500,
+        "category": "وقود",
+        "date": "2026-03-10",
+        "notes": ""
+      }
+    ]
+  }
+]
